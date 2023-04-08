@@ -1,0 +1,27 @@
+{
+  "name": "docs",
+  "type": "module",
+  "private": true,
+  "version": "0.50.6",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "@iconify-json/carbon": "^1.1.16",
+    "@iconify-json/logos": "^1.1.24",
+    "@iconify-json/mdi": "^1.1.50",
+    "@iconify-json/ph": "^1.1.5",
+    "@iconify-json/twemoji": "^1.1.11",
+    "@iconify-json/vscode-icons": "^1.1.22",
+    "ofetch": "^1.0.1",
+    "typescript": "^5.0.3",
+    "unocss": "^0.50.6",
+    "vite": "^4.2.1",
+    "vitepress": "1.0.0-alpha.65"
+  },
+  "dependencies": {
+    "vue": "^3.2.47"
+  }
+}
