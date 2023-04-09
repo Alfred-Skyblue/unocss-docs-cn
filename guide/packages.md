@@ -1,43 +1,43 @@
 ---
 title: Packages
-description: "UnoCSS Packages: available packages and what's included and enabled in unocss."
+description: "UnoCSS 包：可用的包以及 unocss 中包含和启用的内容。"
 outline: deep
 ---
 
 # Packages
 
-UnoCSS is a monorepo that contains multiple packages. This page lists all the packages and what's included in `unocss` package:
+UnoCSS 是一个包含多个包的 monorepo。以下是列出了所有的包以及 unocss 包中包含的内容：
 
-| Package                                                          | Description                                        | Included in `unocss` | Enabled |
-|------------------------------------------------------------------|----------------------------------------------------|----------------------| ------------------ |
-| [@unocss/core](/tools/core)                                      | The core library without preset                    | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />      | - |
-| [@unocss/cli](/integrations/cli)                                 | Command line interface for UnoCSS                  | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | - |
-| [@unocss/preset-uno](/presets/uno)                               | The default preset                                 | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" /> |
-| [@unocss/preset-mini](/presets/mini)                             | The minimal but essential rules and variants       | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" /> |
-| [@unocss/preset-wind](/presets/wind)                             | Tailwind / Windi CSS compact preset                | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" /> |
-| [@unocss/preset-attributify](/presets/attributify)               | Enables Attributify Mode for other rules           | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
-| [@unocss/preset-tagify](/presets/tagify)                         | Enables Tagify Mode for other rules                | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
-| [@unocss/preset-icons](/presets/icons)                           | Pure CSS Icons solution powered by Iconify         | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
-| [@unocss/preset-web-fonts](/presets/web-fonts)                   | Web fonts (Google Fonts, etc.) support             | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
-| [@unocss/preset-typography](/presets/typography)                 | The typography preset                              | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
-| [@unocss/preset-rem-to-px](/presets/rem-to-px)                   | Coverts rem to px for utils                        | No                   | No |
-| [@unocss/transformer-variant-group](/transformers/variant-group) | Transformer for Windi CSS's variant group feature  | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
-| [@unocss/transformer-directives](/transformers/directives)       | Transformer for CSS directives like `@apply`       | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
-| [@unocss/transformer-compile-class](/transformers/compile-class) | Compile group of classes into one class            | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
-| [@unocss/transformer-attributify-jsx](/transformers/attributify-jsx) | Support valueless attributify in JSX/TSX           | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
-| [@unocss/extractor-pug](/extractors/pug)                         | Extractor for Pug                                  | No                   | - |
-| [@unocss/extractor-svelte](/extractors/svelte)                   | Extractor for Svelte                               | No                   | - |
-| [@unocss/autocomplete](/tools/autocomplete)                      | Utils for autocomplete                             | No                   | - |
-| [@unocss/config](/guide/config-file)                             | Configuration file loader                          | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | - |
-| [@unocss/reset](/guide/style-reset)                              | Collection of common CSS resets                    | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
-| [@unocss/vite](/integrations/vite)                               | The Vite plugins                                   | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | - |
-| [@unocss/inspector](/tools/inspector)                            | The inspector UI for UnoCSS                        | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | - |
-| [@unocss/astro](/integrations/astro)                             | The Astro integration                              | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | - |
-| [@unocss/webpack](/integrations/webpack)                         | The Webpack plugin                                 | No                   | - |
-| [@unocss/nuxt](/integrations/nuxt)                               | The Nuxt Module                                    | No                   | - |
-| [@unocss/next](/integrations/next)                               | The Next.js plugin                                 | No                   | - |
-| [@unocss/runtime](/integrations/runtime)                         | CSS-in-JS Runtime for UnoCSS                       | No                   | - |
-| [@unocss/eslint-plugin](/integrations/eslint)                    | ESLint plugin                                      | No                   | - |
-| [@unocss/eslint-config](/integrations/eslint)                    | ESLint config                                      | No                   | - |
-| [@unocss/postcss](/integrations/postcss)                         | The PostCSS plugin                                 | No                   | - |
-| [VS Code Extension](/integrations/vscode)                        | UnoCSS for VS Code                                 | -                    | - |
+| Package                                                          | Description             | Included in `unocss` | Enabled |
+|------------------------------------------------------------------|-------------------------|----------------------| ------------------ |
+| [@unocss/core](/tools/core)                                      | 没有预置的核心库                | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />      | - |
+| [@unocss/cli](/integrations/cli)                                 | UnoCSS 的命令行工具界面         | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | - |
+| [@unocss/preset-uno](/presets/uno)                               | 默认预设                    | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" /> |
+| [@unocss/preset-mini](/presets/mini)                             | 最少但必不可少的规则和变体           | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" /> |
+| [@unocss/preset-wind](/presets/wind)                             | Tailwind / Windi CSS 预设 | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" /> |
+| [@unocss/preset-attributify](/presets/attributify)               | 为其他规则启用属性化模式            | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
+| [@unocss/preset-tagify](/presets/tagify)                         | 为其他规则启用标签化模式            | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
+| [@unocss/preset-icons](/presets/icons)                           | 由Iconify提供支持的纯CSS图标解决方案 | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
+| [@unocss/preset-web-fonts](/presets/web-fonts)                   | 支持Web字体（如Google Fonts等） | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
+| [@unocss/preset-typography](/presets/typography)                 | 排版预设                    | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
+| [@unocss/preset-rem-to-px](/presets/rem-to-px)                   | 将rem单位转换为px单位，用于工具类     | No                   | No |
+| [@unocss/transformer-variant-group](/transformers/variant-group) | Windi CSS 的变体组特性的转换器    | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
+| [@unocss/transformer-directives](/transformers/directives)       | 用于处理CSS指令 `@apply` 的转换器 | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
+| [@unocss/transformer-compile-class](/transformers/compile-class) | 将一组类编译为一个类              | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
+| [@unocss/transformer-attributify-jsx](/transformers/attributify-jsx) | 在JSX/TSX中支持无值的属性化语法     | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
+| [@unocss/extractor-pug](/extractors/pug)                         | 用于提取 Pug 中内容的提取器        | No                   | - |
+| [@unocss/extractor-svelte](/extractors/svelte)                   | 用于提取 Svelte 中内容的提取器     | No                   | - |
+| [@unocss/autocomplete](/tools/autocomplete)                      | 自动完成                    | No                   | - |
+| [@unocss/config](/guide/config-file)                             | 配置文件加载器                 | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | - |
+| [@unocss/reset](/guide/style-reset)                              | 常用 CSS 重置集合             | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | No |
+| [@unocss/vite](/integrations/vite)                               | Vite插件                  | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | - |
+| [@unocss/inspector](/tools/inspector)                            | UnoCSS 的检查器 UI          | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | - |
+| [@unocss/astro](/integrations/astro)                             | Astro 整合                | <span class="block i-carbon:checkbox-checked-filled text-green-600 dark:text-green-400 w-2em h-2em" />                    | - |
+| [@unocss/webpack](/integrations/webpack)                         | Webpack 插件              | No                   | - |
+| [@unocss/nuxt](/integrations/nuxt)                               | Nuxt 模块                 | No                   | - |
+| [@unocss/next](/integrations/next)                               | Next.js 插件              | No                   | - |
+| [@unocss/runtime](/integrations/runtime)                         | UnoCSS 的 CSS-in-JS 运行时  | No                   | - |
+| [@unocss/eslint-plugin](/integrations/eslint)                    | ESLint 插件               | No                   | - |
+| [@unocss/eslint-config](/integrations/eslint)                    | ESLint 配置               | No                   | - |
+| [@unocss/postcss](/integrations/postcss)                         | PostCSS 插件              | No                   | - |
+| [VS Code Extension](/integrations/vscode)                        | vscode 扩展               | -                    | - |

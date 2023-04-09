@@ -1,13 +1,13 @@
 ---
 title: Guide
-description: Getting started with UnoCSS
+description: UnoCSS 入门
 ---
 
 # What is UnoCSS?
 
-UnoCSS is the instant atomic CSS engine, that is designed to be flexible and extensible. The core is un-opinionated, and all the CSS utilities are provided via presets.
+UnoCSS 是一个即时的原子化 CSS 引擎，旨在灵活和可扩展。核心是不拘一格的，所有的 CSS 工具类都是通过预设提供的。
 
-For example, you could define your custom CSS utilities, by providing rules in your local [config file](/guide/config-file).
+例如，您可以通过在您的本地 [配置文件](/guide/config-file) 中提供规则来定义自定义 CSS 工具类。
 
 ```ts
 // uno.config.ts
@@ -19,20 +19,18 @@ export default defineConfig({
   ],
 })
 ```
-
-This will add a new CSS utility `m-1` to your project. Since UnoCSS is on-demand, it won't do anything until you use it in your codebase. So say we have a component like this:
+这将在您的项目中添加一个新的 CSS 工具类 m-1。由于 UnoCSS 是按需加载的，它在您的代码库中不使用它之前不会产生任何作用。因此，假设我们有一个像这样的组件：
 
 ```html
 <div class="m-1">Hello</div>
 ```
 
-`m-1` will be detected and the following CSS will be generated:
+`m-1` 将被检测到，并生成以下 CSS：
 
 ```css
 .m-1 { margin: 1px; }
 ```
-
-To make it more flexible, you can make your rule dynamic by changing the first argument on the rule (we call it matcher) to a RegExp, and the body to a function, for example:
+为了使它更加灵活，您可以通过将规则的第一个参数（我们称之为匹配器）更改为正则表达式，并将其主体更改为函数，从而使规则变得动态化，例如：
 
 ```diff
 // uno.config.ts
@@ -43,8 +41,8 @@ export default defineConfig({
   ],
 })
 ```
+通过这样做，现在您可以拥有任意的 margin 工具，如 `m-1`、`m-100` 或 `m-52.43`。并且，UnoCSS 只在您使用它们时才会生成这些工具。
 
-By doing this, now you can have arbitrary margin utilities, like `m-1`, `m-100` or `m-52.43`. And again, UnoCSS only generates them whenever you use them.
 
 ```html
 <div class="m-1">Hello</div>
@@ -56,9 +54,9 @@ By doing this, now you can have arbitrary margin utilities, like `m-1`, `m-100` 
 .m-7.5 { margin: 7.5px; }
 ```
 
-## Presets
+## 预设
+一旦您创建了一些规则，您可以将它们提取到一个预设中，并与他人分享。例如，您可以为您公司的设计系统创建一个预设，并与您的团队共享。
 
-Once you made a few rules, you can extract them into a preset, and share it with others. For example, you can create a preset for your company's design system, and share it with your team.
 
 ```ts
 // my-preset.ts
@@ -83,20 +81,21 @@ import { myPreset } from './my-preset'
 
 export default defineConfig({
   presets: [
-    myPreset // your own preset
+    myPreset // 您自己的预设
   ],
 })
 ```
+类似地，我们为您提供了一些官方预设，供您立即开始使用，您还可以找到许多有趣的社区预设。
+同样的，我们提供了一些[官方预设](/presets/)让你马上开始使用，你也可以找到很多有趣的[社区预设](/presets/#community).
 
-So similarly, we provided a few [official presets](/presets/) for you to start using right away, and you can also find many interesting [community presets](/presets/#community).
+## 玩转
 
-## Play
+您可以在浏览器中尝试 UnoCSS，在<a href="/play/" target="_blank">Playground</a>中。或者在<a href="/interactive/" target="_blank">交互文档</a>中查找默认预设中的工具。
 
-You can try UnoCSS in your browser, in the <a href="/play/" target="_blank">Playground</a>. Or look up utilities from the default presets in the <a href="/interactive/" target="_blank">Interactive Docs</a>.
 
-## Installation
+## 安装
 
-UnoCSS comes with many integrations for various frameworks:
+UnoCSS 针对多种框架提供了许多集成方式：
 
 <!-- // TODO: make a grid with icons -->
 

@@ -8,26 +8,26 @@ const title = 'UnoCSS'
 const description = 'The instant on-demand Atomic CSS engine'
 
 const Guides: DefaultTheme.NavItemWithLink[] = [
-  { text: 'Getting Started', link: '/guide/' },
-  { text: 'Why UnoCSS?', link: '/guide/why' },
-  { text: 'Presets', link: '/guide/presets' },
-  { text: 'Style reset', link: '/guide/style-reset' },
-  { text: 'Config file', link: '/guide/config-file' },
-  { text: 'Extracting & Safelist', link: '/guide/extracting' },
-  { text: 'Packages', link: '/guide/packages' },
+  { text: '开始使用', link: '/guide/' },
+  { text: '为什么选择UnoCSS？', link: '/guide/why' },
+  { text: '预设', link: '/guide/presets' },
+  { text: '样式重置', link: '/guide/style-reset' },
+  { text: '配置文件', link: '/guide/config-file' },
+  { text: '提取和安全列表', link: '/guide/extracting' },
+  { text: '包', link: '/guide/packages' },
 ]
 
 const Configs: DefaultTheme.NavItemWithLink[] = [
-  { text: 'Overview', link: '/config/' },
-  { text: 'Rules', link: '/config/rules' },
-  { text: 'Shortcuts', link: '/config/shortcuts' },
-  { text: 'Theme', link: '/config/theme' },
-  { text: 'Variants', link: '/config/variants' },
-  { text: 'Extractors', link: '/config/extractors' },
-  { text: 'Transformers', link: '/config/transformers' },
-  { text: 'Preflights', link: '/config/preflights' },
-  { text: 'Layers', link: '/config/layers' },
-  { text: 'Presets', link: '/config/presets' },
+  { text: '概述', link: '/config/' },
+  { text: '规则', link: '/config/rules' },
+  { text: '快捷方式', link: '/config/shortcuts' },
+  { text: '主题', link: '/config/theme' },
+  { text: '变体', link: '/config/variants' },
+  { text: '提取器', link: '/config/extractors' },
+  { text: '变形器', link: '/config/transformers' },
+  { text: '预检查', link: '/config/preflights' },
+  { text: '图层', link: '/config/layers' },
+  { text: '预设', link: '/config/presets' },
 ]
 
 const Integrations: DefaultTheme.NavItemWithLink[] = [
@@ -43,63 +43,63 @@ const Integrations: DefaultTheme.NavItemWithLink[] = [
 ]
 
 const Presets: DefaultTheme.NavItemWithLink[] = [
-  { text: 'Uno (default)', link: '/presets/uno' },
-  { text: 'Icons', link: '/presets/icons' },
-  { text: 'Attributify', link: '/presets/attributify' },
-  { text: 'Typography', link: '/presets/typography' },
-  { text: 'Web fonts', link: '/presets/web-fonts' },
+  { text: 'Uno (默认)', link: '/presets/uno' },
+  { text: '图标', link: '/presets/icons' },
+  { text: '属性化', link: '/presets/attributify' },
+  { text: '排版', link: '/presets/typography' },
+  { text: 'Web 字体', link: '/presets/web-fonts' },
   { text: 'Wind', link: '/presets/wind' },
   { text: 'Mini', link: '/presets/mini' },
-  { text: 'Tagify', link: '/presets/tagify' },
+  { text: '标签化', link: '/presets/tagify' },
   { text: 'Rem to px', link: '/presets/rem-to-px' },
 ]
 
 const Transformers: DefaultTheme.NavItemWithLink[] = [
-  { text: 'Variant Group', link: '/transformers/variant-group' },
-  { text: 'Directives', link: '/transformers/directives' },
-  { text: 'Compile class', link: '/transformers/compile-class' },
-  { text: 'Attributify JSX', link: '/transformers/attributify-jsx' },
+  { text: '变体组', link: '/transformers/variant-group' },
+  { text: '指令', link: '/transformers/directives' },
+  { text: '编译类', link: '/transformers/compile-class' },
+  { text: 'JSX 属性化', link: '/transformers/attributify-jsx' },
 ]
 
 const Extractors: DefaultTheme.NavItemWithLink[] = [
-  { text: 'Pug extractor', link: '/extractors/pug' },
+  { text: 'Pug 提取器', link: '/extractors/pug' },
   // { text: 'Svelte extractor', link: '/extractors/svelte' },
 ]
 
 const Tools: DefaultTheme.NavItemWithLink[] = [
-  { text: 'Inspector', link: '/tools/inspector' },
-  { text: 'Core', link: '/tools/core' },
-  { text: 'Autocomplete', link: '/tools/autocomplete' },
+  { text: '检查器', link: '/tools/inspector' },
+  { text: '核心', link: '/tools/core' },
+  { text: '自动完成', link: '/tools/autocomplete' },
 ]
 
 const Nav: DefaultTheme.NavItem[] = [
   {
-    text: 'Guide',
+    text: '指南',
     items: [
       {
-        text: 'Guide',
+        text: '指南',
         items: Guides,
       },
     ],
   },
   {
-    text: 'Integrations',
+    text: '集成',
     items: [
       {
-        text: 'Integrations',
+        text: '集成',
         items: Integrations,
       },
       {
-        text: 'Examples',
+        text: '示例',
         link: 'https://github.com/unocss/unocss/tree/main/examples',
       },
     ],
   },
   {
-    text: 'Config',
+    text: '配置',
     items: [
       {
-        text: 'Config File',
+        text: '配置文件',
         link: '/guide/config-file',
       },
       {
@@ -109,41 +109,41 @@ const Nav: DefaultTheme.NavItem[] = [
     ],
   },
   {
-    text: 'Presets',
+    text: '预设',
     items: [
       {
-        text: 'Overview',
+        text: '概述',
         link: '/presets/',
       },
       {
-        text: 'Community Presets',
+        text: '社区预设',
         link: '/presets/community',
       },
       {
-        text: 'Presets',
+        text: '预设',
         items: Presets,
       },
       {
-        text: 'Transformers',
+        text: '变形器',
         items: Transformers,
       },
       {
-        text: 'Extractors',
+        text: '提取器',
         items: Extractors,
       },
     ],
   },
-  { text: 'Interactive Docs', link: `${ogUrl}interactive/`, target: '_blank' },
-  { text: 'Playground', link: `${ogUrl}play/`, target: '_blank' },
+  { text: '交互文档', link: `${ogUrl}interactive/`, target: '_blank' },
+  { text: '演练场', link: `${ogUrl}play/`, target: '_blank' },
   {
     text: `v${version}`,
     items: [
       {
-        text: 'Release Notes',
+        text: '发行说明',
         link: 'https://github.com/unocss/unocss/releases',
       },
       {
-        text: 'Contributing',
+        text: '贡献',
         link: 'https://github.com/unocss/unocss/blob/main/CONTRIBUTING.md',
       },
     ],
@@ -152,11 +152,11 @@ const Nav: DefaultTheme.NavItem[] = [
 
 const SidebarGuide: DefaultTheme.SidebarItem[] = [
   {
-    text: 'Guides',
+    text: '指南',
     items: Guides,
   },
   {
-    text: 'Integrations',
+    text: '集成',
     items: Integrations,
   },
   {
@@ -164,41 +164,41 @@ const SidebarGuide: DefaultTheme.SidebarItem[] = [
     link: '/presets/',
   },
   {
-    text: 'Config',
+    text: '配置',
     link: '/config/',
   },
   {
-    text: 'Examples',
+    text: '示例',
     link: 'https://github.com/unocss/unocss/tree/main/examples',
   },
 ]
 
 const SidebarPresets: DefaultTheme.SidebarItem[] = [
   {
-    text: 'Overview',
+    text: '概述',
     link: '/presets/',
   },
   {
-    text: 'Presets',
+    text: '预设',
     collapsed: false,
     items: Presets,
   },
   {
-    text: 'Community Presets',
+    text: '社区预设',
     link: '/presets/community',
   },
   {
-    text: 'Transformers',
+    text: '变形器',
     collapsed: false,
     items: Transformers,
   },
   {
-    text: 'Extractors',
+    text: '提取器',
     collapsed: false,
     items: Extractors,
   },
   {
-    text: 'Other packages',
+    text: '第三方包',
     collapsed: false,
     items: Tools,
   },
@@ -206,18 +206,18 @@ const SidebarPresets: DefaultTheme.SidebarItem[] = [
 
 const SidebarConfig: DefaultTheme.SidebarItem[] = [
   {
-    text: 'Config',
+    text: '配置',
     collapsed: false,
     items: Configs,
   },
   {
-    text: 'Config File',
+    text: '配置文件',
     link: '/guide/config-file',
   },
 ]
 
 export default defineConfig({
-  lang: 'en-US',
+  lang: 'zh-CN',
   title,
   titleTemplate: title,
   description,
