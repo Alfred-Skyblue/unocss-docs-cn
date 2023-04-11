@@ -3,11 +3,11 @@ title: UnoCSS ESLint Config
 description: ESLint config for UnoCSS (@unocss/eslint-config).
 ---
 
-# ESLint Config
+# ESLint 配置
 
-ESLint config for UnoCSS: `@unocss/eslint-config`.
+UnoCSS 的 ESLint 配置: `@unocss/eslint-config`.
 
-## Installation
+## 安装
 
 ::: code-group
   ```bash [pnpm]
@@ -31,11 +31,11 @@ In `.eslintrc`:
 }
 ```
 
-## Rules
+## 规则
 
-- `@unocss/order` - Enforce a specific order for class selectors.
-- `@unocss/order-attributify` - Enforce a specific order for attributify selectors.
+- `@unocss/order` - 对类选择器执行特定顺序。
+- `@unocss/order-attributify` - 对属性选择器执行特定顺序。
 
 ## Prior Arts
 
-Thanks to [eslint-plugin-unocss](https://github.com/devunt/eslint-plugin-unocss) by [@devunt](https://github.com/devunt).
+感谢 [@devunt](https://github.com/devunt) 的 [eslint-plugin-unocss](https://github.com/devunt/eslint-plugin-unocss)。

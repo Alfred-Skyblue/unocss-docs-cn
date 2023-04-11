@@ -1,17 +1,17 @@
 ---
 title: Next.js
-description: Getting started with UnoCSS and Next.js.
+description: UnoCSS 和 Next.js 入门。
 ---
 
 # Next.js
 
 // TODO: link to examples
 
-Getting Started with UnoCSS and Next.js.
+UnoCSS 和 Next.js 入门。
 
-## Setup
+## 设置
 
-### Installation 
+### 安装 
 
 ::: code-group
   ```bash [pnpm]
@@ -25,9 +25,9 @@ Getting Started with UnoCSS and Next.js.
   ```
 :::
 
-### Configuration 
+### 配置 
 
-Create `uno.config.ts` at the root of your project.
+在项目根目录创建 `uno.config.ts`。
 
 ```ts
 // uno.config.ts
@@ -44,9 +44,9 @@ export default defineConfig({
 })
  ```
 
-### Add plugin
+### 添加插件
 
-Then add UnoCSS as a plugin to webpack through your `next.config.js`.
+然后将 UnoCSS 添加为 webpack 的插件，通过 `next.config.js`。
 
 ```js{9}
 // next.config.js
@@ -66,9 +66,9 @@ const nextConfig = {
 module.exports = nextConfig
 ```
 
-### Import stylesheets
+### 导入样式
 
-Then import `uno.css` in `_app.tsx`.
+然后在 `_app.tsx` 中导入 `uno.css`。
 
 ```tsx
 // _app.tsx
@@ -85,9 +85,9 @@ export default MyApp
 ```
 
 
-## Usage 
+## 使用
 
-Style your components with unocss!
+使用 `unocss` 为您的组件添加样式！
 
 ```tsx
 /* index.tsx */
@@ -104,9 +104,9 @@ const Home: NextPage = () => {
 }
 ```
 
-## Hot Module Reload 
+## 热更新
 
-To support HMR you have to opt-out of webpack's caching.
+为了支持 HMR，您需要禁用 webpack 的缓存。
 
 ```js{5}
 // next.config.js
@@ -120,18 +120,20 @@ const nextConfig = {
 }
 ```
 
-## Troubleshooting
+## 故障排除
 
-### Error concerning virtual module
+### 关于虚拟模块的错误
 
 ```bash
 Error: ENOENT: no such file or directory, open '.../_virtual_/__uno.css'
 ```
 
-Try deleting the `.next` directory and restart the dev server.
+尝试删除 `.next` 目录并重新启动开发服务器。
 
-### Other
+### 其他问题
 
-You might need to bump your target up to at least `es2015` in your `tsconfig.json` to build your project.
+您可能需要将目标升级到至少 `es2015` 在您的 `tsconfig.json` 文件中以构建您的项目。
 
-Files with `.js` extension are not supported by default. Change your file extensions to `.jsx` or try to include js files in your config with `include: /\.js$/`. [Learn more](https://github.com/unocss/unocss#scanning).
+
+默认情况下不支持扩展名为 .js 的文件。将您的文件扩展名更改为 .jsx 或尝试使用 `include: \.js` 在您的配置中包含 js 文件。 [了解更多](https://github.com/unocss/unocss#scanning)。
+

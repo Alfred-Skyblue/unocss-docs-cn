@@ -1,16 +1,16 @@
 ---
 title: Presets
-description: Presets are the heart of UnoCSS. They let you make your own custom framework in minutes.
+description: 预设是 UnoCSS 的核心。他们让您在几分钟内制作自己的自定义框架。
 outline: deep
 ---
 
-# Presets
+# 预设
 
-Presets are the heart of UnoCSS. They let you make your own custom framework in minutes.
+预设是 UnoCSS 的核心。他们让您在几分钟内制作自己的自定义框架。
 
-### Using presets
+### 使用预设
 
-To set presets to your project:
+要将预设设置到您的项目中：
 
 ```ts
 // uno.config.ts
@@ -18,27 +18,27 @@ import { defineConfig, presetAttributify, presetUno } from 'unocss'
 
 export default defineConfig({
   presets: [
-    presetAttributify({ /* preset options */}),
+    presetAttributify({ /* 预设选项 */}),
     presetUno(),
-    // ...custom presets
+    // ...自定义预设
   ],
 })
 ```
 
-When the `presets` option is specified, the default preset will be ignored.
+当指定了 `presets` 选项时，将会忽略默认预设。
 
-To disable the default preset, you can set `presets` to an empty array:
+要禁用默认预设，您可以将 `presets` 设置为空数组：
 
 ```ts
 // uno.config.ts
 import { defineConfig } from 'unocss'
 
 export default defineConfig({
-  presets: [], // disable default preset
+  presets: [], // 禁用默认预设
   rules: [
-    // your custom rules
+    // 您的自定义规则
   ],
 })
 ```
 
-You can check [official presets](/presets/) and [community presets](/presets/community) for more. 
+您可以在[官方预设](/presets/)和[社区预设](/presets/community)中查看更多预设选项。
