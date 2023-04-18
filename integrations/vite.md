@@ -4,9 +4,9 @@ description: The Vite plugin for UnoCSS (@unocss/vite).
 outline: deep
 ---
 
-# Vite Plugin
+# Vite插件
 
-The Vite plugin ships with the `unocss` package.
+Vite插件随 `unocss` 包一起提供。
 
 ## Installation
 
@@ -22,7 +22,7 @@ The Vite plugin ships with the `unocss` package.
   ```
 :::
 
-Install the plugin:
+安装插件：
 
 ```ts
 // vite.config.ts
@@ -36,61 +36,63 @@ export default defineConfig({
 })
 ```
 
-Create a `uno.config.ts` file:
+创建一个 `uno.config.ts` 文件：
 
 ```ts
 // uno.config.ts
 import { defineConfig } from 'unocss'
 
 export default defineConfig({
-  // ...UnoCSS options
+  // ...UnoCSS选项
 })
 ```
 
-Add `virtual:uno.css` to your main entry:
+将 `virtual:uno.css` 添加到您的主入口文件：
 
 ```ts
 // main.ts
 import 'virtual:uno.css'
 ```
 
-## Modes
+## 模式
 
-The Vite plugin comes with a set of modes that enable different behaviors.
+Vite插件提供了一组不同行为的模式。
 
-### `global` (default)
+### `global` (默认)
 
-This is the default mode for the plugin: in this mode you need to add the import of `uno.css` on your entry point.
+这是插件的默认模式：在这个模式中，您需要在入口点添加 uno.css 的引入。
 
-This mode enables a set of Vite plugins for `build` and for `dev` with `HMR` support.
 
-The generated `css` will be a global stylesheet injected on the `index.html`.
+此模式为 `build` 和 `dev` 提供了一组 Vite 插件，并支持热更新。
+
+生成的 `css` 将作为全局样式注入到 `index.html`。
 
 ### `vue-scoped`
 
-This mode will inject generated CSS to Vue SFCs `<style scoped>` for isolation.
+此模式将生成的CSS注入到 Vue 单文件组件的 `<style scoped>` 中，以实现样式隔离。
 
 ### `svelte-scoped`
 
-This mode will inject generated CSS to Svelte's `<style>` for isolation.
+此模式将生成的CSS注入到 Svelte 的 `<style>` 中，以实现样式隔离。
 
 ### `shadow-dom`
 
-Since `Web Components` uses `Shadow DOM`, there is no way to style content directly from a global stylesheet (unless you use `custom css vars`, those will penetrate the `Shadow DOM`), you need to inline the generated css by the plugin into the `Shadow DOM` style.
+由于 `Web Components` 使用 `Shadow DOM`，无法直接从全局样式表中对内容进行样式设置（除非使用 `custom css vars`，这些变量将渗透到 `Shadow DOM` 中），因此需要将插件生成的CSS内联到 `Shadow DOM` 样式中。
 
-To inline the generated css, you only need to configure the plugin mode to `shadow-dom` and include `@unocss-placeholder` magic placeholder on each web component style css block. If you are defining your Web Components in Vue SFCs and want to define custom styles alongside UnoCSS, you can wrap placeholder in a CSS comment to avoid syntax errors in your IDE.
+要将生成的CSS内联，只需要将插件模式配置为 `shadow-dom`，并在每个 Web 组件样式的 CSS 块中包含 `@unocss-placeholder` 占位符。如果您在 Vue 单文件组件中定义自定义样式，并希望与 UnoCSS 一起定义，请将占位符包装在 CSS 注释中，以避免IDE中的语法错误。
 
-### `per-module` (experimental)
 
-This mode will generate a CSS sheet for each module, can be scoped.
+### `per-module` (实验性)
+此模式将为每个模块生成一个CSS样式表，并可进行作用域限定。
 
-### `dist-chunk` (experimental)
+### `dist-chunk` (实验性)
 
-This mode will generate a CSS sheet for each code chunk on build, great for MPA.
+此模式将在构建时为每个代码块生成一个CSS样式表，适用于MPA。
 
-## Edit classes in DevTools
+## 在DevTools中编辑类
 
-Because of limitation of "on-demand" where the DevTools don’t know those you haven’t used in your source code yet. So if you want to try how things work by directly changing the classes in DevTools, just add the following lines to your main entry.
+由于 "按需" 的限制，DevTools 不知道您尚未在源代码中使用的类。因此，如果您想通过在 DevTools 中直接更改类来尝试其工作原理，只需在主入口文件中添加以下行。
+
 
 ```ts
 import 'uno.css'
@@ -98,16 +100,16 @@ import 'virtual:unocss-devtools'
 ```
 
 ::: warning
-Please use it with caution, under the hood we use [`MutationObserver`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) to detect the class changes. Which means not only your manual changes but also the changes made by your scripts will be detected and included in the stylesheet. This could cause some misalignment between dev and the production build when you add dynamic classes based on some logic in script tags. We recommended adding your dynamic parts to the [safelist](https://github.com/unocss/unocss/issues/511) or setup UI regression tests for your production build if possible.
+请谨慎使用，我们在内部使用 [`MutationObserver`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) 来检测类名的变化。这意味着不仅您手动进行的更改，还包括您在脚本中进行的更改，都将被检测并包含在样式表中。这可能会导致在生产构建中添加基于某些逻辑的动态类名时，在开发和生产构建之间出现错位。如果可能的话，我们建议将您的动态部分添加到[safelist](https://github.com/unocss/unocss/issues/511)或为您的生产构建设置UI回归测试。
 :::
 
-## Frameworks
+## 框架
 
-Some UI/App frameworks have some caveats that must be fixed to make it work, if you're using one of the following frameworks, just apply the suggestions.
+某些 UI/App 框架需要一些特殊的处理才能正常工作，如果您正在使用以下框架之一，请按照建议进行操作。
 
 ### React
 
-If you're using `@vitejs/plugin-react`:
+如果您正在使用 `@vitejs/plugin-react`:
 
 ```ts
 // vite.config.js
@@ -121,10 +123,10 @@ export default {
   ],
 }
 ```
+如果您正在使用  `@unocss/preset-attributify`，您应该从 `build` 脚本中删除 `tsc`。
 
-If you're using `@unocss/preset-attributify` you should remove `tsc` from the `build` script.
+如果您正在使用 `@vitejs/plugin-react` 与 `@unocss/preset-attributify`，您必须在 `@vitejs/plugin-react` 之前添加 `UnoCSS` 插件。
 
-If you are using `@vitejs/plugin-react` with `@unocss/preset-attributify`, you must add the plugin before `@vitejs/plugin-react`.
 
 ```ts
 // vite.config.js
@@ -138,12 +140,11 @@ export default {
   ],
 }
 ```
-
-You have a `React` example project on [examples/vite-react](https://github.com/unocss/unocss/tree/main/examples/vite-react) directory  using both plugins, check the scripts on `package.json` and its Vite configuration file.
+您可以在 [examples/vite-react](https://github.com/unocss/unocss/tree/main/examples/vite-react) 目录下找到一个使用了这两个插件的 React 示例项目，查看其 `package.json` 文件和 Vite 配置文件中的脚本设置。
 
 ### Preact
 
-If you're using `@preact/preset-vite`:
+如果您正在使用 `@preact/preset-vite`:
 
 ```ts
 // vite.config.js
@@ -158,7 +159,7 @@ export default {
 }
 ```
 
-or if you're using `@prefresh/vite`:
+或者如果您正在使用 `@prefresh/vite`:
 
 ```ts
 // vite.config.js
@@ -173,17 +174,20 @@ export default {
 }
 ```
 
-If you're using `@unocss/preset-attributify` you should remove `tsc` from the `build` script.
+如果您正在使用 `@unocss/preset-attributify`，您应该从 `build` 脚本中删除 `tsc`。
 
-You have a `Preact` example project on [examples/vite-preact](https://github.com/unocss/unocss/tree/main/examples/vite-preact) directory  using both plugins, check the scripts on `package.json` and its Vite configuration file.
+您可以在 [examples/vite-preact](https://github.com/unocss/unocss/tree/main/examples/vite-preact) 目录下找到一个使用了这两个插件的 `Preact` 示例项目，查看其 `package.json` 文件和 Vite 配置文件中的脚本设置。
 
 ### Svelte
 
-You must add the plugin before `@sveltejs/vite-plugin-svelte`.
+您必须在 `@sveltejsvite-plugin-svelte` 之前添加插件。
 
 To support `class:foo` and `class:foo={bar}` add the plugin and configure `extractorSvelte` on `extractors` option.
 
-You can use simple rules with `class:`, for example `class:bg-red-500={foo}` or using `shortcuts` to include multiples rules, see `src/App.svelte` on linked example project below.
+为了支持 `class:foo` 和 `class:foo={bar}` 的写法，你需要在 `extractors` 选项中添加 `extractorSvelte` 配置。
+
+您可以将简单的规则与 `class:` 一起使用，比如 `class:bg-red-500={foo}` ，或者使用 `shortcuts` 来包含多个规则，参考下面链接的示例项目中的 `src/App.svelte` 文件。
+
 
 ```ts
 // vite.config.js
@@ -204,13 +208,17 @@ export default {
 }
 ```
 
-You have a `Vite + Svelte` example project on [examples/vite-svelte](https://github.com/unocss/unocss/tree/main/examples/vite-svelte) directory.
+_You have a `Vite + Svelte` example project on [examples/vite-svelte](https://github.com/unocss/unocss/tree/main/examples/vite-svelte) directory._
+
+你可以在 [examples/vite-svelte](https://github.com/unocss/unocss/tree/main/examples/vite-svelte) 目录中找到一个 `Vite + Svelte` 的示例项目。
+
 
 ### Sveltekit
 
-To support `class:foo` and `class:foo={bar}` add the plugin and configure `extractorSvelte` on `extractors` option.
+为了支持 `class:foo` 和 `class:foo={bar}` 的写法，你需要在 `extractors` 选项中添加 `extractorSvelte` 配置。
 
-You can use simple rules with `class:`, for example `class:bg-red-500={foo}` or using `shortcuts` to include multiples rules, see `src/routes/+layout.svelte` on linked example project below.
+您可以将简单的规则与 `class:` 一起使用，比如 `class:bg-red-500={foo}` ，或者使用 `shortcuts` 来包含多个规则，参考下面链接的示例项目中的 `src/routes/+layout.svelte` 文件。
+
 
 ```ts
 // vite.config.js
@@ -233,13 +241,14 @@ const config = {
 ```
 <!-- :sandbox{src="https://stackblitz.com/fork/github/unocss/unocss/tree/main/examples/sveltekit"} -->
 
-You have a `SvelteKit` example project in [examples/sveltekit](https://github.com/unocss/unocss/tree/main/examples/sveltekit) directory.
+你可以在 [examples/sveltekit](https://github.com/unocss/unocss/tree/main/examples/sveltekit) 目录中找到一个 `SvelteKit` 的示例项目。
 
-### Svelte/SvelteKit Scoped Mode
 
-Adding `mode: 'svelte-scoped'` to your UnoCSS config options will place styles right inside of each component's style block instead of in a global `uno.css` file. Due to automatic class name compilation, classes that depend on attributes in parent components (like `dir="rtl"` or `.dark`) will just work. Also, you can pass classes to children components as long as you pass them using a prop named `class`, e.g. `class="text-lg bg-red-100"`. 
+### Svelte/SvelteKit Scoped 模式
 
-Support for `class:foo` and `class:foo={bar}` is already included. There is no need to add the `extractorSvelte` when using `svelte-scoped` mode.
+在UnoCSS的配置选项中添加 `mode: 'svelte-scoped'` 将会把样式直接放在每个组件的样式块内，而不是一个全局的 `uno.css` 文件中。由于自动的类名编译，依赖于父组件属性（如 `dir="rtl"` 或 `.dark` ）的类名将会生效。同时，你可以通过将类名传递给子组件的 `class` 属性来传递类名，例如`class="text-lg bg-red-100"`。
+
+对于 `class:foo` 和 `class:foo={bar}` 的支持已经包含在内，无需在使用 `svelte-scoped` 模式时添加 `extractorSvelte` 配置。
 
 Because there is no `import 'uno.css'` in your root `+layout.svelte` preflights and safelist classes have no where to be placed. Add the `uno:preflights` or `uno:safelist` attributes to the style block of any component where you want to place them. To use both globally, add the following to your root `+layout.svelte`: 
 

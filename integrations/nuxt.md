@@ -1,13 +1,13 @@
 ---
 title: UnoCSS Nuxt Module
-description: Nuxt module for UnoCSS.
+description: UnoCSS 的 Nuxt 模块。
 ---
 
 # Nuxt Module
 
-The Nuxt module for UnoCSS.
+UnoCSS 的 Nuxt 模块。
 
-## Installation
+## 安装
 
 ::: code-group
   ```bash [pnpm]
@@ -21,7 +21,8 @@ The Nuxt module for UnoCSS.
   ```
 :::
 
-Add `@unocss/nuxt` to your Nuxt config file:
+
+在您的 Nuxt 配置文件中添加  `@unocss/nuxt` ：
 
 ```ts
 // nuxt.config.ts
@@ -32,20 +33,20 @@ export default defineNuxtConfig({
 })
 ```
 
-Create a `uno.config.ts` file:
+创建一个 `uno.config.ts` 文件：
 
 ```ts
 // uno.config.ts
 import { defineConfig } from 'unocss'
 
 export default defineConfig({
-  // ...UnoCSS options
+  // ...UnoCSS 选项
 })
 ```
 
-The `uno.css` entry will be automatically injected by the module.
+`uno.css` 入口将会被模块自动注入。
 
-## Support status
+## 支持状态
 
 | | Nuxt 2 | Nuxt Bridge | Nuxt 3 |
 | --- | :-- | :-- | :-- |
@@ -54,9 +55,9 @@ The `uno.css` entry will be automatically injected by the module.
 | Vite Dev | - | ✅ | ✅ |
 | Vite Build | - | ✅ | ✅ |
 
-## Configuration
+## 配置
 
-We recommend to use the dedicated `uno.config.ts` file for configuration. See [Config File](/guide/config-file) for more details.
+我们建议使用专用的 uno.config.ts 文件进行配置。详见[配置文件](/guide/config-file)了解更多细节。
 
 ## License
 

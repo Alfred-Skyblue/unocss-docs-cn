@@ -3,14 +3,15 @@ title: UnoCSS PostCSS Plugin
 outline: deep
 ---
 
-# PostCSS Plugin
+# PostCSS 插件
 
-PostCSS plugin for UnoCSS. Supports `@apply`, `@screen` and `theme()` directives.
+UnoCSS 的 PostCSS 插件，支持 `@apply`、`@screen` 和 `theme()` 指令。
 
-[Source Code](https://github.com/unocss/unocss/tree/main/packages/postcss)
+
+[源码](https://github.com/unocss/unocss/tree/main/packages/postcss)
 
 ::: warning
-This package is in an experimental state right now. It doesn't follow semver, and may introduce breaking changes in patch versions.
+该包目前处于实验状态，不符合语义化版本规范，并且可能在补丁版本中引入破坏性更改。
 :::
 
 ## Install
@@ -24,7 +25,7 @@ npm i -D @unocss/postcss
 module.exports = {
   plugins: {
     '@unocss/postcss': {
-      // Optional
+      // 可选项
       content: ['**/*.{html,js,ts,jsx,tsx,vue,svelte,astro}'],
     },
   },
@@ -47,13 +48,13 @@ export default defineConfig({
 @unocss;
 ```
 
-## Usage
+## 用法
 
 ### `@unocss`
 
-`@unocss` at-rule is a placeholder. It will be replaced by the generated CSS. 
+`@unocss` 规则是一个占位符，将被生成的 CSS 替换。
 
-You can also inject each layer individually:
+您还可以分别注入每个层：
 
 ```css
 /* style.css */
@@ -61,13 +62,13 @@ You can also inject each layer individually:
 @unocss default;
 
 /*
-  Fallback layer. It's always recommended to include.
-  Only unused layers will be injected here.
+  回退层。始终建议包含。
+  只有未使用的层将在此处注入。
 */
 @unocss; 
 ```
 
-If you want to include all layers no matter whether they are previously included or not, you can use `@unocss all`. This is useful if you want to include generated CSS in multiple files.
+如果您想包含所有层，无论它们之前是否已包含，可以使用 @unocss all。这在需要在多个文件中包含生成的 CSS 时非常有用。
 
 ```css
 @unocss all; 
@@ -81,7 +82,7 @@ If you want to include all layers no matter whether they are previously included
 }
 ```
 
-Will be transformed to:
+将被转换为：
 
 ```css
 .custom-div {
@@ -94,7 +95,7 @@ Will be transformed to:
 
 ### `@screen`
 
-The `@screen` directive allows you to create media queries that reference your breakpoints by name comes from [`theme.breakpoints`](https://github.com/unocss/unocss/blob/main/README.md#extend-theme).
+`@screen` 指令允许您创建引用您的断点的媒体查询，断点来自 [`theme.breakpoints`](https://github.com/unocss/unocss/blob/main/README.md#extend-theme)。
 
 ```css
 .grid {
@@ -114,7 +115,7 @@ The `@screen` directive allows you to create media queries that reference your b
 ...
 ```
 
-Will be transformed to:
+将被转换为：
 
 ```css
 .grid {
@@ -134,8 +135,10 @@ Will be transformed to:
 /* ... */
 ```
 
-#### Breakpoint Variant Support
-`@screen` also supports `lt`、`at` variants
+#### 断点变体支持
+ `@screen` 还支持 `lt`、`at` 变体
+
+
 
 ##### `@screen lt`
 
@@ -156,7 +159,7 @@ Will be transformed to:
 /* ... */
 ```
 
-Will be transformed to:
+将被转换为：
 
 ```css
 .grid {
@@ -200,7 +203,7 @@ Will be transformed to:
 /* ... */
 ```
 
-Will be transformed to:
+将被转换为：
 
 ```css
 .grid {
@@ -227,7 +230,7 @@ Will be transformed to:
 
 ### `theme()`
 
-Use the `theme()` function to access your theme config values using dot notation.
+使用 `theme()` 函数使用点表示法访问您的主题配置值。
 
 ```css
 .btn-blue {
