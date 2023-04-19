@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,N as p}from"./chunks/framework.fcd62fc8.js";const B=JSON.parse('{"title":"预设","description":"","frontmatter":{},"headers":[],"relativePath":"config/presets.md","lastUpdated":1681917313000}'),l={name:"config/presets.md"},o=p("",7),e=[o];function t(c,r,y,i,D,A){return n(),a("div",null,e)}const d=s(l,[["render",t]]);export{B as __pageData,d as default};
