@@ -3,11 +3,11 @@ title: Shortcuts
 description: The shortcuts functionality that UnoCSS provides is similar to Windi CSS’s one.
 ---
 
-# Shortcuts
+# 快捷方式
 
-Shortcuts could let you combine multiple rules into a single shorthand, inspired by [Windi CSS's](https://windicss.org/features/shortcuts.html).
+快捷方式可以让您将多个规则组合成单个简写，受到[Windi CSS](https://windicss.org/features/shortcuts.html)的启发。
 
-## Usage
+## 使用
 
 <!--eslint-skip-->
 
@@ -21,9 +21,9 @@ shortcuts: {
 }
 ```
 
-In addition to the plain mapping, UnoCSS also allows you to define dynamic shortcuts.
+除了普通的映射之外，UnoCSS还允许您定义动态快捷方式。
 
-Similar to [Rules](/config/rules), a dynamic shortcut is the combination of a matcher RegExp and a handler function.
+类似于[Rules](/config/rules)，动态快捷方式是一个匹配器 RegExp 和一个处理函数的组合。
 
 ```ts
 shortcuts: [
@@ -36,7 +36,7 @@ shortcuts: [
 ]
 ```
 
-With this, we could use `btn-green` and `btn-red` to generate the following CSS:
+有了这个，我们可以使用 `btn-green` 和 `btn-red` 来生成以下 CSS：
 
 ```css
 .btn-green {

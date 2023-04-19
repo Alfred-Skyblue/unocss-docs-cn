@@ -3,14 +3,13 @@ title: Theme
 description: UnoCSS also supports the theming system that you might be familiar with in Tailwind / Windi.
 ---
 
-# Theme
+# 主题
 
-UnoCSS also supports the theming system that you might be familiar with in Tailwind / Windi. At the user level, you can specify the `theme` property in your config, and it will be deep merged to the default theme.
+`UnoCSS` 也支持像 Tailwind / Windi 中的主题系统。在用户级别上，您可以在配置中指定 `theme` 属性，它将与默认主题进行深度合并。
 
-## Usage
+## 用法
 
 <!--eslint-skip-->
-
 ```ts
 theme: {
   // ...
@@ -23,9 +22,9 @@ theme: {
 }
 ```
 
-## Usage in `rules`
+## 在 `rules` 中使用
 
-To consume the theme in rules:
+在规则中使用主题：
 
 ```ts
 rules: [
@@ -38,6 +37,8 @@ rules: [
 
 One exception is that UnoCSS gives full control of `breakpoints` to users. When a custom `breakpoints` is provided, the default will be overridden instead of merging. For example:
 
+一个例外是，UnoCSS将 `breakpoints` 控制权完全留给用户。当提供自定义 `breakpoints` 时，默认值将被覆盖而不是合并。例如：
+
 <!--eslint-skip-->
 
 ```ts
@@ -49,7 +50,7 @@ theme: {
   },
 }
 ```
+目前，您只能使用 `sm:` 和 `md:` 断点变量。
 
-Right now, you can only use the `sm:` and `md:` breakpoint variants.
+`verticalBreakpoints` 与 `breakpoints` 相同，但用于垂直布局。
 
-`verticalBreakpoints` is same as `breakpoints` but for vertical layout.

@@ -2,6 +2,6 @@
 title: Svelte extractor
 ---
 
-#  Svelte extractor
+#  Svelte 提取器
 
 // TODO:

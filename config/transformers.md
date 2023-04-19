@@ -1,8 +1,8 @@
 # Transformers
 
-Transformers are used to transform the source code to support conventions.
+Transformers 用于转换源代码以支持约定。
 
-It provide a unified interface to transform source code in order to support conventions.
+它提供了一个统一的接口来转换源代码以支持约定。
 
 ```ts
 // my-transformer.ts
@@ -12,17 +12,18 @@ import { SourceCodeTransformer } from 'unocss'
 export default function myTransformers(options: MyOptions = {}): SourceCodeTransformer {
   return {
     name: 'my-transformer',
-    enforce: 'pre', // enforce before other transformers
+    enforce: 'pre', // 在其他transformer之前执行
     idFilter() {
-      // only transform .tsx and .jsx files
+      // 只转换 .tsx 和 .jsx 文件
       return id.match(/\.[tj]sx$/)
     },
     async transform(code, id, { uno }) {
-      // code is a MagicString instance
+      // code 是一个 MagicString 实例
       code.appendRight(0, '/* my transformer */')
     },
   }
 }
 ```
 
-You can check [official transformers](/presets/#transformers) for more examples.
+您可以查看[官方的 transformers](/presets/#transformers)了解更多示例。
+

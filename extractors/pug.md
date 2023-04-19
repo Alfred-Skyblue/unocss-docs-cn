@@ -3,9 +3,9 @@ title: Pug extractor
 description: Pug extractor for UnoCSS (@unocss/extractor-pug)
 ---
 
-# Pug extractor
+# Pug 提取器
 
-Pug extractor for UnoCSS: `@unocss/extractor-pug`.
+UnoCSS 的 Pug 提取器: `@unocss/extractor-pug`.
 
 ## Installation
 
@@ -21,7 +21,7 @@ Pug extractor for UnoCSS: `@unocss/extractor-pug`.
   ```
 :::
 
-## Usage
+## 使用
 
 ```ts
 import { defineConfig } from 'unocss'

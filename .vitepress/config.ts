@@ -24,7 +24,7 @@ const Configs: DefaultTheme.NavItemWithLink[] = [
   { text: '主题', link: '/config/theme' },
   { text: '变体', link: '/config/variants' },
   { text: '提取器', link: '/config/extractors' },
-  { text: '变形器', link: '/config/transformers' },
+  { text: '转换器', link: '/config/transformers' },
   { text: '预检查', link: '/config/preflights' },
   { text: '图层', link: '/config/layers' },
   { text: '预设', link: '/config/presets' },
@@ -55,7 +55,7 @@ const Presets: DefaultTheme.NavItemWithLink[] = [
 ]
 
 const Transformers: DefaultTheme.NavItemWithLink[] = [
-  { text: '变体组', link: '/transformers/variant-group' },
+  { text: '转换组', link: '/transformers/variant-group' },
   { text: '指令', link: '/transformers/directives' },
   { text: '编译类', link: '/transformers/compile-class' },
   { text: 'JSX 属性化', link: '/transformers/attributify-jsx' },
@@ -124,11 +124,11 @@ const Nav: DefaultTheme.NavItem[] = [
         items: Presets,
       },
       {
-        text: '变形器',
+        text: '转换器',
         items: Transformers,
       },
       {
-        text: '提取器',
+        text: '转换器',
         items: Extractors,
       },
     ],
@@ -188,7 +188,7 @@ const SidebarPresets: DefaultTheme.SidebarItem[] = [
     link: '/presets/community',
   },
   {
-    text: '变形器',
+    text: '转换器',
     collapsed: false,
     items: Transformers,
   },
