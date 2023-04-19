@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/types'
+// @ts-ignore
 import { version } from '../package.json'
 
 const ogUrl = 'https://unocss.dev/'
