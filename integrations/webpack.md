@@ -3,15 +3,18 @@ title: UnoCSS Webpack Plugin
 description: The webpack plugin for UnoCSS (@unocss/webpack).
 ---
 
-# Webpack Plugin
+# Webpack 插件
 
 The webpack plugin for UnoCSS: `@unocss/webpack`. Currently, this plugin only supports the [`global` mode](https://github.com/unocss/unocss/blob/main/packages/vite/src/types.ts#L11-L21).
 
+UnoCSS 的 Webpack 插件：`@unocss/webpack`。目前，此插件仅支持 [global模式](https://github.com/unocss/unocss/blob/main/packages/vite/src/types.ts#L11-L21)。
+
+
 ::: info
-This plugin does not come with any default presets.
+此插件不带有任何默认预设。
 :::
 
-## Installation
+## 安装
 
 ::: code-group
   ```bash [pnpm]
@@ -57,8 +60,7 @@ module.exports = {
 ```
 :::
 
-Create a `uno.config.ts` file:
-
+创建一个 `uno.config.ts` 文件：
 ```ts
 // uno.config.ts
 import { defineConfig } from 'unocss'
@@ -69,13 +71,12 @@ export default defineConfig({
 ```
 
 ::: warning
-If you are using webpack@4.x, the `optimization.realContentHash` configuration is not supported, And you should use `css.extract.filename` to customize css filename (we use first 9 letter of hashcode instead of contenthash as example). Beware this [known issue](https://github.com/unocss/unocss/issues/1728) with bundle and [webpack#9520](https://github.com/webpack/webpack/issues/9520#issuecomment-749534245).
+如果您使用的是webpack@4.x，`optimization.realContentHash` 配置不受支持，并且您应该使用 `css.extract.filename` 自定义CSS文件名（我们使用前9个哈希码字母作为示例）。请注意此捆绑包和[webpack#9520](https://github.com/webpack/webpack/issues/9520#issuecomment-749534245)的[已知问题](https://github.com/unocss/unocss/issues/1728)。
 :::
 
-## Usage
+## 使用
 
-Add `uno.css` to your main entry:
-
+将 `uno.css` 添加到您的主入口中：
 ```ts
 // main.ts
 import 'uno.css'

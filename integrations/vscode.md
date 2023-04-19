@@ -3,21 +3,21 @@ title: UnoCSS VS Code Extension
 description: UnoCSS for VS Code.
 ---
 
-# UnoCSS VS Code Extension
+# UnoCSS VS Code 扩展
 
-[Install in Marketplace](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)
+[在插件市场安装](https://marketplace.visualstudio.com/items?itemName=antfu.unocss)
 
-- Decoration and tooltip for matched utilities
-- Auto loading configs
-- Count of matched utilities
+- 对匹配到的工具进行装饰和提示
+- 自动加载配置
+- 匹配到的工具数量
 
-## Config
+## 配置
 
-To get the best IDE experience, we recommend you to [use a separate `uno.config.ts` file](/guide/config-file) for configuring your UnoCSS.
+为了获得最佳的 IDE 使用体验，我们建议您 [使用单独的 `uno.config.ts` 文件](/guide/config-file) 配置您的 UnoCSS。
 
-The extension will try to find the UnoCSS configurations under your project. When there is no config found, the extension will be disabled. To work with monorepo, you need to change the `unocss.root` option in your `settings.json` to the directory that contains the config file.
+扩展程序将尝试在您的项目中查找 `UnoCSS` 配置。如果未找到配置，则扩展程序将被禁用。要使用 `monorepo`，请在您的 `settings.json` 中更改 `unocss.root` 选项，以便它指向包含配置文件的目录。
 
-```javascript
+```json
 {
   "unocss.root": "packages/client"
 }

@@ -250,13 +250,12 @@ const config = {
 
 对于 `class:foo` 和 `class:foo={bar}` 的支持已经包含在内，无需在使用 `svelte-scoped` 模式时添加 `extractorSvelte` 配置。
 
-Because there is no `import 'uno.css'` in your root `+layout.svelte` preflights and safelist classes have no where to be placed. Add the `uno:preflights` or `uno:safelist` attributes to the style block of any component where you want to place them. To use both globally, add the following to your root `+layout.svelte`: 
+因为您的根 `+layout.svelte` 中没有 `import 'uno.css'`，所以预设类和安全列表类无处放置。在您想要放置它们的任何组件的样式块中添加 `uno:preflights` 或 `uno:safelist` 属性。如果要全局使用两者，请将以下代码添加到您的根 `+layout.svelte` 中：
 
 ```html
 <style uno:preflights uno:safelist global></style>
 ```
-
-Alternatively, if you only want them to apply to a specific component just add them to that component's `style` tag and don't add the `global` attribute.
+或者，如果您只想将它们应用于特定组件，请将它们添加到该组件的 `style` 标签中，而不要添加 `global` 属性。
 
 ```ts
 // vite.config.js
@@ -277,13 +276,13 @@ const config = {
 
 <!-- :sandbox{src="https://stackblitz.com/fork/github/unocss/unocss/tree/main/examples/sveltekit-scoped"} -->
 
-There is a `SvelteKit scoped` example project in the [examples/sveltekit-scoped](https://github.com/unocss/unocss/tree/main/examples/sveltekit-scoped#readme) directory with more detailed explanation of how this mode works.
+在 `examples/sveltekit-scoped` 目录中有一个 [examples/sveltekit-scoped](https://github.com/unocss/unocss/tree/main/examples/sveltekit-scoped#readme)项目，其中详细解释了此模式的工作方式。
 
 ### Web Components
 
-To work with web components you need to enable `shadow-dom` mode on the plugin.
+要与 `Web Components` 一起使用，您需要在插件上启用 `shadow-dom` 模式。
 
-Don't forget to remove the import for `uno.css` since the `shadow-dom` mode will not expose it and the application will not work.
+请不要忘记删除 `uno.css` 的导入，因为 `shadow-dom` 模式不会将其公开，因此应用程序将无法工作。
 
 ```ts
 // vite.config.js
@@ -299,7 +298,8 @@ export default {
 }
 ```
 
-On each `web component` just add `@unocss-placeholder` to its style css block:
+在每个 `web component` 中，只需将 `@unocss-placeholder` 添加到其样式 CSS 块中：
+
 ```ts
 const template = document.createElement('template')
 template.innerHTML = `
@@ -312,8 +312,8 @@ template.innerHTML = `
 </div>
 `
 ```
+如果您正在使用 [Lit](https://lit.dev/):：
 
-If you're using [Lit](https://lit.dev/):
 
 ```ts
 @customElement('my-element')
@@ -326,15 +326,16 @@ export class MyElement extends LitElement {
 }
 ```
 
-You have a `Web Components` example project on [examples/vite-lit](https://github.com/unocss/unocss/tree/main/examples/vite-lit) directory.
+您可以在 [examples/vite-lit](https://github.com/unocss/unocss/tree/main/examples/vite-lit) 目录中找到一个 `Web Components` 示例项目。
 
-#### `::part` built-in support
+#### `::part` 内置支持
 
-You can use `::part` since the plugin supports it via `shortcuts` and using `part-[<part-name>]:<rule|shortcut>` rule from `preset-mini`, for example using it with simple rules like `part-[<part-name>]:bg-green-500` or using some `shortcut`: check `src/my-element.ts` on linked example project below.
+您可以使用 `::part`，因为该插件通过 `shortcuts` 支持它，并使用 `preset-mini` 中的 `part-[<part-name>]:<rule|shortcut>` 规则，例如使用简单规则，如 `part-[<part-name>]:bg-green-500` 或使用一些 `shortcut`：请在下面链接的示例项目中查看 `src/my-element.ts`。
 
-The `part-[<part-name>]:<rule|shortcut>` will work only with this plugin using the `shadow-dom` mode.
+`part-[<part-name>]:<rule|shortcut>` 仅在使用 `shadow-dom` 模式时，该插件才会起作用。
 
-The plugin uses `nth-of-type` to avoid collisions with multiple parts in the same web component and for the same parts on distinct web components, you don't need to worry about it, the plugin will take care for you.
+该插件使用 `nth-of-type` 来避免在同一个 `web component` 中出现多个部分的冲突，并且对于不同 `web component` 上的相同部分，您不需要担心，该插件将为您处理。
+
 
 ```ts
 // vite.config.js
@@ -354,7 +355,7 @@ export default {
 }
 ```
 
-then in your web components:
+然后在您的 web components 中：
 
 ```ts
 // my-container-wc.ts
@@ -399,11 +400,11 @@ export default {
 }
 ```
 
-You have a `Vite + Solid` example project on [examples/vite-solid](https://github.com/unocss/unocss/tree/main/examples/vite-solid) directory.
+您可以在 [examples/vite-solid](https://github.com/unocss/unocss/tree/main/examples/vite-solid) 目录中找到一个 `Vite + Solid` 示例项目。
 
 ### Elm
 
-You need to add the `vite-plugin-elm` plugin before UnoCSS's plugin.
+在 UnoCSS 的插件之前，您需要添加 `vite-plugin-elm` 插件。
 
 ```ts
 // vite.config.js
@@ -419,7 +420,7 @@ export default defineConfig({
 })
 ```
 
-You have a `Vite + Elm` example project on [examples/vite-elm](https://github.com/unocss/unocss/tree/main/examples/vite-elm) directory.
+您可以在 [examples/vite-elm](https://github.com/unocss/unocss/tree/main/examples/vite-elm) 目录中找到一个 `Vite + Elm` 示例项目。
 
 ## License
 
