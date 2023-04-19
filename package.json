@@ -3,6 +3,7 @@
   "type": "module",
   "private": true,
   "version": "0.50.6",
+  "description": "unocss 中文文档",
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
