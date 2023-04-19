@@ -1,5 +1,5 @@
 ---
-title: UnoCSS Webpack Plugin
+title: UnoCSS Webpack 插件
 description: The webpack plugin for UnoCSS (@unocss/webpack).
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: UnoCSS ESLint Config
-description: ESLint config for UnoCSS (@unocss/eslint-config).
+title: UnoCSS ESLint 配置
+description: UnoCSS 的 ESLint 配置 (@unocsseslint-config)。
 ---
 
 # ESLint 配置

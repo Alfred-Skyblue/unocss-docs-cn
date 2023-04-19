@@ -1,5 +1,5 @@
 ---
-title: UnoCSS Nuxt Module
+title: UnoCSS Nuxt 模块
 description: UnoCSS 的 Nuxt 模块。
 ---
 

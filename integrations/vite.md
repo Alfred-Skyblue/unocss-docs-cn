@@ -1,5 +1,5 @@
 ---
-title: UnoCSS Vite Plugin
+title: UnoCSS Vite 插件
 description: The Vite plugin for UnoCSS (@unocss/vite).
 outline: deep
 ---

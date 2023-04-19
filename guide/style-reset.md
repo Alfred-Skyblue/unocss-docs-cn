@@ -1,5 +1,5 @@
 ---
-title: Style Reset
+title: 样式重置
 description: UnoCSS 在默认情况下不提供样式重置或预检以获得最大的灵活性，并且不会填充您的全局 CSS。
 outline: deep
 ---

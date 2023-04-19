@@ -1,6 +1,6 @@
 ---
-title: Variants
-description: Variants allow you to apply some variations to your existing rules.
+title: 变体
+description: 变体允许您对现有规则应用一些变体
 ---
 
 # 变体

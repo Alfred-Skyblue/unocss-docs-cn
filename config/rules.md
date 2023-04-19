@@ -1,5 +1,5 @@
 ---
-title: Rules
+title: 规则
 description: Writing custom rules for UnoCSS is super easy.
 ---
 

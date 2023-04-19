@@ -1,5 +1,5 @@
 ---
-title: Preflights
+title: 预检
 description: 您可以从配置中注入原始 css 作为预处理。 已解决的主题可用于自定义 css。
 ---
 

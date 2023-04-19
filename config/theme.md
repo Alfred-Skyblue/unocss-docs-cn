@@ -1,6 +1,6 @@
 ---
-title: Theme
-description: UnoCSS also supports the theming system that you might be familiar with in Tailwind / Windi.
+title: 主题
+description: UnoCSS 还支持设置您在 Tailwind Windi 中可能熟悉的主题系统。
 ---
 
 # 主题

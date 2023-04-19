@@ -1,9 +1,9 @@
 ---
-title: Guide
+title: 指南
 description: UnoCSS 入门
 ---
 
-# What is UnoCSS?
+# 什么是 UnoCSS？
 
 UnoCSS 是一个即时的原子化 CSS 引擎，旨在灵活和可扩展。核心是不拘一格的，所有的 CSS 工具类都是通过预设提供的。
 

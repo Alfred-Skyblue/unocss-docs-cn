@@ -1,5 +1,5 @@
 ---
-title: Presets
+title: 预设
 description: 预设是 UnoCSS 的核心。他们让您在几分钟内制作自己的自定义框架。
 outline: deep
 ---

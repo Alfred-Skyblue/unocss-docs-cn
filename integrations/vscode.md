@@ -1,5 +1,5 @@
 ---
-title: UnoCSS VS Code Extension
+title: UnoCSS VS Code 扩展
 description: UnoCSS for VS Code.
 ---
 

@@ -1,11 +1,11 @@
 ---
-title: Pug extractor
-description: Pug extractor for UnoCSS (@unocss/extractor-pug)
+title: Pug 提取器
+description: UnoCSS 的 Pug 提取器 (@unocssextractor-pug)
 ---
 
 # Pug 提取器
 
-UnoCSS 的 Pug 提取器: `@unocss/extractor-pug`.
+UnoCSS 的 Pug 提取器: `@unocss/extractor-pug`。
 
 ## Installation
 

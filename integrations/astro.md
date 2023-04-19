@@ -1,5 +1,5 @@
 ---
-title: UnoCSS Astro Integration
+title: UnoCSS Astro 集成
 description: The UnoCSS integration for Astro (@unocss/astro).
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: Layers
+title: 图层
 icon: ph:stack-bold
-description: UnoCSS allows you to define the layers as you want.
+description: UnoCSS 允许您根据需要定义图层。
 ---
 
 # 图层

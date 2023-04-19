@@ -1,5 +1,5 @@
 ---
-title: UnoCSS PostCSS Plugin
+title: UnoCSS PostCSS 插件
 outline: deep
 ---
 

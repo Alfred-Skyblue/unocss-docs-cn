@@ -1,6 +1,6 @@
 ---
-title: Shortcuts
-description: The shortcuts functionality that UnoCSS provides is similar to Windi CSS’s one.
+title: 快捷方式
+description: UnoCSS 提供的快捷方式功能类似于 Windi CSS 的功能。
 ---
 
 # 快捷方式
