@@ -224,6 +224,17 @@ export default defineConfig({
   titleTemplate: title,
   description,
   outDir: './dist',
+  locales: {
+    root: {
+      label: '简体中文',
+      lang: 'zh',
+    },
+    en: {
+      label: 'English',
+      lang: 'en',
+      link: 'https://unocss.dev/',
+    },
+  },
   head: [
     ['link', { rel: 'icon', href: `${GITHUB_URL}favicon.svg`, type: 'image/svg+xml' }],
     ['link', { rel: 'alternate icon', href: `${GITHUB_URL}favicon.ico`, type: 'image/png', sizes: '16x16' }],
@@ -257,6 +268,11 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     nav: Nav,
+    // @ts-ignore
+    localeLinks: {
+      text: '简体中文',
+      items: [{ text: 'English', link: 'https://unocss.dev/' }],
+    },
     sidebar: {
       '/guide/': SidebarGuide,
       '/integrations/': SidebarGuide,
