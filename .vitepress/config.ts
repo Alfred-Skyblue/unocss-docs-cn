@@ -216,17 +216,17 @@ const SidebarConfig: DefaultTheme.SidebarItem[] = [
     link: '/guide/config-file',
   },
 ]
-
+const GITHUB_URL = '/unocss-docs-cn/'
 export default defineConfig({
   lang: 'zh-CN',
   title,
-  base: '/unocss-docs-cn/',
+  base: GITHUB_URL,
   titleTemplate: title,
   description,
   outDir: './dist',
   head: [
-    ['link', { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' }],
-    ['link', { rel: 'alternate icon', href: '/favicon.ico', type: 'image/png', sizes: '16x16' }],
+    ['link', { rel: 'icon', href: `${GITHUB_URL}favicon.svg`, type: 'image/svg+xml' }],
+    ['link', { rel: 'alternate icon', href: `${GITHUB_URL}favicon.ico`, type: 'image/png', sizes: '16x16' }],
     ['meta', { name: 'author', content: 'Anthony Fu' }],
     ['meta', { property: 'og:type', content: 'website' }],
     ['meta', { name: 'og:title', content: title }],
