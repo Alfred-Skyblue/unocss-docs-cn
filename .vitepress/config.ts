@@ -219,6 +219,7 @@ const SidebarConfig: DefaultTheme.SidebarItem[] = [
 export default defineConfig({
   lang: 'zh-CN',
   title,
+  base: '/unocss-docs-cn/',
   titleTemplate: title,
   description,
   outDir: './dist',
