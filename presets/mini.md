@@ -1,16 +1,16 @@
 ---
-title: Mini preset
+title: Mini 预设
 description: The minimal preset for UnoCSS (@unocss/preset-mini).
 outline: deep
 ---
 
-# Mini preset
+# Mini 预设
 
-The basic preset for UnoCSS, with only the most essential utilities.
+这是 UnoCSS 的基本预设，仅包含最基本的实用工具。
 
-[Source Code](https://github.com/unocss/unocss/tree/main/packages/preset-mini)
+[源码](https://github.com/unocss/unocss/tree/main/packages/preset-mini)
 
-## Installation
+## 安装
 
 ::: code-group
 
@@ -42,7 +42,7 @@ export default defineConfig({
 ```
 
 ::: tip
-This preset is included in the `unocss` package, you can also import it from there:
+此预设已包含在 `unocss` 包中，您也可以从中导入它：
 
 ```ts
 import { presetMini } from 'unocss'
@@ -50,21 +50,21 @@ import { presetMini } from 'unocss'
 
 :::
 
-## Rules
+## 规则
 
-This preset is a subset of [`@unocss/preset-wind`](/presets/wind), containing only the most essential utilities aligned with CSS's properties, but excludes opinioned or complicated utilities introduced in Tailwind (`container`, `animation`, `gradient` etc.). This can be a good starting point for your own custom preset on top of familiar utilities from Tailwind CSS or Windi CSS.
+此预设是 [`@unocss/preset-wind`](/presets/wind) 的子集，仅包含与 CSS 属性对齐的最基本实用工具，但不包括 Tailwind 中引入的有争议或复杂的实用工具（`container`、`animation`、`gradient` 等）。这可以是一个良好的起点，用于在熟悉的 Tailwind CSS 或 Windi CSS 工具类之上构建自己的自定义预设。
 
-## Features
+## 特点
 
-### Dark mode
+### 暗黑模式
 
-By default, this preset generates class-based dark mode with `dark:` variant.
+默认情况下，此预设生成基于类的暗黑模式，并带有 `dark:` 变体。
 
 ```html
 <div class="dark:bg-red:10" />
 ```
 
-will generate:
+将生成：
 
 ```css
 .dark .dark\:bg-red\:10 {
@@ -72,7 +72,7 @@ will generate:
 }
 ```
 
-To opt-in media query based dark mode, you can use `@dark:` variant:
+要选择基于媒体查询的暗黑模式，您可以使用 `@dark:` 变体：
 
 ```html
 <div class="@dark:bg-red:10" />
@@ -86,7 +86,7 @@ To opt-in media query based dark mode, you can use `@dark:` variant:
 }
 ```
 
-Or set globally with the config for `dark:` variant
+或使用 `dark:` 变体的全局配置设置
 
 ```ts
 presetMini({
@@ -96,14 +96,14 @@ presetMini({
 
 ### CSS @layer
 
-[CSS's native @layer](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) is supported with variant `layer-xx:`
+支持 [CSS 的原生 @layer](https://developer.mozilla.org/en-US/docs/Web/CSS/@layer) 并使用变体 `layer-xx:`
 
 ```html
 <div class="layer-foo:p4" />
 <div class="layer-bar:m4" />
 ```
 
-will generate:
+将生成：
 
 ```css
 @layer foo {
@@ -118,9 +118,9 @@ will generate:
 }
 ```
 
-### Theme
+### 主题
 
-You can fully customize your theme property in your config, and UnoCSS will eventually deeply merge it to the default theme.
+您可以在您的配置中完全自定义主题属性，UnoCSS 最终将深度合并它到默认主题中。
 
 <!--eslint-skip-->
 
@@ -138,7 +138,7 @@ presetMini({
 })
 ```
 
-To consume the theme in rules:
+在规则中使用主题:
 
 ```ts
 rules: [
@@ -152,10 +152,10 @@ rules: [
 ```
 
 ::: warning
-One exception is that UnoCSS gives full control of `breakpoints` to users. When a custom `breakpoints` is provided, the default will be overridden instead of merging.
+需要注意的是，UnoCSS 允许用户完全控制 `breakpoints`。当提供自定义的 `breakpoints` 时，将覆盖默认值而不是合并。
 :::
 
-With the following example, you will be able to only use the `sm:` and `md:` breakpoint variants:
+通过以下示例，您将只能使用 sm:和 md:断点变体：
 
 ```ts
 presetMini({
@@ -170,7 +170,7 @@ presetMini({
 ```
 
 ::: info
-`verticalBreakpoints` is same as `breakpoints` but for vertical layout.
+`verticalBreakpoints` 与 `breakpoints` 相同，但是针对垂直布局。
 :::
 
 ## Options
@@ -180,19 +180,19 @@ presetMini({
 - **Type:** `class | media | DarkModeSelectors`
 - **Default:** `class`
 
-The dark mode options. It can be either `class`, `media`, or a custom selector object(`DarkModeSelectors`).
+暗模式选项。它可以是 `class`、`media` 或自定义选择器对象(`DarkModeSelectors`)。
 
 ```ts
 interface DarkModeSelectors {
   /**
-   * Selector for light variant.
+   * 亮色主题选择器。
    *
    * @default '.light'
    */
   light?: string
 
   /**
-   * Selector for dark variant.
+   * 暗色主题选择器。
    *
    * @default '.dark'
    */
@@ -205,25 +205,25 @@ interface DarkModeSelectors {
 - **Type:** `Boolean`
 - **Default:** `false`
 
-Generate pseudo selector as `[group=""]` instead of `.group`.
+生成伪选择器作为 `[group=""]` 而不是 `.group`。
 
 ### variablePrefix
 
 - **Type:** `string`
 - **Default:** `un-`
 
-Prefix for CSS variables.
+CSS 变量的前缀。
 
 ### prefix
 
 - **Type:** `string | string[]`
 - **Default:** `undefined`
 
-Utils prefix.
+工具类前缀
 
 ### preflight
 
 - **Type:** `boolean`
 - **Default:** `true`
 
-Generate preflight.
+生成预设样式。

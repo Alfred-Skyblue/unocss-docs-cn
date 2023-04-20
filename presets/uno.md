@@ -1,20 +1,20 @@
 ---
-title: Uno preset
-description: The default preset for UnoCSS (@unocss/preset-uno).
+title: Uno 预设
+description: UnoCSS的默认预设（@unocss/preset-uno）。
 outline: deep
 ---
 
 # Uno preset
 
-The default preset for UnoCSS. It's currently equivalent to [`@unocss/preset-wind`](/presets/wind).
+UnoCSS 的默认预设。目前它等同于 [`@unocss/preset-wind`](/presets/wind)
 
-[Source Code](https://github.com/unocss/unocss/tree/main/packages/preset-uno)
+[源码](https://github.com/unocss/unocss/tree/main/packages/preset-uno)
 
 ::: info
-This preset inherits [`@unocss/preset-wind`](/presets/wind) and [`@unocss/preset-mini`](/presets/mini).
+该预设继承自 [`@unocss/preset-wind`](/presets/wind) 和 [`@unocss/preset-mini`](/presets/mini)。
 :::
 
-## Installation
+## 安装
 
 ::: code-group
 
@@ -43,7 +43,7 @@ export default defineConfig({
 ```
 
 ::: tip
-This preset is included in the `unocss` package, you can also import it from there:
+该预设已包含在 `unocss` 包中，您也可以从中导入：
 
 ```ts
 import { presetUno } from 'unocss'
@@ -51,11 +51,11 @@ import { presetUno } from 'unocss'
 
 :::
 
-## Usage
+## 用法
 
-This preset attempts to provide a common superset of the popular utility-first frameworks, including Tailwind CSS, Windi CSS, Bootstrap, Tachyons, etc.
+该预设尝试提供流行的功能优先框架（包括 Tailwind CSS、Windi CSS、Bootstrap、Tachyons 等）的共同超集。
 
-For example, both `ml-3` (Tailwind), `ms-2` (Bootstrap), `ma4` (Tachyons), and `mt-10px` (Windi CSS) are valid.
+例如，`ml-3`（Tailwind）、`ms-2`（Bootstrap）、`ma4`（Tachyons）和 `mt-10px`（Windi CSS）都是有效的。
 
 ```css
 .ma4 {
@@ -72,16 +72,16 @@ For example, both `ml-3` (Tailwind), `ms-2` (Bootstrap), `ma4` (Tachyons), and `
 }
 ```
 
-## Rules
+## 规则
 
-This preset is compatible with [Tailwind CSS](https://tailwindcss.com/) and [Windi CSS](https://windicss.org/), you can refer to their [documentation](https://tailwindcss.com/docs) for detailed usage.
+该预设与 [Tailwind CSS](https://tailwindcss.com/) 和 [Windi CSS](https://windicss.org/) 兼容，您可以参考它们的[文档](https://tailwindcss.com/docs)以获取详细的使用方法。
 
-For all rules and presets included in this preset, please refer to our [interactive docs](/interactive/) or directly go to the [source code](https://github.com/unocss/unocss/tree/main/packages/preset-uno).
+有关此预设中包含的所有规则和预设，请参阅我们的[交互式文档](/interactive/)，或直接查看[源码](https://github.com/unocss/unocss/tree/main/packages/preset-uno)。
 
 ## Options
 
 ::: info
-This preset options are inherited from [`@unocss/preset-mini`](/presets/mini#options).
+该预设选项继承自[`@unocss/preset-mini`](/presets/mini#options)。
 :::
 
-For more details about the default preset, you can check out our [playground](https://uno.antfu.me/play/) and try out. Meanwhile, you can also check out [the implementations](https://github.com/unocss/unocss/tree/main/packages).
+有关默认预设的更多详细信息，请查看我们的 [playground](https://uno.antfu.me/play/) 并尝试。同时，您还可以[查看实现](https://github.com/unocss/unocss/tree/main/packages)。

@@ -1,16 +1,16 @@
 ---
-title: Tagify preset
-description: Tagify Mode for UnoCSS (@unocss/preset-tagify).
+title: Tagify 预设
+description: UnoCSS 的 Tagify 模式 (@unocss/preset-tagify)。
 outline: deep
 ---
 
-# Tagify preset
+# Tagify 预设
 
-This enables the [tagify mode](#tagify-mode) for other presets.
+该预设可为其他预设启用 [标签化模式](#tagify-预设)。
 
-[Source Code](https://github.com/unocss/unocss/tree/main/packages/preset-tagify)
+[源码](https://github.com/unocss/unocss/tree/main/packages/preset-tagify)
 
-## Installation
+## 安装
 
 ```bash
 npm i -D @unocss/preset-tagify
@@ -31,9 +31,9 @@ export default defineConfig({
 })
 ```
 
-## Tagify mode
+## 标签化模式
 
-This preset can come in handy when you only need to apply a single unocss rule to an element.
+当您只需要将单个 unocss 规则应用于元素时，该预设会非常有用。
 
 ```html
 <span class="text-red">red text</span>
@@ -43,7 +43,7 @@ I'm feeling
 today!
 ```
 
-With tagify mode, you can embed CSS styles into HTML tags:
+使用 Tagify 模式，您可以将 CSS 样式嵌入 HTML 标签：
 
 ```html
 <text-red>red text</text-red>
@@ -53,9 +53,9 @@ I'm feeling
 today!
 ```
 
-The HTML above works exactly as you would expect.
+上面的 HTML 与您预期的完全一样。
 
-## With prefix
+## 带前缀
 
 ```js
 presetTagify({
@@ -70,9 +70,9 @@ presetTagify({
 <flex></flex>
 ```
 
-## Extra properties
+## 额外属性
 
-You can inject extra properties to the matched rules:
+您可以将额外的属性注入到匹配规则中：
 
 ```js
 presetTagify({
@@ -95,24 +95,24 @@ presetTagify({
 
 - **Type:** `string`
 
-The prefix to use for the tagify variant.
+Tagify 变量使用的前缀。
 
 ### excludedTags
 
 - **Type:** `string[] | RegExp[]`
 - **Default:** `['b', /^h\d+$/, 'table']`
 
-Tags excluded from processing.
+要排除处理的标签。
 
 ### extraProperties
 
 - **Type:** `Record<string, string> | ((matched: string) => Partial<Record<string, string>>)`
 
-Extra CSS properties to apply to matched rules.
+要应用于匹配规则的额外 CSS 属性。
 
 ### defaultExtractor
 
 - **Type:** `boolean`
 - **Default:** `true`
 
-Enable default extractor.
+启用默认提取器。

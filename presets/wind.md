@@ -1,20 +1,20 @@
 ---
-title: Wind preset
-description: The Tailwind / Windi CSS compact preset for UnoCSS (@unocss/preset-wind).
+title: Wind 预设
+description: UnoCSS 的 Tailwind / Windi CSS 紧凑预设 (@unocss/preset-wind).
 outline: deep
 ---
 
-# Wind preset
+# Wind 预设
 
-The Tailwind / Windi CSS compact preset for UnoCSS.
+用于 UnoCSS 的 TailWind/Windi CSS 预设。
 
-[Source Code](https://github.com/unocss/unocss/tree/main/packages/preset-wind)
+[源码](https://github.com/unocss/unocss/tree/main/packages/preset-wind)
 
 ::: info
-This preset inherits [`@unocss/preset-mini`](/presets/mini).
+该预设继承 [`@unocss/preset-mini`](/presets/mini)。
 :::
 
-## Installation
+## 安装
 
 ::: code-group
 
@@ -43,7 +43,7 @@ export default defineConfig({
 ```
 
 ::: tip
-This preset is included in the `unocss` package, you can also import it from there:
+该预设已经包含在 unocss 包中，您也可以从那里导入：
 
 ```ts
 import { presetWind } from 'unocss'
@@ -51,15 +51,15 @@ import { presetWind } from 'unocss'
 
 :::
 
-## Rules
+## 规则
 
-This preset is compatible with [Tailwind CSS](https://tailwindcss.com/) and [Windi CSS](https://windicss.org/), you can refer to their [documentation](https://tailwindcss.com/docs) for detailed usage.
+该预设与 [Tailwind CSS](https://tailwindcss.com/) 和 [Windi CSS](https://windicss.org/) 兼容，您可以参考它们的 [文档](https://tailwindcss.com/docs) 获取详细的使用信息。
 
-For all rules and presets included in this preset, please refer to our [interactive docs](/interactive/) or directly go to the [source code](https://github.com/unocss/unocss/tree/main/packages/preset-wind).
+有关此预设中包含的所有规则和预设，请参见我们的[交互式文档](/interactive/)或直接转到[源码](https://github.com/unocss/unocss/tree/main/packages/preset-wind)。
 
-## Differences from Windi CSS
+## 与 Windi CSS 的不同之处
 
-### Breakpoints
+### 断点
 
 | Windi CSS | UnoCSS      |
 | :-------- | :---------- |
@@ -67,29 +67,29 @@ For all rules and presets included in this preset, please refer to our [interact
 | `@lg:p-1` | `at-lg:p-1` |
 | `>xl:p-1` | `lg:p-1`    |
 
-### Bracket syntax spaces
+### 方括号语法中的空格
 
-This preset uses `_` instead of `,` to respect space in bracket syntax.
+该预设使用 `_` 而不是 `,` 来表示方括号语法中的空格。
 
 | Windi CSS                          | UnoCSs                             |
 | :--------------------------------- | :--------------------------------- |
 | `grid-cols-[1fr,10px,max-content]` | `grid-cols-[1fr_10px_max-content]` |
 
-Since some CSS rules require `,` as parts of the value, e.g. `grid-cols-[repeat(3,auto)]`
+由于某些 CSS 规则需要 `,` 作为值的一部分，例如 `grid-cols-[repeat(3,auto)]`。
 
-## Experimental Features
+## 实验性特性
 
 ::: warning
-This preset includes experimental features that may be changed in breaking ways at any time.
+该预设包含可能随时以破坏性方式更改的实验性特性。
 :::
 
-### Media Hover
+### 媒体悬停
 
-Media hover addresses the [sticky hover](https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/) problem where tapping target that includes hover style on mobile will persist that hover style until tapping elsewhere.
+媒体悬停解决了移动端触摸包含悬停样式的目标后，悬停样式将一直持续到其他地方触摸的[粘滞悬停](https://css-tricks.com/solving-sticky-hover-states-with-media-hover-hover/)问题。
 
-Since the regular `:hover` style most probably used so widely, the variant uses `@hover` syntax to distinguish it from the regular `hover` pseudo.
+由于常规的 `:hover` 样式可能被广泛使用，该变体使用 `@hover` 语法来区别于常规的 `hover` 伪类。
 
-The variant `@hover-text-red` will output:
+变体 `@hover-text-red` 将输出：
 
 ```css
 @media (hover: hover) and (pointer: fine) {
@@ -103,5 +103,5 @@ The variant `@hover-text-red` will output:
 ## Options
 
 ::: info
-This preset options are inherited from [`@unocss/preset-mini`](/presets/mini#options).
+这些预设选项继承自 [`@unocss/preset-mini`](/presets/mini#options)。
 :::

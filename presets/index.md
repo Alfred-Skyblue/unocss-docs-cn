@@ -25,8 +25,8 @@
 
 ## 提取器
 
-| 包名                                                                   | 描述                                                  |
-| ---------------------------------------------------------------------- | ----------------------------------------------------- |
-| [@unocss/extractor-pug](/extractors/pug)                               | Extractor for Pug                                     |
-| [@unocss/extractor-svelte](/extractors/svelte)                         | Extractor for Svelte                                  |
-| [@unocss/extractor-arbitrary-variants](/extractors/arbitrary-variants) | Extractor to support arbitrary variants for utilities |
+| 包名                                                                   | 描述                             |
+| ---------------------------------------------------------------------- | -------------------------------- |
+| [@unocss/extractor-pug](/extractors/pug)                               | 用于 Pug 的提取器                |
+| [@unocss/extractor-svelte](/extractors/svelte)                         | 用于 Svelte 的提取器             |
+| [@unocss/extractor-arbitrary-variants](/extractors/arbitrary-variants) | 用于支持工具类的任意变体的提取器 |

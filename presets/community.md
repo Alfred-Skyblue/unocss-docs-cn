@@ -20,7 +20,7 @@
 
 # 社区框架
 
-- [Anu](https://github.com/jd-solanki/anu) - 由[@jd-solanki](https://github.com/jd-solanki)创建的基于实用工具的 Vue 组件库，注重开发体验。
+- [Anu](https://github.com/jd-solanki/anu) - 由[@jd-solanki](https://github.com/jd-solanki)创建的基于工具类的 Vue 组件库，注重开发体验。
 - [OnuUI](https://github.com/onu-ui/onu-ui) - 由[@zyyv](https://github.com/zyyv)和[@yzh990918](https://github.com/yzh990918)创建的受欢迎、美观、快速的 UnoCSS 组件库。
 
 # 社区转换器
