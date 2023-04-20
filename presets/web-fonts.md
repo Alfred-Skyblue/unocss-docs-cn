@@ -15,15 +15,19 @@ See [all supported providers](#providers).
 ## Installation
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/preset-web-fonts
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/preset-web-fonts
-  ```
-  ```bash [npm]
-  npm install -D @unocss/preset-web-fonts
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/preset-web-fonts
+```
+
+```bash [yarn]
+yarn add -D @unocss/preset-web-fonts
+```
+
+```bash [npm]
+npm install -D @unocss/preset-web-fonts
+```
+
 :::
 
 ```ts
@@ -35,11 +39,12 @@ import presetUno from '@unocss/preset-uno'
 export default defineConfig({
   presets: [
     presetUno(),
-    presetWebFonts({ /* options */ }),
-  ],
+    presetWebFonts({
+      /* options */
+    })
+  ]
 })
 ```
-
 
 ::: tip
 This preset is included in the `unocss` package, you can also import it from there:
@@ -47,8 +52,8 @@ This preset is included in the `unocss` package, you can also import it from the
 ```ts
 import { presetWebFonts } from 'unocss'
 ```
-:::
 
+:::
 
 ## Providers
 
@@ -80,20 +85,24 @@ export default defineConfig({
     presetUno(),
     presetWebFonts({
       // use axios with an https proxy
-      customFetch: (url: string) => axios.get(url, { httpsAgent: new ProxyAgent('https://localhost:7890') }),
+      customFetch: (url: string) =>
+        axios.get(url, {
+          httpsAgent: new ProxyAgent('https://localhost:7890')
+        }),
       provider: 'google',
       fonts: {
         sans: 'Roboto',
-        mono: ['Fira Code', 'Fira Mono:400,700'],
-      },
-    }),
-  ],
+        mono: ['Fira Code', 'Fira Mono:400,700']
+      }
+    })
+  ]
 })
 ```
 
 ## Options
 
 ### provider
+
 - **Type:** `WebFontsProviders`
 - **Default:** `google`
 
@@ -104,6 +113,7 @@ type WebFontsProviders = 'google' | 'bunny' | 'fontshare' | 'none'
 ```
 
 ### fonts
+
 - **Type:** `Record<string, WebFontMeta | string | (WebFontMeta | string)[]>`
 
 The fonts. See [example](#example) for more details.
@@ -122,29 +132,32 @@ interface WebFontMeta {
 ```
 
 ### extendTheme
+
 - **Type:** `boolean`
 - **Default:** `true`
 
 Extend the theme object.
 
 ### themeKey
+
 - **Type:** `string`
 - **Default:** `fontFamily`
 
 Key for the theme object.
 
 ### inlineImports
+
 - **Type:** `boolean`
 - **Default:** `true`
 
 Inline CSS `@import()`.
 
 ### customFetch
+
 - **Type:** `(url: string) => Promise<string>`
 - **Default:** `undefined`
 
 Use your own function to fetch font source. See [Custom fetch function](#custom-fetch-function).
-
 
 ## Example
 
@@ -161,14 +174,14 @@ presetWebFonts({
       {
         name: 'Lato',
         weights: ['400', '700'],
-        italic: true,
+        italic: true
       },
       {
         name: 'sans-serif',
-        provider: 'none',
-      },
-    ],
-  },
+        provider: 'none'
+      }
+    ]
+  }
 })
 ```
 
@@ -179,19 +192,18 @@ The following CSS will be generated automatically:
 
 /* layer: default */
 .font-lato {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 .font-lobster {
-  font-family: "Lobster";
+  font-family: 'Lobster';
 }
 .font-mono {
-  font-family: "Fira Code", "Fira Mono", ui-monospace, SFMono-Regular, Menlo,
-    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-family: 'Fira Code', 'Fira Mono', ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 }
 .font-sans {
-  font-family: "Roboto", ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
-    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
-    "Noto Color Emoji";
+  font-family: 'Roboto', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 ```

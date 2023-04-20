@@ -18,10 +18,12 @@ import { defineConfig, presetAttributify, presetUno } from 'unocss'
 
 export default defineConfig({
   presets: [
-    presetAttributify({ /* 预设选项 */}),
-    presetUno(),
+    presetAttributify({
+      /* 预设选项 */
+    }),
+    presetUno()
     // ...自定义预设
-  ],
+  ]
 })
 ```
 
@@ -37,7 +39,7 @@ export default defineConfig({
   presets: [], // 禁用默认预设
   rules: [
     // 您的自定义规则
-  ],
+  ]
 })
 ```
 

@@ -8,20 +8,24 @@ outline: deep
 
 这个预设可以为其他预设启用 [`attributify` 模式](#属性化模式)。
 
-[源代码](https://github.com/unocss/unocss/tree/main/packages/preset-attributify)
+[源码](https://github.com/unocss/unocss/tree/main/packages/preset-attributify)
 
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/preset-attributify
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/preset-attributify
-  ```
-  ```bash [npm]
-  npm install -D @unocss/preset-attributify
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/preset-attributify
+```
+
+```bash [yarn]
+yarn add -D @unocss/preset-attributify
+```
+
+```bash [npm]
+npm install -D @unocss/preset-attributify
+```
+
 :::
 
 ```ts
@@ -30,9 +34,11 @@ import presetAttributify from '@unocss/preset-attributify'
 
 export default defineConfig({
   presets: [
-    presetAttributify({ /* preset options */ }),
+    presetAttributify({
+      /* preset options */
+    })
     // ...
-  ],
+  ]
 })
 ```
 
@@ -42,6 +48,7 @@ export default defineConfig({
 ```ts
 import { presetAttributify } from 'unocss'
 ```
+
 :::
 
 ## 属性化模式
@@ -49,14 +56,17 @@ import { presetAttributify } from 'unocss'
 假设你有一个使用 Tailwind 工具类的按钮。当列表变得越来越长时，它变得很难阅读和维护。
 
 ```html
-<button class="bg-blue-400 hover:bg-blue-500 text-sm text-white font-mono font-light py-2 px-4 rounded border-2 border-blue-200 dark:bg-blue-500 dark:hover:bg-blue-600">
+<button
+  class="bg-blue-400 hover:bg-blue-500 text-sm text-white font-mono font-light py-2 px-4 rounded border-2 border-blue-200 dark:bg-blue-500 dark:hover:bg-blue-600"
+>
   Button
 </button>
 ```
 
 使用属性化模式，你可以将工具类分成属性：
+
 ```html
-<button 
+<button
   bg="blue-400 hover:blue-500 dark:blue-500 dark:hover:blue-600"
   text="sm white"
   font="mono light"
@@ -66,6 +76,7 @@ import { presetAttributify } from 'unocss'
   Button
 </button>
 ```
+
 例如，`text-sm text-white` 可以合并为 `text="sm white"`，而无需重复相同的前缀。
 
 ## 前缀自引用
@@ -75,23 +86,18 @@ import { presetAttributify } from 'unocss'
 例如:
 
 ```html
-<button class="border border-red">
-  Button
-</button>
+<button class="border border-red">Button</button>
 ```
 
 可以写为:
 
 ```html
-<button border="~ red">
-  Button
-</button>
+<button border="~ red">Button</button>
 ```
 
 ## 无值属性
 
 除了 Windi CSS 的属性化模式外，这个预设还支持无值属性。
-
 
 例如：
 
@@ -122,10 +128,11 @@ import { presetAttributify } from 'unocss'
 ```
 
 默认情况下前缀是可选的，如果要强制使用前缀，可以设置：
+
 ```ts
 presetAttributify({
   prefix: 'un-',
-  prefixedOnly: true, // <--
+  prefixedOnly: true // <--
 })
 ```
 
@@ -145,7 +152,6 @@ presetAttributify({
 创建 `shims.d.ts` 文件并添加以下内容：
 
 > 默认情况下，类型包括 `@unocss/preset-uno` 中的常见属性。如果您需要自定义属性，请参考[类型源代码](https://github.com/antfu/unocss/blob/main/packages/preset-attributify/src/jsx.ts) 实现自己的类型。
-
 
 ### Vue
 
@@ -215,7 +221,7 @@ import type { AttributifyAttributes } from '@unocss/preset-attributify'
 
 declare global {
   namespace astroHTML.JSX {
-    interface HTMLAttributes extends AttributifyAttributes { }
+    interface HTMLAttributes extends AttributifyAttributes {}
   }
 }
 ```
@@ -239,7 +245,8 @@ import type { AttributifyNames } from '@unocss/preset-attributify'
 
 type Prefix = 'uno:' // change it to your prefix
 
-interface HTMLAttributes extends Partial<Record<AttributifyNames<Prefix>, string>> {}
+interface HTMLAttributes
+  extends Partial<Record<AttributifyNames<Prefix>, string>> {}
 ```
 
 ## 选项
@@ -249,7 +256,7 @@ interface HTMLAttributes extends Partial<Record<AttributifyNames<Prefix>, string
 - **type:** `boolean`
 - **default:** `false`
 
-仅为属性或类生成CSS。
+仅为属性或类生成 CSS。
 
 ### prefix
 
@@ -283,8 +290,8 @@ interface HTMLAttributes extends Partial<Record<AttributifyNames<Prefix>, string
 - **type:** `boolean`
 - **default:** `false`
 
-如果DOM中实际表示为true，则非带值属性也将匹配。此选项用于支持将非带值属性编码为true的框架。启用此选项将打破以true结尾的规则。
+如果 DOM 中实际表示为 true，则非带值属性也将匹配。此选项用于支持将非带值属性编码为 true 的框架。启用此选项将打破以 true 结尾的规则。
 
 ## 鸣谢
 
- 由[@Tahul](https://github.com/Tahul) 和 [@antfu](https://github.com/antfu)提出的初始想法，先前在[Windi CSS](https://windicss.org/posts/v30.html#attributify-mode)中的实现由[@voorjaar](https://github.com/voorjaar)完成。
+由[@Tahul](https://github.com/Tahul) 和 [@antfu](https://github.com/antfu)提出的初始想法，先前在[Windi CSS](https://windicss.org/posts/v30.html#attributify-mode)中的实现由[@voorjaar](https://github.com/voorjaar)完成。

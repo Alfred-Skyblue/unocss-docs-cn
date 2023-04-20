@@ -7,7 +7,6 @@ outline: deep
 
 UnoCSS 的 PostCSS 插件，支持 `@apply`、`@screen` 和 `theme()` 指令。
 
-
 [源码](https://github.com/unocss/unocss/tree/main/packages/postcss)
 
 ::: warning
@@ -26,9 +25,9 @@ module.exports = {
   plugins: {
     '@unocss/postcss': {
       // 可选项
-      content: ['**/*.{html,js,ts,jsx,tsx,vue,svelte,astro}'],
-    },
-  },
+      content: ['**/*.{html,js,ts,jsx,tsx,vue,svelte,astro}']
+    }
+  }
 }
 ```
 
@@ -37,9 +36,7 @@ module.exports = {
 import { defineConfig, presetUno } from 'unocss'
 
 export default defineConfig({
-  presets: [
-    presetUno(),
-  ],
+  presets: [presetUno()]
 })
 ```
 
@@ -65,13 +62,13 @@ export default defineConfig({
   回退层。始终建议包含。
   只有未使用的层将在此处注入。
 */
-@unocss; 
+@unocss;
 ```
 
 如果您想包含所有层，无论它们之前是否已包含，可以使用 @unocss all。这在需要在多个文件中包含生成的 CSS 时非常有用。
 
 ```css
-@unocss all; 
+@unocss all;
 ```
 
 ### `@apply`
@@ -136,9 +133,8 @@ export default defineConfig({
 ```
 
 #### 断点变体支持
- `@screen` 还支持 `lt`、`at` 变体
 
-
+`@screen` 还支持 `lt`、`at` 变体
 
 ##### `@screen lt`
 

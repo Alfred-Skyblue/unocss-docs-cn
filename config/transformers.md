@@ -9,7 +9,9 @@ Transformers 用于转换源代码以支持约定。
 import { createFilter } from '@rollup/pluginutils'
 import { SourceCodeTransformer } from 'unocss'
 
-export default function myTransformers(options: MyOptions = {}): SourceCodeTransformer {
+export default function myTransformers(
+  options: MyOptions = {}
+): SourceCodeTransformer {
   return {
     name: 'my-transformer',
     enforce: 'pre', // 在其他transformer之前执行
@@ -20,10 +22,9 @@ export default function myTransformers(options: MyOptions = {}): SourceCodeTrans
     async transform(code, id, { uno }) {
       // code 是一个 MagicString 实例
       code.appendRight(0, '/* my transformer */')
-    },
+    }
   }
 }
 ```
 
 您可以查看[官方的 transformers](/presets/#transformers)了解更多示例。
-

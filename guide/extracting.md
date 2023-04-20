@@ -15,7 +15,7 @@
 // @unocss-include
 export const classes = {
   active: 'bg-primary text-white',
-  inactive: 'bg-gray-200 text-gray-500',
+  inactive: 'bg-gray-200 text-gray-500'
 }
 ```
 
@@ -26,7 +26,8 @@ export const classes = {
 有时您可能希望使用动态的拼接，例如：
 
 ```html
-<div class="p-${size}"></div> <!-- 这不会生效！ -->
+<div class="p-${size}"></div>
+<!-- 这不会生效！ -->
 ```
 
 由于 UnoCSS 在构建时使用静态提取，编译时无法知道所有工具类的组合。为此，您可以配置 `safelist` 选项。
@@ -39,36 +40,36 @@ safelist: 'p-1 p-2 p-3 p-4'.split(' ')
 将始终生成对应的 CSS：
 
 ```css
-.p-1 { padding: 0.25rem; }
-.p-2 { padding: 0.5rem; }
-.p-3 { padding: 0.75rem; }
-.p-4 { padding: 1rem; }
+.p-1 {
+  padding: 0.25rem;
+}
+.p-2 {
+  padding: 0.5rem;
+}
+.p-3 {
+  padding: 0.75rem;
+}
+.p-4 {
+  padding: 1rem;
+}
 ```
 
 或者更灵活：
 
 ```ts
 // uno.config.ts
-safelist: [
-  ...Array.from({ length: 4 }, (_, i) => `p-${i + 1}`),
-]
+safelist: [...Array.from({ length: 4 }, (_, i) => `p-${i + 1}`)]
 ```
+
 如果您寻求在运行时进行真正的动态生成，可以考虑查看 [@unocss/runtime](https://github.com/unocss/unocss/tree/main/packages/runtime) 包。
 
-
-
 ## 黑名单
-与 `safelist` 类似，您还可以配置 `blocklist` 来排除一些工具类的生成。不同于 `safelist`，`blocklist` 接受字符串进行精确匹配和正则表达式进行模式匹配。
 
+与 `safelist` 类似，您还可以配置 `blocklist` 来排除一些工具类的生成。不同于 `safelist`，`blocklist` 接受字符串进行精确匹配和正则表达式进行模式匹配。
 
 ```ts
 // uno.config.ts
-blocklist: [
-  'p-1',
-  /^p-[2-4]$/,
-]
+blocklist: ['p-1', /^p-[2-4]$/]
 ```
 
 这将排除 p-1、p-2、p-3、p-4 的生成。
-
-

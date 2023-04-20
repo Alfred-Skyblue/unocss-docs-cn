@@ -13,15 +13,19 @@ UnoCSS 默认不提供样式重置或预设样式，以实现最大灵活性，�
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add @unocss/reset
-  ```
-  ```bash [yarn]
-  yarn add @unocss/reset
-  ```
-  ```bash [npm]
-  npm install @unocss/reset
-  ```
+
+```bash [pnpm]
+pnpm add @unocss/reset
+```
+
+```bash [yarn]
+yarn add @unocss/reset
+```
+
+```bash [npm]
+npm install @unocss/reset
+```
+
 :::
 
 ## Usage
@@ -68,24 +72,27 @@ import '@unocss/reset/tailwind-compat.css'
 这个样式重置基于 [Tailwind reset](#tailwind)，只是去除了按钮的背景颜色覆盖，以避免与 UI 框架发生冲突。请[参阅链接的问题 #2127](https://github.com/unocss/unocss/issues/2127).。
 
 ::: code-group
-  ```css [Before]
-  button,
-  [type='button'],
-  [type='reset'],
-  [type='submit'] {
-    -webkit-appearance: button; /* 1 */
-    background-color: transparent; /* 2 */
-    background-image: none; /* 2 */
-  }
-  ```
-  ```css [After]
-  button,
-  [type='button'],
-  [type='reset'],
-  [type='submit'] {
-    -webkit-appearance: button; /* 1 */
-    /*background-color: transparent; !* 2 *!*/
-    background-image: none; /* 2 */
-  }
-  ```
+
+```css [Before]
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button; /* 1 */
+  background-color: transparent; /* 2 */
+  background-image: none; /* 2 */
+}
+```
+
+```css [After]
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button; /* 1 */
+  /*background-color: transparent; !* 2 *!*/
+  background-image: none; /* 2 */
+}
+```
+
 :::

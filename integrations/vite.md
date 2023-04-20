@@ -4,22 +4,26 @@ description: The Vite plugin for UnoCSS (@unocss/vite).
 outline: deep
 ---
 
-# Vite插件
+# Vite 插件
 
-Vite插件随 `unocss` 包一起提供。
+Vite 插件随 `unocss` 包一起提供。
 
 ## Installation
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D unocss
-  ```
-  ```bash [yarn]
-  yarn add -D unocss
-  ```
-  ```bash [npm]
-  npm install -D unocss
-  ```
+
+```bash [pnpm]
+pnpm add -D unocss
+```
+
+```bash [yarn]
+yarn add -D unocss
+```
+
+```bash [npm]
+npm install -D unocss
+```
+
 :::
 
 安装插件：
@@ -30,9 +34,7 @@ import UnoCSS from 'unocss/vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  plugins: [
-    UnoCSS(),
-  ],
+  plugins: [UnoCSS()]
 })
 ```
 
@@ -56,12 +58,11 @@ import 'virtual:uno.css'
 
 ## 模式
 
-Vite插件提供了一组不同行为的模式。
+Vite 插件提供了一组不同行为的模式。
 
 ### `global` (默认)
 
 这是插件的默认模式：在这个模式中，您需要在入口点添加 uno.css 的引入。
-
 
 此模式为 `build` 和 `dev` 提供了一组 Vite 插件，并支持热更新。
 
@@ -69,30 +70,29 @@ Vite插件提供了一组不同行为的模式。
 
 ### `vue-scoped`
 
-此模式将生成的CSS注入到 Vue 单文件组件的 `<style scoped>` 中，以实现样式隔离。
+此模式将生成的 CSS 注入到 Vue 单文件组件的 `<style scoped>` 中，以实现样式隔离。
 
 ### `svelte-scoped`
 
-此模式将生成的CSS注入到 Svelte 的 `<style>` 中，以实现样式隔离。
+此模式将生成的 CSS 注入到 Svelte 的 `<style>` 中，以实现样式隔离。
 
 ### `shadow-dom`
 
-由于 `Web Components` 使用 `Shadow DOM`，无法直接从全局样式表中对内容进行样式设置（除非使用 `custom css vars`，这些变量将渗透到 `Shadow DOM` 中），因此需要将插件生成的CSS内联到 `Shadow DOM` 样式中。
+由于 `Web Components` 使用 `Shadow DOM`，无法直接从全局样式表中对内容进行样式设置（除非使用 `custom css vars`，这些变量将渗透到 `Shadow DOM` 中），因此需要将插件生成的 CSS 内联到 `Shadow DOM` 样式中。
 
-要将生成的CSS内联，只需要将插件模式配置为 `shadow-dom`，并在每个 Web 组件样式的 CSS 块中包含 `@unocss-placeholder` 占位符。如果您在 Vue 单文件组件中定义自定义样式，并希望与 UnoCSS 一起定义，请将占位符包装在 CSS 注释中，以避免IDE中的语法错误。
-
+要将生成的 CSS 内联，只需要将插件模式配置为 `shadow-dom`，并在每个 Web 组件样式的 CSS 块中包含 `@unocss-placeholder` 占位符。如果您在 Vue 单文件组件中定义自定义样式，并希望与 UnoCSS 一起定义，请将占位符包装在 CSS 注释中，以避免 IDE 中的语法错误。
 
 ### `per-module` (实验性)
-此模式将为每个模块生成一个CSS样式表，并可进行作用域限定。
+
+此模式将为每个模块生成一个 CSS 样式表，并可进行作用域限定。
 
 ### `dist-chunk` (实验性)
 
-此模式将在构建时为每个代码块生成一个CSS样式表，适用于MPA。
+此模式将在构建时为每个代码块生成一个 CSS 样式表，适用于 MPA。
 
-## 在DevTools中编辑类
+## 在 DevTools 中编辑类
 
 由于 "按需" 的限制，DevTools 不知道您尚未在源代码中使用的类。因此，如果您想通过在 DevTools 中直接更改类来尝试其工作原理，只需在主入口文件中添加以下行。
-
 
 ```ts
 import 'uno.css'
@@ -100,7 +100,7 @@ import 'virtual:unocss-devtools'
 ```
 
 ::: warning
-请谨慎使用，我们在内部使用 [`MutationObserver`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) 来检测类名的变化。这意味着不仅您手动进行的更改，还包括您在脚本中进行的更改，都将被检测并包含在样式表中。这可能会导致在生产构建中添加基于某些逻辑的动态类名时，在开发和生产构建之间出现错位。如果可能的话，我们建议将您的动态部分添加到[safelist](https://github.com/unocss/unocss/issues/511)或为您的生产构建设置UI回归测试。
+请谨慎使用，我们在内部使用 [`MutationObserver`](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) 来检测类名的变化。这意味着不仅您手动进行的更改，还包括您在脚本中进行的更改，都将被检测并包含在样式表中。这可能会导致在生产构建中添加基于某些逻辑的动态类名时，在开发和生产构建之间出现错位。如果可能的话，我们建议将您的动态部分添加到[safelist](https://github.com/unocss/unocss/issues/511)或为您的生产构建设置 UI 回归测试。
 :::
 
 ## 框架
@@ -117,16 +117,13 @@ import UnoCSS from 'unocss/vite'
 import React from '@vitejs/plugin-react'
 
 export default {
-  plugins: [
-    React(),
-    UnoCSS(),
-  ],
+  plugins: [React(), UnoCSS()]
 }
 ```
-如果您正在使用  `@unocss/preset-attributify`，您应该从 `build` 脚本中删除 `tsc`。
+
+如果您正在使用 `@unocss/preset-attributify`，您应该从 `build` 脚本中删除 `tsc`。
 
 如果您正在使用 `@vitejs/plugin-react` 与 `@unocss/preset-attributify`，您必须在 `@vitejs/plugin-react` 之前添加 `UnoCSS` 插件。
-
 
 ```ts
 // vite.config.js
@@ -134,12 +131,10 @@ import UnoCSS from 'unocss/vite'
 import React from '@vitejs/plugin-react'
 
 export default {
-  plugins: [
-    UnoCSS(),
-    React(),
-  ],
+  plugins: [UnoCSS(), React()]
 }
 ```
+
 您可以在 [examples/vite-react](https://github.com/unocss/unocss/tree/main/examples/vite-react) 目录下找到一个使用了这两个插件的 React 示例项目，查看其 `package.json` 文件和 Vite 配置文件中的脚本设置。
 
 ### Preact
@@ -152,10 +147,7 @@ import Preact from '@preact/preset-vite'
 import UnoCSS from 'unocss/vite'
 
 export default {
-  plugins: [
-    UnoCSS(),
-    Preact(),
-  ],
+  plugins: [UnoCSS(), Preact()]
 }
 ```
 
@@ -167,10 +159,7 @@ import Prefresh from '@prefresh/vite'
 import UnoCSS from 'unocss/vite'
 
 export default {
-  plugins: [
-    UnoCSS(),
-    Prefresh(),
-  ],
+  plugins: [UnoCSS(), Prefresh()]
 }
 ```
 
@@ -188,7 +177,6 @@ To support `class:foo` and `class:foo={bar}` add the plugin and configure `extra
 
 您可以将简单的规则与 `class:` 一起使用，比如 `class:bg-red-500={foo}` ，或者使用 `shortcuts` 来包含多个规则，参考下面链接的示例项目中的 `src/App.svelte` 文件。
 
-
 ```ts
 // vite.config.js
 import { svelte } from '@sveltejs/vite-plugin-svelte'
@@ -198,13 +186,11 @@ import extractorSvelte from '@unocss/extractor-svelte'
 export default {
   plugins: [
     UnoCSS({
-      extractors: [
-        extractorSvelte
-      ],
+      extractors: [extractorSvelte]
       /* more options */
     }),
-    svelte(),
-  ],
+    svelte()
+  ]
 }
 ```
 
@@ -212,13 +198,11 @@ _You have a `Vite + Svelte` example project on [examples/vite-svelte](https://gi
 
 你可以在 [examples/vite-svelte](https://github.com/unocss/unocss/tree/main/examples/vite-svelte) 目录中找到一个 `Vite + Svelte` 的示例项目。
 
-
 ### Sveltekit
 
 为了支持 `class:foo` 和 `class:foo={bar}` 的写法，你需要在 `extractors` 选项中添加 `extractorSvelte` 配置。
 
 您可以将简单的规则与 `class:` 一起使用，比如 `class:bg-red-500={foo}` ，或者使用 `shortcuts` 来包含多个规则，参考下面链接的示例项目中的 `src/routes/+layout.svelte` 文件。
-
 
 ```ts
 // vite.config.js
@@ -230,23 +214,21 @@ import extractorSvelte from '@unocss/extractor-svelte'
 const config = {
   plugins: [
     UnoCSS({
-      extractors: [
-        extractorSvelte()
-      ],
+      extractors: [extractorSvelte()]
       /* more options */
     }),
-    sveltekit(),
-  ],
+    sveltekit()
+  ]
 }
 ```
+
 <!-- :sandbox{src="https://stackblitz.com/fork/github/unocss/unocss/tree/main/examples/sveltekit"} -->
 
 你可以在 [examples/sveltekit](https://github.com/unocss/unocss/tree/main/examples/sveltekit) 目录中找到一个 `SvelteKit` 的示例项目。
 
-
 ### Svelte/SvelteKit Scoped 模式
 
-在UnoCSS的配置选项中添加 `mode: 'svelte-scoped'` 将会把样式直接放在每个组件的样式块内，而不是一个全局的 `uno.css` 文件中。由于自动的类名编译，依赖于父组件属性（如 `dir="rtl"` 或 `.dark` ）的类名将会生效。同时，你可以通过将类名传递给子组件的 `class` 属性来传递类名，例如`class="text-lg bg-red-100"`。
+在 UnoCSS 的配置选项中添加 `mode: 'svelte-scoped'` 将会把样式直接放在每个组件的样式块内，而不是一个全局的 `uno.css` 文件中。由于自动的类名编译，依赖于父组件属性（如 `dir="rtl"` 或 `.dark` ）的类名将会生效。同时，你可以通过将类名传递给子组件的 `class` 属性来传递类名，例如`class="text-lg bg-red-100"`。
 
 对于 `class:foo` 和 `class:foo={bar}` 的支持已经包含在内，无需在使用 `svelte-scoped` 模式时添加 `extractorSvelte` 配置。
 
@@ -255,6 +237,7 @@ const config = {
 ```html
 <style uno:preflights uno:safelist global></style>
 ```
+
 或者，如果您只想将它们应用于特定组件，请将它们添加到该组件的 `style` 标签中，而不要添加 `global` 属性。
 
 ```ts
@@ -266,11 +249,11 @@ import UnoCSS from 'unocss/vite'
 const config = {
   plugins: [
     UnoCSS({
-      mode: 'svelte-scoped',
+      mode: 'svelte-scoped'
       /* options */
     }),
-    sveltekit(),
-  ],
+    sveltekit()
+  ]
 }
 ```
 
@@ -291,10 +274,10 @@ import UnoCSS from 'unocss/vite'
 export default {
   plugins: [
     UnoCSS({
-      mode: 'shadow-dom',
+      mode: 'shadow-dom'
       /* more options */
-    }),
-  ],
+    })
+  ]
 }
 ```
 
@@ -312,8 +295,8 @@ template.innerHTML = `
 </div>
 `
 ```
-如果您正在使用 [Lit](https://lit.dev/):：
 
+如果您正在使用 [Lit](https://lit.dev/):：
 
 ```ts
 @customElement('my-element')
@@ -336,7 +319,6 @@ export class MyElement extends LitElement {
 
 该插件使用 `nth-of-type` 来避免在同一个 `web component` 中出现多个部分的冲突，并且对于不同 `web component` 上的相同部分，您不需要担心，该插件将为您处理。
 
-
 ```ts
 // vite.config.js
 import UnoCSS from 'unocss/vite'
@@ -347,11 +329,11 @@ export default {
       mode: 'shadow-dom',
       shortcuts: [
         { 'cool-blue': 'bg-blue-500 text-white' },
-        { 'cool-green': 'bg-green-500 text-black' },
-      ],
+        { 'cool-green': 'bg-green-500 text-black' }
+      ]
       /* more options */
-    }),
-  ],
+    })
+  ]
 }
 ```
 
@@ -384,7 +366,6 @@ template.innerHTML = `
 
 ### Solid
 
-
 ```ts
 // vite.config.js
 import solidPlugin from 'vite-plugin-solid'
@@ -395,8 +376,8 @@ export default {
     solidPlugin(),
     UnoCSS({
       /* options */
-    }),
-  ],
+    })
+  ]
 }
 ```
 
@@ -413,10 +394,7 @@ import Elm from 'vite-plugin-elm'
 import UnoCSS from 'unocss/vite'
 
 export default defineConfig({
-  plugins: [
-    Elm(),
-    UnoCSS(),
-  ],
+  plugins: [Elm(), UnoCSS()]
 })
 ```
 

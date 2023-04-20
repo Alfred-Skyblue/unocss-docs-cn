@@ -13,15 +13,19 @@ The basic preset for UnoCSS, with only the most essential utilities.
 ## Installation
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/preset-mini
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/preset-mini
-  ```
-  ```bash [npm]
-  npm install -D @unocss/preset-mini
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/preset-mini
+```
+
+```bash [yarn]
+yarn add -D @unocss/preset-mini
+```
+
+```bash [npm]
+npm install -D @unocss/preset-mini
+```
+
 :::
 
 ```ts
@@ -31,9 +35,9 @@ import presetMini from '@unocss/preset-mini'
 
 export default defineConfig({
   presets: [
-    presetMini(),
+    presetMini()
     // ...other presets
-  ],
+  ]
 })
 ```
 
@@ -43,6 +47,7 @@ This preset is included in the `unocss` package, you can also import it from the
 ```ts
 import { presetMini } from 'unocss'
 ```
+
 :::
 
 ## Rules
@@ -114,6 +119,7 @@ will generate:
 ```
 
 ### Theme
+
 You can fully customize your theme property in your config, and UnoCSS will eventually deeply merge it to the default theme.
 
 <!--eslint-skip-->
@@ -123,11 +129,11 @@ presetMini({
   theme: {
     // ...
     colors: {
-      'veryCool': '#0000ff', // class="text-very-cool"
-      'brand': {
-        'primary': 'hsla(var(--hue, 217), 78%, 51%)', //class="bg-brand-primary"
+      veryCool: '#0000ff', // class="text-very-cool"
+      brand: {
+        primary: 'hsla(var(--hue, 217), 78%, 51%)' //class="bg-brand-primary"
       }
-    },
+    }
   }
 })
 ```
@@ -136,10 +142,12 @@ To consume the theme in rules:
 
 ```ts
 rules: [
-  [/^text-(.*)$/, ([, c], { theme }) => {
-    if (theme.colors[c])
-      return { color: theme.colors[c] }
-  }],
+  [
+    /^text-(.*)$/,
+    ([, c], { theme }) => {
+      if (theme.colors[c]) return { color: theme.colors[c] }
+    }
+  ]
 ]
 ```
 
@@ -155,9 +163,9 @@ presetMini({
     // ...
     breakpoints: {
       sm: '320px',
-      md: '640px',
-    },
-  },
+      md: '640px'
+    }
+  }
 })
 ```
 
@@ -168,6 +176,7 @@ presetMini({
 ## Options
 
 ### dark
+
 - **Type:** `class | media | DarkModeSelectors`
 - **Default:** `class`
 
@@ -192,24 +201,28 @@ interface DarkModeSelectors {
 ```
 
 ### attributifyPseudo
+
 - **Type:** `Boolean`
 - **Default:** `false`
 
 Generate pseudo selector as `[group=""]` instead of `.group`.
 
 ### variablePrefix
+
 - **Type:** `string`
 - **Default:** `un-`
 
 Prefix for CSS variables.
 
 ### prefix
+
 - **Type:** `string | string[]`
 - **Default:** `undefined`
 
 Utils prefix.
 
 ### preflight
+
 - **Type:** `boolean`
 - **Default:** `true`
 

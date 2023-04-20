@@ -10,6 +10,7 @@ description: UnoCSS 还支持设置您在 Tailwind Windi 中可能熟悉的主�
 ## 用法
 
 <!--eslint-skip-->
+
 ```ts
 theme: {
   // ...
@@ -28,16 +29,18 @@ theme: {
 
 ```ts
 rules: [
-  [/^text-(.*)$/, ([, c], { theme }) => {
-    if (theme.colors[c])
-      return { color: theme.colors[c] }
-  }],
+  [
+    /^text-(.*)$/,
+    ([, c], { theme }) => {
+      if (theme.colors[c]) return { color: theme.colors[c] }
+    }
+  ]
 ]
 ```
 
 One exception is that UnoCSS gives full control of `breakpoints` to users. When a custom `breakpoints` is provided, the default will be overridden instead of merging. For example:
 
-一个例外是，UnoCSS将 `breakpoints` 控制权完全留给用户。当提供自定义 `breakpoints` 时，默认值将被覆盖而不是合并。例如：
+一个例外是，UnoCSS 将 `breakpoints` 控制权完全留给用户。当提供自定义 `breakpoints` 时，默认值将被覆盖而不是合并。例如：
 
 <!--eslint-skip-->
 
@@ -50,7 +53,7 @@ theme: {
   },
 }
 ```
+
 目前，您只能使用 `sm:` 和 `md:` 断点变量。
 
 `verticalBreakpoints` 与 `breakpoints` 相同，但用于垂直布局。
-

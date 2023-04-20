@@ -23,9 +23,11 @@ import presetTagify from '@unocss/preset-tagify'
 
 export default defineConfig({
   presets: [
-    presetTagify({ /* options */ }),
+    presetTagify({
+      /* options */
+    })
     // ...other presets
-  ],
+  ]
 })
 ```
 
@@ -34,17 +36,21 @@ export default defineConfig({
 This preset can come in handy when you only need to apply a single unocss rule to an element.
 
 ```html
-<span class="text-red"> red text </span>
-<div class="flex"> flexbox </div>
-I'm feeling <span class="i-line-md-emoji-grin"></span> today!
+<span class="text-red">red text</span>
+<div class="flex">flexbox</div>
+I'm feeling
+<span class="i-line-md-emoji-grin"></span>
+today!
 ```
 
 With tagify mode, you can embed CSS styles into HTML tags:
 
 ```html
-<text-red> red text </text-red>
-<flex> flexbox </flex>
-I'm feeling <i-line-md-emoji-grin /> today!
+<text-red>red text</text-red>
+<flex>flexbox</flex>
+I'm feeling
+<i-line-md-emoji-grin />
+today!
 ```
 
 The HTML above works exactly as you would expect.
@@ -59,9 +65,9 @@ presetTagify({
 
 ```html
 <!-- this will be matched -->
-<un-flex> </un-flex>
+<un-flex></un-flex>
 <!-- this will not be matched -->
-<flex> </flex>
+<flex></flex>
 ```
 
 ## Extra properties
@@ -71,9 +77,8 @@ You can inject extra properties to the matched rules:
 ```js
 presetTagify({
   // adds display: inline-block to matched icons
-  extraProperties: matched => matched.startsWith('i-')
-    ? { display: 'inline-block' }
-    : { }
+  extraProperties: matched =>
+    matched.startsWith('i-') ? { display: 'inline-block' } : {}
 })
 ```
 
@@ -87,22 +92,26 @@ presetTagify({
 ## Options
 
 ### prefix
+
 - **Type:** `string`
 
 The prefix to use for the tagify variant.
 
 ### excludedTags
+
 - **Type:** `string[] | RegExp[]`
 - **Default:** `['b', /^h\d+$/, 'table']`
 
 Tags excluded from processing.
 
 ### extraProperties
+
 - **Type:** `Record<string, string> | ((matched: string) => Partial<Record<string, string>>)`
 
 Extra CSS properties to apply to matched rules.
 
 ### defaultExtractor
+
 - **Type:** `boolean`
 - **Default:** `true`
 

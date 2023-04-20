@@ -14,9 +14,7 @@ Autocomplete utils for UnoCSS: `@unocss/autocomplete`. This is embedded in the <
 Static rules like this will just work without any configuration.
 
 ```ts
-rules: [
-  ['flex', { display: 'flex' }]
-]
+rules: [['flex', { display: 'flex' }]]
 ```
 
 ### Dynamic rules
@@ -28,8 +26,8 @@ rules: [
   [
     /^m-(\d)$/,
     ([, d]) => ({ margin: `${d / 4}rem` }),
-    { autocomplete: 'm-<num>' }, // <-- this
-  ],
+    { autocomplete: 'm-<num>' } // <-- this
+  ]
 ]
 ```
 

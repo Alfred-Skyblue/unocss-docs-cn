@@ -16,7 +16,7 @@ CSS 的顺序将影响它们的优先级。虽然我们将[保留规则的顺序
 rules: [
   [/^m-(\d)$/, ([, d]) => ({ margin: `${d / 4}rem` }), { layer: 'utilities' }],
   // 当您省略图层时，它将是 `default`
-  ['btn', { padding: '4px' }],
+  ['btn', { padding: '4px' }]
 ]
 ```
 
@@ -24,9 +24,13 @@ rules: [
 
 ```css
 /* 图层: default */
-.btn { padding: 4px; }
+.btn {
+  padding: 4px;
+}
 /* 图层: utilities */
-.m-2 { margin: 0.5rem; }
+.m-2 {
+  margin: 0.5rem;
+}
 ```
 
 每个预设样式也可以设置图层：
@@ -35,8 +39,8 @@ rules: [
 preflights: [
   {
     layer: 'my-layer',
-    getCSS: async () => (await fetch('my-style.css')).text(),
-  },
+    getCSS: async () => (await fetch('my-style.css')).text()
+  }
 ]
 ```
 

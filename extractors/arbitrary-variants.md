@@ -17,15 +17,19 @@ This extractor is included in [`@unocss/preset-mini`](/presets/mini) as the defa
 ## Installation
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/extractor-arbitrary-variants
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/extractor-arbitrary-variants
-  ```
-  ```bash [npm]
-  npm install -D @unocss/extractor-arbitrary-variants
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/extractor-arbitrary-variants
+```
+
+```bash [yarn]
+yarn add -D @unocss/extractor-arbitrary-variants
+```
+
+```bash [npm]
+npm install -D @unocss/extractor-arbitrary-variants
+```
+
 :::
 
 ```ts
@@ -33,8 +37,6 @@ import { defineConfig } from 'unocss'
 import extractorArbitrary from '@unocss/extractor-arbitrary-variants'
 
 export default defineConfig({
-  extractors: [
-    extractorArbitrary(),
-  ],
+  extractors: [extractorArbitrary()]
 })
 ```

@@ -12,15 +12,15 @@ description: Writing custom rules for UnoCSS is super easy.
 使用以下示例：
 
 ```ts
-rules: [
-  ['m-1', { margin: '0.25rem' }],
-]
+rules: [['m-1', { margin: '0.25rem' }]]
 ```
 
 无论何时在用户的代码库中检测到 `m-1`，将生成以下 CSS：
 
 ```css
-.m-1 { margin: 0.25rem; }
+.m-1 {
+  margin: 0.25rem;
+}
 ```
 
 ## 动态规则
@@ -30,7 +30,7 @@ rules: [
 ```ts
 rules: [
   [/^m-(\d+)$/, ([, d]) => ({ margin: `${d / 4}rem` })],
-  [/^p-(\d+)$/, match => ({ padding: `${match[1] / 4}rem` })],
+  [/^p-(\d+)$/, match => ({ padding: `${match[1] / 4}rem` })]
 ]
 ```
 
@@ -50,9 +50,15 @@ rules: [
 将生成相应的 CSS：
 
 ```css
-.m-100 { margin: 25rem; }
-.m-3 { margin: 0.75rem; }
-.p-5 { padding: 1.25rem; }
+.m-100 {
+  margin: 25rem;
+}
+.m-3 {
+  margin: 0.75rem;
+}
+.p-5 {
+  padding: 1.25rem;
+}
 ```
 
 恭喜！现在你拥有了自己的强大的原子 CSS 实用工具，尽情享用吧！
@@ -73,17 +79,17 @@ import { defineConfig, toEscapedSelector as e } from 'unocss'
 
 export default defineConfig({
   rules: [
-    [/^custom-(.+)$/, ([, name], { rawSelector, currentSelector, variantHandlers, theme }) => {
-      // 丢弃不匹配的规则
-      if (name.includes('something'))
-        return
+    [
+      /^custom-(.+)$/,
+      ([, name], { rawSelector, currentSelector, variantHandlers, theme }) => {
+        // 丢弃不匹配的规则
+        if (name.includes('something')) return
 
-      // 如果你想的话，可以禁用这个规则的变体
-      if (variantHandlers.length)
-        return
-      const selector = e(rawSelector)
-      // 返回一个字符串而不是对象
-      return `
+        // 如果你想的话，可以禁用这个规则的变体
+        if (variantHandlers.length) return
+        const selector = e(rawSelector)
+        // 返回一个字符串而不是对象
+        return `
 ${selector} {
   font-size: ${theme.fontSize.sm};
 }
@@ -101,8 +107,9 @@ ${selector}::after {
   }
 }
 `
-    }],
-  ],
+      }
+    ]
+  ]
 })
 ```
 
@@ -110,21 +117,28 @@ ${selector}::after {
 
 ## 排序
 
-UnoCSS尊重您在生成CSS中定义的规则的顺序。后定义的规则具有更高的优先级。
+UnoCSS 尊重您在生成 CSS 中定义的规则的顺序。后定义的规则具有更高的优先级。
 
 ## 规则合并
 
-默认情况下，UnoCSS将合并具有相同属性的CSS规则，以最小化CSS大小。
+默认情况下，UnoCSS 将合并具有相同属性的 CSS 规则，以最小化 CSS 大小。
 
-例如，`<div class="m-2 hover:m2">` 将生成以下CSS规则：
+例如，`<div class="m-2 hover:m2">` 将生成以下 CSS 规则：
 
 ```css
-.hover\:m2:hover, .m-2 { margin: 0.5rem; }
+.hover\:m2:hover,
+.m-2 {
+  margin: 0.5rem;
+}
 ```
 
 而不是两个单独的规则：
 
 ```css
-.hover\:m2:hover { margin: 0.5rem; }
-.m-2 { margin: 0.5rem; }
+.hover\:m2:hover {
+  margin: 0.5rem;
+}
+.m-2 {
+  margin: 0.5rem;
+}
 ```

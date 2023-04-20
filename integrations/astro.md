@@ -7,19 +7,22 @@ description: The UnoCSS integration for Astro (@unocss/astro).
 
 UnoCSS 在 [Astro](https://astro.build/) 中的集成：`@unocss/astro`。查看[示例](https://github.com/unocss/unocss/tree/main/examples/astro)。
 
-
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D unocss
-  ```
-  ```bash [yarn]
-  yarn add -D unocss
-  ```
-  ```bash [npm]
-  npm install -D unocss
-  ```
+
+```bash [pnpm]
+pnpm add -D unocss
+```
+
+```bash [yarn]
+yarn add -D unocss
+```
+
+```bash [npm]
+npm install -D unocss
+```
+
 :::
 
 ```ts
@@ -28,9 +31,7 @@ import { defineConfig } from 'astro/config'
 import UnoCSS from 'unocss/astro'
 
 export default defineConfig({
-  integrations: [
-    UnoCSS(),
-  ],
+  integrations: [UnoCSS()]
 })
 ```
 
@@ -50,15 +51,19 @@ export default defineConfig({
 默认情况下，[浏览器样式重置](/guide/style-reset) 不会被注入。要启用它，请安装 `@unocss/reset` 包：
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/reset
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/reset
-  ```
-  ```bash [npm]
-  npm install -D @unocss/reset
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/reset
+```
+
+```bash [yarn]
+yarn add -D @unocss/reset
+```
+
+```bash [npm]
+npm install -D @unocss/reset
+```
+
 :::
 
 并更新您的 `astro.config.ts`：
@@ -72,8 +77,8 @@ export default defineConfig({
   integrations: [
     UnoCSS({
       injectReset: true // 或者重置文件的路径
-    }),
-  ],
+    })
+  ]
 })
 ```
 
@@ -82,15 +87,19 @@ export default defineConfig({
 此插件不带任何默认预设。
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/astro
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/astro
-  ```
-  ```bash [npm]
-  npm install -D @unocss/astro
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/astro
+```
+
+```bash [yarn]
+yarn add -D @unocss/astro
+```
+
+```bash [npm]
+npm install -D @unocss/astro
+```
+
 :::
 
 ```ts
@@ -98,11 +107,10 @@ export default defineConfig({
 import UnoCSS from '@unocss/astro'
 
 export default {
-  integrations: [
-    UnoCSS(),
-  ],
+  integrations: [UnoCSS()]
 }
 ```
+
 更多详情，请参考 [Vite 插件](/integrations/vite)。
 
 ::: info
@@ -112,4 +120,3 @@ export default {
 ## 注意事项
 
 [`client:only`](https://docs.astro.build/en/reference/directives-reference/#clientonly) 组件必须放置在 [`components`](https://docs.astro.build/en/core-concepts/project-structure/#srccomponents) 文件夹中，或者添加到 UnoCSS 的 `extraContent` 配置中，以便进行处理。
-

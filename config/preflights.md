@@ -5,7 +5,7 @@ description: 您可以从配置中注入原始 css 作为预处理。 已解决�
 
 # 预检
 
-您可以从配置中注入原始css作为预处理。解析的 `theme` 可用于自定义css。
+您可以从配置中注入原始 css 作为预处理。解析的 `theme` 可用于自定义 css。
 
 <!--eslint-skip-->
 

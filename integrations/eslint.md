@@ -10,24 +10,26 @@ UnoCSS 的 ESLint 配置: `@unocss/eslint-config`.
 ## 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/eslint-config
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/eslint-config
-  ```
-  ```bash [npm]
-  npm install -D @unocss/eslint-config
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/eslint-config
+```
+
+```bash [yarn]
+yarn add -D @unocss/eslint-config
+```
+
+```bash [npm]
+npm install -D @unocss/eslint-config
+```
+
 :::
 
 In `.eslintrc`:
 
 ```json
 {
-  "extends": [
-    "@unocss"
-  ]
+  "extends": ["@unocss"]
 }
 ```
 

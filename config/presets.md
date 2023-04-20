@@ -16,11 +16,10 @@ export default function myPreset(options: MyPresetOptions): Preset {
     ],
     variants: {
       // ...
-    },
+    }
     // 它支持您在根配置中拥有的大多数配置
   }
 }
-
 ```
 
 然后用户可以像这样使用它：
@@ -32,8 +31,10 @@ import myPreset from './my-preset'
 
 export default defineConfig({
   presets: [
-    myPreset({ /* 预设选项 */ }),
-  ],
+    myPreset({
+      /* 预设选项 */
+    })
+  ]
 })
 ```
 

@@ -12,7 +12,6 @@ UnoCSS 运行时提供了一个在浏览器中运行 UnoCSS 引擎的 CDN 构建
 
 在您的 `index.html` 文件中添加以下代码：
 
-
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime"></script>
 ```
@@ -21,27 +20,33 @@ UnoCSS 运行时提供了一个在浏览器中运行 UnoCSS 引擎的 CDN 构建
 
 ```html
 <script>
- // 传递 unocss 选项
- window.__unocss = {
+  // 传递 unocss 选项
+  window.__unocss = {
     rules: [
-        // 自定义规则...
+      // 自定义规则...
     ],
     presets: [
-        // 自定义预设...
-    ],
+      // 自定义预设...
+    ]
     // ...
- }
+  }
 </script>
-
 ```
+
 默认情况下，将应用 [Uno 预设](/presets/uno)。
 
 运行时不包含预先设置的样式重置。如果您希望有样式重置，您可以添加自己的重置样式，或者使用来自 [Reset 包(/guide/style-reset)] 中的样式重置。
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unocss/reset/normalize.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@unocss/reset/normalize.min.css"
+/>
 <!-- or -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css"
+/>
 ```
 
 ## 构建
@@ -89,7 +94,9 @@ npm i @unocss/runtime
 ```ts
 import initUnocssRuntime from '@unocss/runtime'
 
-initUnocssRuntime({ /* options */ })
+initUnocssRuntime({
+  /* options */
+})
 ```
 
 ## 防止 FOUC
@@ -107,7 +114,5 @@ initUnocssRuntime({ /* options */ })
 ```
 
 ```html
-<div class="text-blue-500" un-cloak>
-    此文本将仅以蓝色显示。
-</div>
+<div class="text-blue-500" un-cloak>此文本将仅以蓝色显示。</div>
 ```

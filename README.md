@@ -6,7 +6,7 @@
 UnoCSS
 </h1>
 <p align="center">
-社区维护的 UnoCSS 中文文档
+即时按需的原子级 CSS 引擎
 </p>
 
 <p align="center">

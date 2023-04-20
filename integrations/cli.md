@@ -5,9 +5,9 @@ description: The CLI for UnoCSS (@unocss/cli).
 
 # CLI
 
-UnoCSS的命令行界面：`@unocss/cli`。
+UnoCSS 的命令行界面：`@unocss/cli`。
 
-- 🍱 适用于传统的后端框架，如Laravel或Kirby
+- 🍱 适用于传统的后端框架，如 Laravel 或 Kirby
 - 👀 包含[监听模式](#开发模式)
 - 🔌 支持通过[`uno.config.ts`](#配置)进行自定义配置
 
@@ -16,35 +16,42 @@ UnoCSS的命令行界面：`@unocss/cli`。
 这个包已经包含在 `unocss` 包中:
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D unocss
-  ```
-  ```bash [yarn]
-  yarn add -D unocss
-  ```
-  ```bash [npm]
-  npm install -D unocss
-  ```
+
+```bash [pnpm]
+pnpm add -D unocss
+```
+
+```bash [yarn]
+yarn add -D unocss
+```
+
+```bash [npm]
+npm install -D unocss
+```
+
 :::
 
 你也可以单独安装 `@unocss/cli` 包:
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/cli
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/cli
-  ```
-  ```bash [npm]
-  npm install -D @unocss/cli
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/cli
+```
+
+```bash [yarn]
+yarn add -D @unocss/cli
+```
+
+```bash [npm]
+npm install -D @unocss/cli
+```
+
 :::
 
 ## 使用
 
-你可以将多个glob模式传递给 `@unocss/cli`：
-
+你可以将多个 glob 模式传递给 `@unocss/cli`：
 
 ```bash
 unocss "site/snippets/**/*.php" "site/templates/**/*.php"
@@ -53,7 +60,7 @@ unocss "site/snippets/**/*.php" "site/templates/**/*.php"
 配置示例:
 
 ::: info
-确保在npm脚本的glob模式中添加转义符号。
+确保在 npm 脚本的 glob 模式中添加转义符号。
 :::
 
 ```json
@@ -88,15 +95,15 @@ unocss "site/{snippets,templates}/**/*.php"
 
 ### 配置
 
-在项目的根目录下创建一个 `uno.config.js` 或 `uno.config.ts` 配置文件来自定义UnoCSS。
+在项目的根目录下创建一个 `uno.config.js` 或 `uno.config.ts` 配置文件来自定义 UnoCSS。
 
 ```ts
 import { defineConfig } from 'unocss'
 
 export default defineConfig({
   cli: {
-    entry: {}, // CliEntryItem | CliEntryItem[]
-  },
+    entry: {} // CliEntryItem | CliEntryItem[]
+  }
   // ...
 })
 
@@ -112,17 +119,16 @@ interface CliEntryItem {
 }
 ```
 
-有关选项的完整列表，请查看[UnoCSS配置文档](/config/)。
+有关选项的完整列表，请查看[UnoCSS 配置文档](/config/)。
 
 ## 选项
 
-| Options                    |                                           |
-|----------------------------|-------------------------------------------|
-| `-v, --version`            | 显示当前UnoCSS的版本号                            |
-| `-c, --config-file <file>` | 配置文件                                      |
+| Options                    |                                                                  |
+| -------------------------- | ---------------------------------------------------------------- |
+| `-v, --version`            | 显示当前 UnoCSS 的版本号                                         |
+| `-c, --config-file <file>` | 配置文件                                                         |
 | `-o, --out-file <file>`    | 生成的 UnoCSS 文件的输出文件名。默认为当前工作目录中的 `uno.css` |
-| `-w, --watch`              | 指示是否应监视 glob 模式找到的文件                      |
-| `--preflights`             | 启用预检样式                                    |
-| `-m, --minify`             | 缩小生成的 CSS                                 |
-| `-h, --help`               | 显示可用的 CLI 命令                              |
-
+| `-w, --watch`              | 指示是否应监视 glob 模式找到的文件                               |
+| `--preflights`             | 启用预检样式                                                     |
+| `-m, --minify`             | 缩小生成的 CSS                                                   |
+| `-h, --help`               | 显示可用的 CLI 命令                                              |

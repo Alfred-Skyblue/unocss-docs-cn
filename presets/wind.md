@@ -17,15 +17,19 @@ This preset inherits [`@unocss/preset-mini`](/presets/mini).
 ## Installation
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D @unocss/preset-wind
-  ```
-  ```bash [yarn]
-  yarn add -D @unocss/preset-wind
-  ```
-  ```bash [npm]
-  npm install -D @unocss/preset-wind
-  ```
+
+```bash [pnpm]
+pnpm add -D @unocss/preset-wind
+```
+
+```bash [yarn]
+yarn add -D @unocss/preset-wind
+```
+
+```bash [npm]
+npm install -D @unocss/preset-wind
+```
+
 :::
 
 ```ts
@@ -34,9 +38,7 @@ import { defineConfig } from 'unocss'
 import presetWind from '@unocss/preset-wind'
 
 export default defineConfig({
-  presets: [
-    presetWind(),
-  ],
+  presets: [presetWind()]
 })
 ```
 
@@ -46,9 +48,11 @@ This preset is included in the `unocss` package, you can also import it from the
 ```ts
 import { presetWind } from 'unocss'
 ```
+
 :::
 
 ## Rules
+
 This preset is compatible with [Tailwind CSS](https://tailwindcss.com/) and [Windi CSS](https://windicss.org/), you can refer to their [documentation](https://tailwindcss.com/docs) for detailed usage.
 
 For all rules and presets included in this preset, please refer to our [interactive docs](/interactive/) or directly go to the [source code](https://github.com/unocss/unocss/tree/main/packages/preset-wind).
@@ -57,8 +61,8 @@ For all rules and presets included in this preset, please refer to our [interact
 
 ### Breakpoints
 
-| Windi CSS | UnoCSS |
-|:--|:--|
+| Windi CSS | UnoCSS      |
+| :-------- | :---------- |
 | `<sm:p-1` | `lt-sm:p-1` |
 | `@lg:p-1` | `at-lg:p-1` |
 | `>xl:p-1` | `lg:p-1`    |
@@ -67,8 +71,8 @@ For all rules and presets included in this preset, please refer to our [interact
 
 This preset uses `_` instead of `,` to respect space in bracket syntax.
 
-| Windi CSS | UnoCSs |
-|:--|:--|
+| Windi CSS                          | UnoCSs                             |
+| :--------------------------------- | :--------------------------------- |
 | `grid-cols-[1fr,10px,max-content]` | `grid-cols-[1fr_10px_max-content]` |
 
 Since some CSS rules require `,` as parts of the value, e.g. `grid-cols-[repeat(3,auto)]`

@@ -11,21 +11,25 @@ UnoCSS 和 Next.js 入门。
 
 ## 设置
 
-### 安装 
+### 安装
 
 ::: code-group
-  ```bash [pnpm]
-  pnpm add -D unocss @unocss/webpack
-  ```
-  ```bash [yarn]
-  yarn add -D unocss @unocss/webpack
-  ```
-  ```bash [npm]
-  npm install -D unocss @unocss/webpack
-  ```
+
+```bash [pnpm]
+pnpm add -D unocss @unocss/webpack
+```
+
+```bash [yarn]
+yarn add -D unocss @unocss/webpack
+```
+
+```bash [npm]
+npm install -D unocss @unocss/webpack
+```
+
 :::
 
-### 配置 
+### 配置
 
 在项目根目录创建 `uno.config.ts`。
 
@@ -33,16 +37,19 @@ UnoCSS 和 Next.js 入门。
 // uno.config.ts
 import {
   defineConfig,
-  presetAttributify, presetIcons, presetUno, presetWebFonts
+  presetAttributify,
+  presetIcons,
+  presetUno,
+  presetWebFonts
 } from 'unocss'
 
 export default defineConfig({
   presets: [
-    presetUno(),
+    presetUno()
     // ...
-  ],
+  ]
 })
- ```
+```
 
 ### 添加插件
 
@@ -84,7 +91,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 export default MyApp
 ```
 
-
 ## 使用
 
 使用 `unocss` 为您的组件添加样式！
@@ -95,7 +101,9 @@ const Home: NextPage = () => {
   return (
     <>
       <main className="py-20 px-12 text-center flex flex-col items-center gap-20px">
-        <span text="blue 5xl hover:red" cursor="default">Nextjs</span>
+        <span text="blue 5xl hover:red" cursor="default">
+          Nextjs
+        </span>
         <div className="i-carbon-car inline-block" text="4xl" />
         <button className="btn w-10rem">Button</button>
       </main>
@@ -134,6 +142,4 @@ Error: ENOENT: no such file or directory, open '.../_virtual_/__uno.css'
 
 您可能需要将目标升级到至少 `es2015` 在您的 `tsconfig.json` 文件中以构建您的项目。
 
-
 默认情况下不支持扩展名为 .js 的文件。将您的文件扩展名更改为 .jsx 或尝试使用 `include: \.js` 在您的配置中包含 js 文件。 [了解更多](https://github.com/unocss/unocss#scanning)。
-

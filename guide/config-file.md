@@ -7,9 +7,14 @@
 ```ts
 // uno.config.ts
 import {
-  defineConfig, presetAttributify, presetIcons,
-  presetTypography, presetUno, presetWebFonts,
-  transformerDirectives, transformerVariantGroup
+  defineConfig,
+  presetAttributify,
+  presetIcons,
+  presetTypography,
+  presetUno,
+  presetWebFonts,
+  transformerDirectives,
+  transformerVariantGroup
 } from 'unocss'
 
 export default defineConfig({
@@ -29,13 +34,10 @@ export default defineConfig({
     presetWebFonts({
       fonts: {
         // ...
-      },
-    }),
+      }
+    })
   ],
-  transformers: [
-    transformerDirectives(),
-    transformerVariantGroup(),
-  ],
+  transformers: [transformerDirectives(), transformerVariantGroup()]
 })
 ```
 
@@ -51,9 +53,10 @@ import UnoCSS from 'unocss/vite'
 export default defineConfig({
   plugins: [
     UnoCSS({
-      configFile: '../my-uno.config.ts',
+      configFile: '../my-uno.config.ts'
     })
   ]
 })
 ```
+
 有关支持的配置选项的完整列表，请参阅[配置参考](/config/)。

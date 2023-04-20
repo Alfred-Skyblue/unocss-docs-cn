@@ -21,7 +21,7 @@ shortcuts: {
 }
 ```
 
-除了普通的映射之外，UnoCSS还允许您定义动态快捷方式。
+除了普通的映射之外，UnoCSS 还允许您定义动态快捷方式。
 
 类似于[Rules](/config/rules)，动态快捷方式是一个匹配器 RegExp 和一个处理函数的组合。
 
@@ -29,10 +29,10 @@ shortcuts: {
 shortcuts: [
   // you could still have object style
   {
-    btn: 'py-2 px-4 font-semibold rounded-lg shadow-md',
+    btn: 'py-2 px-4 font-semibold rounded-lg shadow-md'
   },
   // dynamic shortcuts
-  [/^btn-(.*)$/, ([, c]) => `bg-${c}-400 text-${c}-100 py-2 px-4 rounded-lg`],
+  [/^btn-(.*)$/, ([, c]) => `bg-${c}-400 text-${c}-100 py-2 px-4 rounded-lg`]
 ]
 ```
 

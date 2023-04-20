@@ -28,9 +28,9 @@ rules: [
   [/^m-(\d)$/, ([, d]) => ({ margin: `${d / 4}rem` })],
 ]
 ```
+
 - `matcher` 控制变体何时启用。如果返回值是字符串，则将其用作匹配规则的选择器。
 - `selector` 提供了自定义生成的 CSS 选择器的可用性。
-
 
 ## 内部实现
 
@@ -47,7 +47,9 @@ rules: [
 因此，将生成以下 CSS：
 
 ```css
-.hover\:m-2:hover { margin: 0.5rem; }
+.hover\:m-2:hover {
+  margin: 0.5rem;
+}
 ```
 
 这样，只有当用户悬停在元素上时，才会应用 `m-2`。
