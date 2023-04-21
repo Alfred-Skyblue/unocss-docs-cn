@@ -1,1 +1,0 @@
-import{_ as t,o as s,c as r,N as e}from"./chunks/framework.fcd62fc8.js";const m=JSON.parse('{"title":"官方包","description":"","frontmatter":{},"headers":[],"relativePath":"presets/index.md","lastUpdated":1682085050000}'),a={name:"presets/index.md"},o=e("",7),n=[o];function d(c,i,u,h,f,p){return s(),r("div",null,n)}const _=t(a,[["render",d]]);export{m as __pageData,_ as default};
