@@ -8,13 +8,13 @@ hero:
     alt: UnoCSS
   name: "UnoCSS"
   text: 即时按需的原子级CSS引擎
-  tagline: 可定制的·强大的·快速的·令人愉快的
+  tagline: 可定制的·强大的·快速的·快乐的
   actions:
     - theme: brand
-      text: 开始使用
+      text: 入门
       link: /guide/
     - theme: alt
-      text: 交互文档
+      text: 交互式文档
       link: https://unocss.dev/interactive/
       target: _blank
     - theme: alt
