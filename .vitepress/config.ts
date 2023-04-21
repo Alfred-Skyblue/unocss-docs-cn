@@ -286,7 +286,7 @@ export default defineConfig({
     },
     editLink: {
       pattern: 'https://github.com/unocss/unocss/edit/main/docs/:path',
-      text: 'Suggest changes to this page',
+      text: '在 GitHub 上编辑此页',
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/unocss/unocss' },

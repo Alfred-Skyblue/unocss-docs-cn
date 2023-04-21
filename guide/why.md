@@ -14,7 +14,7 @@ outline: deep
 
 UnoCSS 由 [Windi CSS](https://windicss.org/) 团队的成员创建，灵感来源于我们在 Windi CSS 中的工作。虽然 Windi CSS 在 2023 年 3 月停止了维护，但您可以将 UnoCSS 看作是 Windi CSS 的"精神继承者"。
 
-UnoCSS 继承了 Windi 的按需自然样式、[属性模式](/presets/attributify)、[快捷方式](/config/shortcuts)、[变体组](/transformers/variant-group)、[编译模式](/transformers/compile-class)等特性，并在此基础上构建了极具可扩展性和性能的 UnoCSS，从而引入了新的功能，如[纯 CSS 图标](/presets/icons)、[无值属性模式](/presets/attributify#valueless-attributify)、[标签化](/presets/tagify)、[Web 字体](/presets/web-fonts)等。
+UnoCSS 继承了 Windi 的按需自然样式、[属性模式](/presets/attributify)、[快捷方式](/config/shortcuts)、[变体组](/transformers/variant-group)、[编译模式](/transformers/compile-class)等特性，并在此基础上构建了极具可扩展性和性能的 UnoCSS，从而引入了新的功能，如[纯 CSS 图标](/presets/icons)、[无值属性模式](/presets/attributify#无值属性)、[标签化](/presets/tagify)、[Web 字体](/presets/web-fonts)等。
 
 最重要的是，UnoCSS 作为一种原子级 CSS 引擎，所有的功能都是可选的，并且可以轻松创建自己的约定、设计系统和预设 - 您可以选择需要的功能组合。
 
