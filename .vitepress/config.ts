@@ -134,6 +134,10 @@ const Nav: DefaultTheme.NavItem[] = [
       },
     ],
   },
+  {
+    text:'关于本站',
+    link: '/about/',
+  },
   { text: '交互文档', link: `${ogUrl}interactive/`, target: '_blank' },
   { text: '演练场', link: `${ogUrl}play/`, target: '_blank' },
   {
@@ -276,6 +280,7 @@ export default defineConfig({
     sidebar: {
       '/guide/': SidebarGuide,
       '/integrations/': SidebarGuide,
+      '/about/': SidebarGuide,
 
       '/tools/': SidebarPresets,
       '/presets/': SidebarPresets,
