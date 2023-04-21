@@ -1,13 +1,13 @@
 ---
-title: Variant group transformer
-description: Enables the variant group feature of Windi CSS for UnoCSS (@unocss/transformer-variant-group)
+title: 变体组转换器
+description: 为 UnoCSS 启用 Windi CSS 的变体组特性  (@unocss/transformer-variant-group)
 ---
 
-# Variant group transformer
+# 变体组转换器
 
-Enables the [variant group feature](https://windicss.org/features/variant-groups.html) of Windi CSS for UnoCSS.
+为 UnoCSS 启用 Windi CSS 的 [变体组特性](https://windicss.org/features/variant-groups.html)。
 
-## Installation
+## 安装
 
 ::: code-group
   ```bash [pnpm]
@@ -34,13 +34,13 @@ export default defineConfig({
 })
 ```
 
-## Usage
+## 使用方法
 
 ```html
 <div class="hover:(bg-gray-400 font-medium) font-(light mono)"/>
 ```
 
-Will be transformed to:
+将被转换为：
 
 ```html
 <div class="hover:bg-gray-400 hover:font-medium font-light font-mono"/>

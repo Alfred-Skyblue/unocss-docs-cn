@@ -1,27 +1,27 @@
 ---
 title: Attributify JSX transformer
-description: Support valueless attributify in JSX/TSX (@unocss/transformer-attributify-jsx)
+description: 支持在 JSX/TSX 中使用无值的 attributify (@unocss/transformer-attributify-jsx)
 ---
 
-#  Attributify JSX transformer
+#  Attributify JSX 转换器
 
-Support [valueless attributify](/presets/attributify#valueless-attributify) in JSX/TSX: `@unocss/transformer-attributify-jsx`.
+支持在 JSX/TSX 中使用 [无值的 attributify](/presets/attributify#无值属性)：`@unocss/transformer-attributify-jsx`。
 
-## Presentation
+## 介绍
 
 <!-- @unocss-ignore -->
 
 ```jsx
 export function Component() {
-  return (
-    <div text-red text-center text-5xl animate-bounce>
-      unocss
-    </div>
-  )
+	return (
+			<div text-red text-center text-5xl animate-bounce>
+				unocss
+			</div>
+	)
 }
 ```
 
-Will be transformed to:
+将被转换为：
 
 ```jsx
 export function Component() {
@@ -33,7 +33,7 @@ export function Component() {
 }
 ```
 
-::: details Without this transformer, JSX treats valueless attributes as boolean attributes.
+::: details 如果没有这个转换器，JSX 会将无值属性视为布尔属性。
 ```jsx
 export function Component() {
   return (
@@ -45,7 +45,7 @@ export function Component() {
 ```
 :::
 
-## Installation
+## 安装
 
 ::: code-group
   ```bash [pnpm]
@@ -76,16 +76,18 @@ export default defineConfig({
 })
 ```
 
-## Caveats
+## 注意事项
 
 ::: warning
 The rules are almost the same as those of [Attributify preset](/presets/attributify), but there are several precautions.
+
+规则与 [属性化预设](/presets/attributify) 几乎相同，但有一些需要注意的地方。
 :::
 
 ```html
-<div translate-x-100% /> <!-- cannot end with `%` -->
+<div translate-x-100% /> <!-- 不能以 `%` 结尾 -->
 
-<div translate-x-[100px] /> <!-- cannot contain `[` or `]` -->
+<div translate-x-[100px] /> <!-- 不能包含 `[` 或 `]` -->
 ```
 
 Instead, you may want to use valued attributes instead:
@@ -96,10 +98,9 @@ Instead, you may want to use valued attributes instead:
 <div translate="x-[100px]" />
 ```
 
-## Blocklist
+## 黑名单
 
-This transformer will only transform attributes that are valid UnoCSS utilities.
-You can also `blocklist` bypass some attributes from been transformed.
+该转换器只会转换有效的 UnoCSS 工具类属性。您还可以通过 `blocklist` 属性来屏蔽某些属性，防止它们被转换。
 
 ```js
 transformerAttributifyJsx({
@@ -113,7 +114,7 @@ transformerAttributifyJsx({
 </div>
 ```
 
-Will be compiled to:
+将被编译为：
 
 ```html
 <div text-red text-center text-5xl animate-bounce="">
@@ -123,4 +124,4 @@ Will be compiled to:
 
 ## License
 
-- MIT License &copy; 2022-PRESENT [Anthony Fu](https://github.com/antfu)
+- MIT License &copy; 2021-PRESENT [Anthony Fu](https://github.com/antfu)

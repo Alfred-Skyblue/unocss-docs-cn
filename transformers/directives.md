@@ -1,14 +1,14 @@
 ---
-title: Directives transformer
-description: UnoCSS transformer for @apply, @screen and theme() directives (@unocss/transformer-directives)
+title: 指令转换器
+description: UnoCSS的指令转换器，支持 @apply、@screen 和 theme() 指令 (@unocss/transformer-directives)
 outline: deep
 ---
 
-# Directives transformer
+# 指令转换器
 
-UnoCSS transformer for `@apply`, `@screen` and `theme()` directives: `@unocss/transformer-directives`.
+`@unocss/transformer-directives` 是 UnoCSS 的指令转换器，支持 `@apply`、`@screen` 和 `theme()` 指令。
 
-## Installation
+## 安装
 
 ::: code-group
   ```bash [pnpm]
@@ -36,7 +36,7 @@ export default defineConfig({
 })
 ```
 
-## Usage
+## 使用
 
 ### `@apply`
 
@@ -46,7 +46,7 @@ export default defineConfig({
 }
 ```
 
-Will be transformed to:
+将被转换为：
 
 ```css
 .custom-div {
@@ -59,7 +59,7 @@ Will be transformed to:
 
 #### `--at-apply`
 
-To be compatible with vanilla CSS, you can use CSS Variables to replace the `@apply` directive:
+为了与普通的 CSS 兼容，你可以使用 CSS 变量来替换 `@apply` 指令：
 
 ```css
 .custom-div {
@@ -67,7 +67,7 @@ To be compatible with vanilla CSS, you can use CSS Variables to replace the `@ap
 }
 ```
 
-To use rules with `:`, you will have to quote the value:
+如果你要使用带有 `:` 的规则，则需要将其值用引号括起来：
 
 ```css
 .custom-div {
@@ -75,7 +75,7 @@ To use rules with `:`, you will have to quote the value:
 }
 ```
 
-This feature is enabled by default with a few aliases, that you can configure or disable via:
+该功能默认启用了一些别名，您可以通过以下方式配置或禁用它们：
 
 ```js
 transformerDirectives({
@@ -88,7 +88,7 @@ transformerDirectives({
 
 ### `@screen`
 
-The `@screen` directive that allows you to create media queries that reference your breakpoints by name comes from [`theme.breakpoints`](/config/theme).
+`@screen`指令允许您创建媒体查询，通过名称引用断点，其来自于[`theme.breakpoints`](/config/theme)。
 
 ```css
 .grid {
@@ -105,10 +105,9 @@ The `@screen` directive that allows you to create media queries that reference y
   }
 }
 /* ... */
-...
 ```
 
-Will be transformed to:
+将被转换为：
 
 ```css
 .grid {
@@ -128,9 +127,9 @@ Will be transformed to:
 /* ... */
 ```
 
-#### Breakpoint variant support
+#### 支持断点变体
 
-`@screen` also supports `lt`、`at` variants:
+`@screen`还支持`lt`、`at`变体：
 
 #### `@screen lt-`
 
@@ -151,7 +150,7 @@ Will be transformed to:
 /* ... */
 ```
 
-Will be transformed to:
+将被转换为：
 
 ```css
 .grid {
@@ -170,7 +169,6 @@ Will be transformed to:
 }
 /* ... */
 ```
-
 #### `@screen at-`
 
 ```css
@@ -195,7 +193,7 @@ Will be transformed to:
 /* ... */
 ```
 
-Will be transformed to:
+将被转换为：
 
 ```css
 .grid {
@@ -222,7 +220,7 @@ Will be transformed to:
 
 ### `theme()`
 
-Use the `theme()` function to access your theme config values using dot notation.
+使用`theme()`函数通过点符号访问您的主题配置值。
 
 ```css
 .btn-blue {
@@ -230,7 +228,7 @@ Use the `theme()` function to access your theme config values using dot notation
 }
 ```
 
-Will be compiled to:
+将被编译为：
 
 ```css
 .btn-blue {

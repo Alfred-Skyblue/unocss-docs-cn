@@ -1,16 +1,17 @@
 ---
-title: Compile class transformer
-description: Compile group of classes into one class (@unocss/transformer-compile-class)
+title: 编译类转换器
+description: 将一组类编译为一个类 (@unocss/transformer-compile-class)
 outline: deep
 ---
 
-# Compile class transformer
+# 编译类转换器
 
 <!-- @unocss-ignore -->
 
-Compile group of classes into one class. Inspired by the [compilation mode](https://windicss.org/posts/modes.html#compilation-mode) of Windi CSS and [issue #948](https://github.com/unocss/unocss/issues/948) by [@UltraCakeBakery](https://github.com/UltraCakeBakery).
 
-## Installation
+将一组类编译成一个类。灵感来自于Windi CSS的[编译模式](https://windicss.org/posts/modes.html#compilation-mode)以及[@UltraCakeBakery](https://github.com/UltraCakeBakery)的[issue #948](https://github.com/unocss/unocss/issues/948)。
+
+## 安装
 
 ::: code-group
   ```bash [pnpm]
@@ -37,11 +38,11 @@ export default defineConfig({
 })
 ```
 
-## Usage
+## 用法
 
-Add `:uno:` at the beginning of the class strings to mark them for compilation.
+在类字符串的开头添加 `:uno:`，以将它们标记为编译对象。
 
-For example:
+例如：
 
 ```html
 <div class=":uno: text-center sm:text-left">
@@ -49,7 +50,7 @@ For example:
 </div>
 ```
 
-Will be compiled to:
+将被编译成：
 
 ```html
 <div class="uno-qlmcrp">
@@ -77,9 +78,9 @@ Will be compiled to:
 }
 ```
 
-## Options
+## 选项
 
-You can config the trigger string and prefix for compile class with the options. Refer to [the types](https://github.com/antfu/unocss/blob/main/packages/transformer-compile-class/src/index.ts#L4) for details.
+您可以使用选项配置编译类的触发字符串和前缀。有关详细信息，请参考[类型](https://github.com/antfu/unocss/blob/main/packages/transformer-compile-class/src/index.ts#L4)。
 
 ## License
 
