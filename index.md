@@ -1,6 +1,6 @@
 ---
 layout: home
-title: "UnoCSS：即时的按需原子级 CSS 引擎"
+title: "UnoCSS 中文文档"
 
 hero:
   image:
