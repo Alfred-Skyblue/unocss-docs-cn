@@ -1,5 +1,8 @@
+import { createWriteStream } from 'fs'
+import { resolve } from 'path'
 import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress/types'
+import { SitemapStream } from 'sitemap'
 // @ts-ignore
 import { version } from '../package.json'
 
@@ -7,7 +10,7 @@ const ogUrl = 'https://unocss.dev/'
 const ogImage = `${ogUrl}og.png`
 const title = 'UnoCSS'
 const description = 'unocss 中文文档'
-
+const links = []
 const Guides: DefaultTheme.NavItemWithLink[] = [
   { text: '开始使用', link: '/guide/' },
   { text: '为什么选择UnoCSS？', link: '/guide/why' },
@@ -302,4 +305,27 @@ export default defineConfig({
       copyright: 'Copyright © 2021-PRESENT Anthony Fu',
     },
   },
+
+  //region Generate sitemap
+  transformHtml: (_, id, { pageData }) => {
+    if (!/[\\/]404\.html$/.test(id)) {
+      links.push({
+        // you might need to change this if not using clean urls mode
+        url: pageData.relativePath.replace(/((^|\/)index)?\.md$/, '$2'),
+        lastmod: pageData.lastUpdated,
+      })
+    }
+  },
+  buildEnd: async ({ outDir }) => {
+    const sitemap = new SitemapStream({
+      hostname: 'https://alfred-skyblue.github.io/unocss-docs-cn/',
+    })
+    const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
+    sitemap.pipe(writeStream)
+    links.forEach(link => sitemap.write(link))
+    sitemap.end()
+    // eslint-disable-next-line promise/param-names
+    await new Promise(r => writeStream.on('finish', r))
+  },
+  //endregion
 })
