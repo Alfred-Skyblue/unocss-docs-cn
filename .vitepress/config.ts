@@ -305,13 +305,17 @@ export default defineConfig({
       '/extractors/': SidebarPresets,
       '/config/': SidebarConfig
     },
-    // algolia: {
-    //   appId: '5TS4DAIRFB',
-    //   apiKey: '28213e655f344cb12b84525aab4eacb4',
-    //   indexName: 'unocss-docs-cn',
-    //   placeholder: '请输入关键词',
-    //   buttonText: '搜索'
-    // },
+    algolia: {
+      appId: 'AXP9JFI96W',
+      apiKey: '161aea93f115d66f8f0d8658af517c03',
+      indexName: 'unocss--cn',
+      placeholder: '请输入关键词',
+      translations:{
+        button:{
+          buttonText:'搜索'
+        }
+      }
+    },
     editLink: {
       pattern: 'https://github.com/unocss/unocss/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页'
