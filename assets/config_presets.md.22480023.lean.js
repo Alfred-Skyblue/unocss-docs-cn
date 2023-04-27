@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,R as p}from"./chunks/framework.a0edb2bb.js";const B=JSON.parse('{"title":"预设","description":"","frontmatter":{},"headers":[],"relativePath":"config/presets.md","lastUpdated":1682608323000}'),l={name:"config/presets.md"},o=p("",7),e=[o];function c(t,r,y,i,D,A){return n(),a("div",null,e)}const d=s(l,[["render",c]]);export{B as __pageData,d as default};
