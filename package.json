@@ -16,6 +16,7 @@
     "@iconify-json/ph": "^1.1.5",
     "@iconify-json/twemoji": "^1.1.11",
     "@iconify-json/vscode-icons": "^1.1.22",
+    "@types/node": "^18.16.1",
     "ofetch": "^1.0.1",
     "prettier": "^2.8.7",
     "sitemap": "^7.1.1",

@@ -24,6 +24,9 @@ devDependencies:
   '@iconify-json/vscode-icons':
     specifier: ^1.1.22
     version: 1.1.22
+  '@types/node':
+    specifier: ^18.16.1
+    version: 18.16.1
   ofetch:
     specifier: ^1.0.1
     version: 1.0.1
@@ -41,10 +44,10 @@ devDependencies:
     version: 0.50.6(postcss@8.4.21)(vite@4.2.1)
   vite:
     specifier: ^4.2.1
-    version: 4.2.1
+    version: 4.2.1(@types/node@18.16.1)
   vitepress:
     specifier: 1.0.0-alpha.73
-    version: 1.0.0-alpha.73(@algolia/client-search@4.17.0)
+    version: 1.0.0-alpha.73(@algolia/client-search@4.17.0)(@types/node@18.16.1)
 
 packages:
 
@@ -575,10 +578,14 @@ packages:
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
     dev: true
 
+  /@types/node@18.16.1:
+    resolution: {integrity: sha512-DZxSZWXxFfOlx7k7Rv4LAyiMroaxa3Ly/7OOzZO8cBNho0YzAi4qlbrx8W27JGqG57IgR/6J7r+nOJWw6kcvZA==}
+    dev: true
+
   /@types/sax@1.2.4:
     resolution: {integrity: sha512-pSAff4IAxJjfAXUG6tFkO7dsSbTmf8CtUpfhhZ5VhkRpC4628tJhh3+V6H1E+/Gs9piSzYKT5yzHO5M4GG9jkw==}
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 18.16.1
     dev: true
 
   /@types/web-bluetooth@0.0.16:
@@ -756,7 +763,7 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.2.12
       magic-string: 0.30.0
-      vite: 4.2.1
+      vite: 4.2.1(@types/node@18.16.1)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -768,7 +775,7 @@ packages:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.3.1
+      vite: 4.3.1(@types/node@18.16.1)
       vue: 3.2.47
     dev: true
 
@@ -1515,7 +1522,7 @@ packages:
       - vite
     dev: true
 
-  /vite@4.2.1:
+  /vite@4.2.1(@types/node@18.16.1):
     resolution: {integrity: sha512-7MKhqdy0ISo4wnvwtqZkjke6XN4taqQ2TBaTccLIpOKv7Vp2h4Y+NpmWCnGDeSvvn45KxvWgGyb0MkHvY1vgbg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1540,6 +1547,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 18.16.1
       esbuild: 0.17.15
       postcss: 8.4.21
       resolve: 1.22.2
@@ -1548,7 +1556,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vite@4.3.1:
+  /vite@4.3.1(@types/node@18.16.1):
     resolution: {integrity: sha512-EPmfPLAI79Z/RofuMvkIS0Yr091T2ReUoXQqc5ppBX/sjFRhHKiPPF/R46cTdoci/XgeQpB23diiJxq5w30vdg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -1573,6 +1581,7 @@ packages:
       terser:
         optional: true
     dependencies:
+      '@types/node': 18.16.1
       esbuild: 0.17.15
       postcss: 8.4.21
       rollup: 3.20.2
@@ -1580,7 +1589,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress@1.0.0-alpha.73(@algolia/client-search@4.17.0):
+  /vitepress@1.0.0-alpha.73(@algolia/client-search@4.17.0)(@types/node@18.16.1):
     resolution: {integrity: sha512-BWK7b5yYxdA3SeBnUV+ly8vJU2MFcQhjooycLDc2AsSd07uGp+WO6J6gBmjwHuOz5hgcNa+/VxGWKKwBycdbnA==}
     hasBin: true
     dependencies:
@@ -1593,7 +1602,7 @@ packages:
       mark.js: 8.11.1
       minisearch: 6.0.1
       shiki: 0.14.1
-      vite: 4.3.1
+      vite: 4.3.1(@types/node@18.16.1)
       vue: 3.2.47
     transitivePeerDependencies:
       - '@algolia/client-search'
