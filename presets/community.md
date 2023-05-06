@@ -26,3 +26,4 @@
 # 社区转换器
 
 - [unocss-transformer-attribute-values-group](https://github.com/lvjiaxuan/unocss-transformer-attribute-values-group) - 由[@lvjiaxuan](https://github.com/lvjiaxuan)创建的 UnoCSS 属性值组转换器。
+- [unocss-transformer-alias](https://github.com/zyyv/unocss-transformer-alias) - UnoCSS 快捷方式的转换器，由[@zyyv](https://github.com/zyyv)创建。

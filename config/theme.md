@@ -38,8 +38,6 @@ rules: [
 ]
 ```
 
-One exception is that UnoCSS gives full control of `breakpoints` to users. When a custom `breakpoints` is provided, the default will be overridden instead of merging. For example:
-
 一个例外是，UnoCSS 将 `breakpoints` 控制权完全留给用户。当提供自定义 `breakpoints` 时，默认值将被覆盖而不是合并。例如：
 
 <!--eslint-skip-->
