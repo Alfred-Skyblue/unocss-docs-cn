@@ -80,7 +80,7 @@ export default defineConfig({
 
 ## 选项
 
-您可以使用选项配置编译类的触发字符串和前缀。有关详细信息，请参考[类型](https://github.com/antfu/unocss/blob/main/packages/transformer-compile-class/src/index.ts#L4)。
+您可以使用选项配置编译类的触发字符串和前缀。有关详细信息，请参考[类型](https://github.com/unocss/unocss/blob/main/packages/transformer-compile-class/src/index.ts#L4)。
 
 ## License
 
