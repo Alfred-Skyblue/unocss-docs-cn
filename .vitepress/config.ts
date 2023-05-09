@@ -13,7 +13,7 @@ const description = 'unocss 中文文档'
 const links = []
 const Guides: DefaultTheme.NavItemWithLink[] = [
   { text: '开始使用', link: '/guide/' },
-  { text: '为什么选择UnoCSS？', link: '/guide/why' },
+  { text: '为什么是 UnoCSS？', link: '/guide/why' },
   { text: '预设', link: '/guide/presets' },
   { text: '样式重置', link: '/guide/style-reset' },
   { text: '配置文件', link: '/guide/config-file' },
