@@ -18,7 +18,7 @@ export default defineConfig({
 })
 ```
 
-这将在您的项目中添加一个新的 CSS 工具类 m-1。由于 UnoCSS 是按需加载的，它在您的代码库中不使用它之前不会产生任何作用。因此，假设我们有一个像这样的组件：
+这将在您的项目中添加一个新的 CSS 工具类 `m-1`。由于 UnoCSS 是按需加载的，在您的代码库使用它之前不会产生任何作用。因此，假设我们有一个像这样的组件：
 
 ```html
 <div class="m-1">Hello</div>
@@ -32,7 +32,7 @@ export default defineConfig({
 }
 ```
 
-为了使它更加灵活，您可以通过将规则的第一个参数（我们称之为匹配器）更改为正则表达式，并将其主体更改为函数，从而使规则变得动态化，例如：
+为了使其更加灵活，您可以通过将规则的第一个参数（我们称之为匹配器）更改为正则表达式，并将其主体更改为函数，从而使规则变得动态化，例如：
 
 ```diff
 // uno.config.ts
@@ -44,7 +44,7 @@ export default defineConfig({
 })
 ```
 
-通过这样做，现在您可以拥有任意的 margin 工具，如 `m-1`、`m-100` 或 `m-52.43`。并且，UnoCSS 只在您使用它们时才会生成这些工具。
+通过这样做，现在您可以拥有任意的 margin 工具类，如 `m-1`、`m-100` 或 `m-52.43`。并且，UnoCSS 只在您使用它们时才会生成这些工具。
 
 ```html
 <div class="m-1">Hello</div>
@@ -96,12 +96,11 @@ export default defineConfig({
 })
 ```
 
-类似地，我们为您提供了一些官方预设，供您立即开始使用，您还可以找到许多有趣的社区预设。
-同样的，我们提供了一些[官方预设](/presets/)让你马上开始使用，你也可以找到很多有趣的[社区预设](/presets/#community).
+同样的，我们提供了一些 [官方预设](/presets/) 可以让您马上开始使用，您也可以找到很多有趣的 [社区预设](/presets/#community).
 
-## 玩转
+## 开始
 
-您可以在浏览器中尝试 UnoCSS，在<a href="https://unocss.dev/play/" target="_blank">Playground</a>中。或者在<a href="https://unocss.dev/interactive/" target="_blank">交互式文档</a>中查找默认预设中的工具。
+您可以在浏览器的 <a href="https://unocss.dev/play/" target="_blank">Playground</a> 中尝试 UnoCSS。或者在 <a href="https://unocss.dev/interactive/" target="_blank">交互式文档</a> 中查找默认预设中的工具类。
 
 ## 安装
 
