@@ -100,7 +100,7 @@ export default defineConfig({
 
 ## 开始
 
-您可以在浏览器的 <a href="https://unocss.dev/play/" target="_blank">Playground</a> 中尝试 UnoCSS。或者在 <a href="https://unocss.dev/interactive/" target="_blank">交互式文档</a> 中查找默认预设中的工具类。
+您可以在 <a href="https://unocss.dev/play/" target="_blank">Playground</a> 中尝试 UnoCSS。或者在 <a href="https://unocss.dev/interactive/" target="_blank">交互式文档</a> 中查找默认预设中的工具类。
 
 ## 安装
 
