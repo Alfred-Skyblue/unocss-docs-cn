@@ -428,11 +428,11 @@ presetIcons({
 
 ### 高级自定义图标集清理
 
-在使用此预设与您自己的自定义图标时，请考虑使用类似于 [Iconify](https://iconify.design/) 所做的任何图标集清理过程。您需要的所有工具都可以在 [Iconify 工具](https://docs.iconify.design/tools/tools2/) 中找到。
+在使用此预设与您自己的自定义图标时，请考虑使用类似于 [Iconify](https://iconify.design/) 所做的任何图标集清理过程。您需要的所有工具都可以在 [Iconify 工具](https://iconify.design/docs/libraries/tools/) 中找到。
 
 您可以查看此 repo，在一个 `Vue 3` 项目上使用此预设: [@iconify/tools/@iconify-demo/unocss](https://github.com/iconify/tools/tree/main/%40iconify-demo/unocss)
 
-阅读 [Cleaning up icons](https://docs.iconify.design/articles/cleaning-up-icons/) article from [Iconify] 来自 [Iconify](https://iconify.design/) 的文章获取更多详细信息。
+阅读 [Cleaning up icons](https://iconify.design/docs/articles/cleaning-up-icons/) article from [Iconify] 来自 [Iconify](https://iconify.design/) 的文章获取更多详细信息。
 
 ## 鸣谢
 
