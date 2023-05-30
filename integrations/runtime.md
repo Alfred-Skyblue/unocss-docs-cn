@@ -6,7 +6,7 @@ outline: deep
 
 # 运行时
 
-UnoCSS 运行时提供了一个在浏览器中运行 UnoCSS 引擎的 CDN 构建。它将检测 DOM 的变化并即时生成样式。
+UnoCSS 运行时提供了一个 CDN 构建，可以在浏览器中运行 UnoCSS 引擎。它将检测 DOM 更改并动态生成样式。
 
 ## 使用方法
 
@@ -16,7 +16,7 @@ UnoCSS 运行时提供了一个在浏览器中运行 UnoCSS 引擎的 CDN 构建
 <script src="https://cdn.jsdelivr.net/npm/@unocss/runtime"></script>
 ```
 
-如果需要配置 UnoCSS（可选）：
+配置 UnoCSS（可选）：
 
 ```html
 <script>
@@ -33,7 +33,7 @@ UnoCSS 运行时提供了一个在浏览器中运行 UnoCSS 引擎的 CDN 构建
 </script>
 ```
 
-默认情况下，将应用 [Uno 预设](/presets/uno)。
+默认情况下，将加载 [Uno 预设](/presets/uno)。
 
 运行时不包含预先设置的样式重置。如果您希望有样式重置，您可以添加自己的重置样式，或者使用来自 [Reset 包(/guide/style-reset)] 中的样式重置。
 
@@ -101,11 +101,9 @@ initUnocssRuntime({
 
 ## 防止 FOUC
 
-由于 UnoCSS 在 DOM 出现后运行，可能会出现 "未样式化的内容闪烁"（FOUC），导致用户看到页面未经样式化的情况。
+由于 UnoCSS 在 DOM 出现后运行，可能会出现 "无样式内容闪烁"（FOUC），导致用户看到页面无样式的情况。
 
 使用 `un-cloak` 属性和 CSS 规则，例如 `[un-cloak] { display: none }` 来隐藏无样式的元素，直到 UnoCSS 为它应用样式。
-
-使用 un-cloak 属性和 CSS 规则，例如 `[un-cloak] { display: none }` 来隐藏未经样式化的元素，直到 UnoCSS 为其应用样式。
 
 ```css
 [un-cloak] {
