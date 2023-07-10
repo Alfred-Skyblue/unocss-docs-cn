@@ -10,7 +10,7 @@ outline: deep
 
 ### 使用预设
 
-要将预设设置到您的项目中：
+为您的项目添加预设:
 
 ```ts
 // uno.config.ts
