@@ -3,16 +3,13 @@ import UnoCSS from 'unocss/vite'
 
 export default defineConfig({
   optimizeDeps: {
-    exclude: [
-      'vitepress',
-    ],
+    exclude: ['vitepress']
   },
   server: {
     hmr: {
-      overlay: false,
+      overlay: false
     },
+    port: 8888
   },
-  plugins: [
-    UnoCSS(),
-  ],
+  plugins: [UnoCSS()]
 })
