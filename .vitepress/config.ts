@@ -93,6 +93,10 @@ const Nav: DefaultTheme.NavItem[] = [
     text: '集成',
     items: [
       {
+        text: 'Overview',
+        link: '/integrations/'
+      },
+      {
         text: '集成',
         items: Integrations
       },
