@@ -55,9 +55,21 @@ For examples:
 
 ## 安装
 
-```bash
-npm i -D @unocss/preset-icons @iconify-json/[the-collection-you-want]
+::: code-group
+
+```bash [pnpm]
+pnpm add -D @unocss/preset-icons @iconify-json/[the-collection-you-want]
 ```
+
+```bash [yarn]
+yarn add -D @unocss/preset-icons @iconify-json/[the-collection-you-want]
+```
+
+```bash [npm]
+npm install -D @unocss/preset-icons @iconify-json/[the-collection-you-want]
+```
+
+:::
 
 我们使用 [Iconify](https://iconify.design) 作为图标数据源。您需要按照 `@iconify-json/*` 模式在 `devDependencies` 中安装相应的图标集。例如，`@iconify-json/mdi` 是 [Material Design Icons](https://materialdesignicons.com/) 图标，`@iconify-json/tabler` 是 [Tabler](https://tabler-icons.io/)。您可以参考 [Icônes](https://icones.js.org/) 或 [Iconify](https://icon-sets.iconify.design/) 获取所有可用的图标集。
 
@@ -91,13 +103,25 @@ import { presetIcons } from 'unocss'
 
 如果您喜欢一次性安装 Iconify 上所有可用的图标集（~130MB）：
 
-```bash
-npm i -D @iconify/json
+::: code-group
+
+```bash [pnpm]
+pnpm add -D @iconify/json
 ```
+
+```bash [yarn]
+yarn add -D @iconify/json
+```
+
+```bash [npm]
+npm install -D @iconify/json
+```
+
+:::
 
 ### 额外的属性
 
-您可以提供额外的 CSS 属性来控制图标的默认行为。以下是一个让图标默认呈现为行内块级元素的示例：
+您可以提供额外的 CSS 属性来控制图标的默认行为。以下是默认内嵌图标的示例：
 
 ```ts
 presetIcons({
@@ -193,7 +217,7 @@ presetIcons({
 
 ### Node.js
 
-在 `Node.js` 中，预设将自动搜索已安装的 `iconify` 数据集，因此您不需要注册 `iconify` 集合。
+在 `Node.js` 中，预设会自动搜索已安装的 `iconify` 数据集，因此您无需注册 `iconify`。
 
 您还可以使用 [CustomIconLoader](https://github.com/iconify/iconify/blob/master/packages/utils/src/loader/types.ts#L17) 或 [InlineCollection](https://github.com/iconify/iconify/blob/master/packages/utils/src/loader/types.ts#L86) 提供自己的自定义集合。
 
@@ -428,11 +452,11 @@ presetIcons({
 
 ### 高级自定义图标集清理
 
-在使用此预设与您自己的自定义图标时，请考虑使用类似于 [Iconify](https://iconify.design/) 所做的任何图标集清理过程。您需要的所有工具都可以在 [Iconify 工具](https://iconify.design/docs/libraries/tools/) 中找到。
+将此预设与自定义图标一起使用时，请考虑使用类似于 [Iconify](https://iconify.design/) 对任何图标集执行的清理过程。您需要的所有工具都可以在 [Iconify Tools](https://iconify.design/docs/libraries/tools/) 中找到。
 
 您可以查看此 Repo，在 `Vue 3` 项目上使用此预设: [@iconify/tools/@iconify-demo/unocss](https://github.com/iconify/tools/tree/main/%40iconify-demo/unocss)
 
-阅读 [Iconify](https://iconify.design/) 的文章 [Cleaning up icons](https://iconify.design/docs/articles/cleaning-up-icons/) 获取更多详细信息。
+阅读 [Cleaning up icons](https://iconify.design/docs/articles/cleaning-up-icons/) 中的[Iconify](https://iconify.design/)文章了解更多详细信息。
 
 ## 鸣谢
 

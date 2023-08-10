@@ -74,7 +74,7 @@ Vite 插件提供了一组不同行为的模式。
 
 ### `svelte-scoped`
 
-此模式将生成的 CSS 注入到 Svelte 的 `<style>` 中，以实现样式隔离。
+`svelte-scoped` 模式已移至其自己的包中，请参阅 [@unocss/svelte-scoped/vite](/integrations/svelte-scoped)。
 
 ### `shadow-dom`
 
@@ -186,7 +186,7 @@ import extractorSvelte from '@unocss/extractor-svelte'
 export default {
   plugins: [
     UnoCSS({
-      extractors: [extractorSvelte]
+      extractors: [extractorSvelte()]
       /* more options */
     }),
     svelte()
@@ -225,41 +225,6 @@ const config = {
 <!-- :sandbox{src="https://stackblitz.com/fork/github/unocss/unocss/tree/main/examples/sveltekit"} -->
 
 你可以在 [examples/sveltekit](https://github.com/unocss/unocss/tree/main/examples/sveltekit) 目录中找到一个 `SvelteKit` 的示例项目。
-
-### Svelte/SvelteKit Scoped 模式
-
-在 UnoCSS 的配置选项中添加 `mode: 'svelte-scoped'` 将会把样式直接放在每个组件的样式块内，而不是一个全局的 `uno.css` 文件中。由于自动的类名编译，依赖于父组件属性（如 `dir="rtl"` 或 `.dark` ）的类名将会生效。同时，你可以通过将类名传递给子组件的 `class` 属性来传递类名，例如`class="text-lg bg-red-100"`。
-
-对于 `class:foo` 和 `class:foo={bar}` 的支持已经包含在内，无需在使用 `svelte-scoped` 模式时添加 `extractorSvelte` 配置。
-
-因为您的根 `+layout.svelte` 中没有 `import 'uno.css'`，所以预设类和安全列表类无处放置。在您想要放置它们的任何组件的样式块中添加 `uno:preflights` 或 `uno:safelist` 属性。如果要全局使用两者，请将以下代码添加到您的根 `+layout.svelte` 中：
-
-```html
-<style uno:preflights uno:safelist global></style>
-```
-
-或者，如果您只想将它们应用于特定组件，请将它们添加到该组件的 `style` 标签中，而不要添加 `global` 属性。
-
-```ts
-// vite.config.js
-import { sveltekit } from '@sveltejs/kit/vite'
-import UnoCSS from 'unocss/vite'
-
-/** @type {import('vite').UserConfig} */
-const config = {
-  plugins: [
-    UnoCSS({
-      mode: 'svelte-scoped'
-      /* options */
-    }),
-    sveltekit()
-  ]
-}
-```
-
-<!-- :sandbox{src="https://stackblitz.com/fork/github/unocss/unocss/tree/main/examples/sveltekit-scoped"} -->
-
-在 `examples/sveltekit-scoped` 目录中有一个 [examples/sveltekit-scoped](https://github.com/unocss/unocss/tree/main/examples/sveltekit-scoped#readme)项目，其中详细解释了此模式的工作方式。
 
 ### Web Components
 

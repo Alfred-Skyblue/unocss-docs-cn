@@ -123,12 +123,13 @@ interface CliEntryItem {
 
 ## 选项
 
-| Options                    |                                                                  |
-| -------------------------- | ---------------------------------------------------------------- |
-| `-v, --version`            | 显示当前 UnoCSS 的版本号                                         |
-| `-c, --config-file <file>` | 配置文件                                                         |
-| `-o, --out-file <file>`    | 生成的 UnoCSS 文件的输出文件名。默认为当前工作目录中的 `uno.css` |
-| `-w, --watch`              | 指示是否应监视 glob 模式找到的文件                               |
-| `--preflights`             | 启用预检样式                                                     |
-| `-m, --minify`             | 缩小生成的 CSS                                                   |
-| `-h, --help`               | 显示可用的 CLI 命令                                              |
+| Options                    |                                                                          |
+| -------------------------- | ------------------------------------------------------------------------ |
+| `-v, --version`            | 显示当前 UnoCSS 的版本号                                                 |
+| `-c, --config-file <file>` | 配置文件                                                                 |
+| `-o, --out-file <file>`    | 生成的 UnoCSS 文件的输出文件名。默认为当前工作目录中的 `uno.css`         |
+| `--stdout`                 | 将生成的 UnoCSS 文件写入 STDOUT。会导致 `--watch` 和 `--out-file` 被忽略 |
+| `-w, --watch`              | 指示是否应监视 glob 模式找到的文件                                       |
+| `--preflights`             | 启用预检样式                                                             |
+| `-m, --minify`             | 缩小生成的 CSS                                                           |
+| `-h, --help`               | 显示可用的 CLI 命令                                                      |

@@ -98,20 +98,18 @@ export default defineConfig({
 
 同样的，我们提供了一些 [官方预设](/presets/) 可以让您马上开始使用，您也可以找到很多有趣的 [社区预设](/presets/#community).
 
-## 开始
+## 交互式文档
 
 您可以在 <a href="https://unocss.dev/play/" target="_blank">Playground</a> 中尝试 UnoCSS。或者在 <a href="https://unocss.dev/interactive/" target="_blank">交互式文档</a> 中查找默认预设中的工具类。
 
-## 安装
+## 集成
 
-UnoCSS 针对多种框架提供了许多集成方式：
+UnoCSS 集成了各种框架工具：
 
-<!-- // TODO: make a grid with icons -->
+<ContentIntegrations />
 
-- [Vite](/integrations/vite)
-- [Nuxt](/integrations/nuxt)
-- [Astro](/integrations/astro)
-- [Webpack](/integrations/webpack)
-- [CLI](/integrations/cli)
-- [PostCSS](/integrations/postcss)
-- [CDN Runtime](/integrations/runtime)
+## 例子
+
+所有示例的源代码都可以在 [/examples](https://github.com/unocss/unocss/tree/main/examples) 目录中找到。
+
+<ContentExamples/>

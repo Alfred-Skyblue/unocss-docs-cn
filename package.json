@@ -2,7 +2,7 @@
   "name": "docs",
   "type": "module",
   "private": true,
-  "version": "0.50.6",
+  "version": "0.55.0",
   "description": "unocss 中文文档",
   "scripts": {
     "dev": "vitepress dev",

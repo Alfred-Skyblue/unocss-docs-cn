@@ -6,7 +6,7 @@ outline: deep
 
 # 浏览器样式重置
 
-UnoCSS 为了保持最大灵活性，默认并不提供样式重置或预设样式。并且不会为您填充全局 CSS。如果您与其他 CSS 框架一起使用，它们可能已经为您进行了样式重置。如果您单独使用 UnoCSS，您可以使用像 [Normalize.css](https://necolas.github.io/normalize.css/) 这样的样式重置库。
+UnoCSS 默认情况下不提供样式重置或预检以实现最大灵活性，并且不会填充全局 CSS。如果您将 UnoCSS 与其他 CSS 框架一起使用，它们可能已经为您完成了重置。如果您单独使用 UnoCSS，则可以使用 [Normalize.css](https://github.com/csstools/normalize.css)等重置库。
 
 我们还为您提供了一些快速选择的样式重置：
 
@@ -34,7 +34,7 @@ npm install @unocss/reset
 
 ### normalize.css
 
-来源: https://necolas.github.io/normalize.css/
+来源: https://github.com/csstools/normalize.css
 
 ```ts
 import '@unocss/reset/normalize.css'
@@ -42,7 +42,7 @@ import '@unocss/reset/normalize.css'
 
 ### sanitize.css
 
-来源: https://github.com/csstools/sanitize.css#usage
+来源: https://github.com/csstools/sanitize.css
 
 ```ts
 import '@unocss/reset/sanitize/sanitize.css'

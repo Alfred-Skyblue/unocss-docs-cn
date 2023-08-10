@@ -112,7 +112,7 @@ import { presetAttributify } from 'unocss'
 ```
 
 ::: info
-注意：如果您使用的是 JSX，`<div foo>` 可能会转换为 `<div foo={true}>`，这将使从 UnoCSS 生成的 CSS 无法匹配属性。要解决此问题，您可能需要尝试 [`transformer-attributify-jsx`](https://github.com/unocss/unocss/tree/main/packages/transformer-attributify-jsx) 以及此预设。
+注意：如果您使用的是 JSX，`<div foo>` 可能会转换为 `<div foo={true}>`，这将使从 UnoCSS 生成的 CSS 无法匹配属性。要解决此问题，您可能需要尝试 [`transformer-attributify-jsx`](https://github.com/unocss/unocss/tree/main/packages/transformer-attributify-jsx)以及此预设。
 :::
 
 ## 属性冲突

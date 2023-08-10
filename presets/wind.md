@@ -71,7 +71,7 @@ import { presetWind } from 'unocss'
 
 该预设使用 `_` 而不是 `,` 来表示方括号语法中的空格。
 
-| Windi CSS                          | UnoCSs                             |
+| Windi CSS                          | UnoCSS                             |
 | :--------------------------------- | :--------------------------------- |
 | `grid-cols-[1fr,10px,max-content]` | `grid-cols-[1fr_10px_max-content]` |
 
