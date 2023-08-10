@@ -1,1 +1,0 @@
-import{_ as s,o as n,c as a,O as p}from"./chunks/framework.37c6c1ca.js";const B=JSON.parse('{"title":"预设","description":"","frontmatter":{},"headers":[],"relativePath":"config/presets.md","lastUpdated":1691638604000}'),l={name:"config/presets.md"},o=p("",7),e=[o];function c(t,r,y,i,D,A){return n(),a("div",null,e)}const d=s(l,[["render",c]]);export{B as __pageData,d as default};
