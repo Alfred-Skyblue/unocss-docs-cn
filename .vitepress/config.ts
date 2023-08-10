@@ -93,7 +93,7 @@ const Nav: DefaultTheme.NavItem[] = [
     text: '集成',
     items: [
       {
-        text: 'Overview',
+        text: '概述',
         link: '/integrations/'
       },
       {
@@ -172,7 +172,17 @@ const SidebarGuide: DefaultTheme.SidebarItem[] = [
   },
   {
     text: '集成',
-    items: Integrations
+    items: [
+      {
+        text: '概述',
+        link: '/integrations/'
+      },
+      ...Integrations,
+      {
+        text: '示例',
+        link: '/integrations/#示例'
+      }
+    ]
   },
   {
     text: 'Presets',
