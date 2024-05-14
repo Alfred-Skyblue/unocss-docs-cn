@@ -251,7 +251,16 @@ export default defineConfig({
   locales: {
     root: {
       label: '简体中文',
-      lang: 'zh'
+      lang: 'zh',
+      head: [
+        [
+          'meta',
+          {
+            'http-equiv': 'refresh',
+            content: '0; url=https://unocss-cn.pages.dev/'
+          }
+        ]
+      ],
     },
     en: {
       label: 'English',
