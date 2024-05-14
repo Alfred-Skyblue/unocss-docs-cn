@@ -13,7 +13,7 @@ const description = 'unocss 中文文档'
 const links = []
 const Guides: DefaultTheme.NavItemWithLink[] = [
   { text: '开始使用', link: '/guide/' },
-  { text: '为什么选择UnoCSS？', link: '/guide/why' },
+  { text: '为什么是 UnoCSS？', link: '/guide/why' },
   { text: '预设', link: '/guide/presets' },
   { text: '样式重置', link: '/guide/style-reset' },
   { text: '配置文件', link: '/guide/config-file' },
@@ -31,6 +31,7 @@ const Configs: DefaultTheme.NavItemWithLink[] = [
   { text: '转换器', link: '/config/transformers' },
   { text: '预检查', link: '/config/preflights' },
   { text: '图层', link: '/config/layers' },
+  { text: '自动完成', link: '/config/autocomplete' },
   { text: '预设', link: '/config/presets' }
 ]
 
@@ -38,12 +39,14 @@ const Integrations: DefaultTheme.NavItemWithLink[] = [
   { text: 'Vite', link: '/integrations/vite' },
   { text: 'Nuxt', link: '/integrations/nuxt' },
   { text: 'Astro', link: '/integrations/astro' },
+  { text: 'Svelte Scoped', link: '/integrations/svelte-scoped' },
   { text: 'Webpack', link: '/integrations/webpack' },
   { text: 'Runtime', link: '/integrations/runtime' },
   { text: 'CLI', link: '/integrations/cli' },
   { text: 'PostCSS', link: '/integrations/postcss' },
   { text: 'ESLint', link: '/integrations/eslint' },
-  { text: 'VSCode extension', link: '/integrations/vscode' }
+  { text: 'VSCode extension', link: '/integrations/vscode' },
+  { text: 'JetBrains IDE Plugin', link: '/integrations/jetbrains' }
 ]
 
 const Presets: DefaultTheme.NavItemWithLink[] = [
@@ -89,6 +92,10 @@ const Nav: DefaultTheme.NavItem[] = [
   {
     text: '集成',
     items: [
+      {
+        text: '概述',
+        link: '/integrations/'
+      },
       {
         text: '集成',
         items: Integrations
@@ -165,7 +172,17 @@ const SidebarGuide: DefaultTheme.SidebarItem[] = [
   },
   {
     text: '集成',
-    items: Integrations
+    items: [
+      {
+        text: '概述',
+        link: '/integrations/'
+      },
+      ...Integrations,
+      {
+        text: '示例',
+        link: '/integrations/#示例'
+      }
+    ]
   },
   {
     text: 'Presets',
@@ -310,9 +327,9 @@ export default defineConfig({
       apiKey: '161aea93f115d66f8f0d8658af517c03',
       indexName: 'unocss--cn',
       placeholder: '请输入关键词',
-      translations:{
-        button:{
-          buttonText:'搜索'
+      translations: {
+        button: {
+          buttonText: '搜索'
         }
       }
     },

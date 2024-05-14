@@ -15,18 +15,27 @@ UnoCSS 的 PostCSS 插件，支持 `@apply`、`@screen` 和 `theme()` 指令。
 
 ## Install
 
-```bash
-npm i -D @unocss/postcss
+::: code-group
+
+```bash [pnpm]
+pnpm add -D @unocss/postcss
 ```
+
+```bash [yarn]
+yarn add -D @unocss/postcss
+```
+
+```bash [npm]
+npm install -D @unocss/postcss
+```
+
+:::
 
 ```ts
 // postcss.config.cjs
 module.exports = {
   plugins: {
-    '@unocss/postcss': {
-      // 可选项
-      content: ['**/*.{html,js,ts,jsx,tsx,vue,svelte,astro}']
-    }
+    '@unocss/postcss': {}
   }
 }
 ```
@@ -36,6 +45,9 @@ module.exports = {
 import { defineConfig, presetUno } from 'unocss'
 
 export default defineConfig({
+  content: {
+    filesystem: ['**/*.{html,js,ts,jsx,tsx,vue,svelte,astro}']
+  },
   presets: [presetUno()]
 })
 ```

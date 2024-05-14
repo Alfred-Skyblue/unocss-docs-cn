@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# 为什么选择 UnoCSS？
+# 为什么是 UnoCSS？
 
 ## 动机
 

@@ -5,7 +5,7 @@ description: UnoCSS (@unocss/autocomplete) 的自动完成工具。
 
 # 自动完成
 
-UnoCSS 的自动完成工具：`@unocss/autocomplete`。这个工具已经嵌入到<a href="/play" target="_blank" rel="noreferrer">Playground</a> 和 [VS Code 扩展](/integrations/vscode)中。
+UnoCSS 的自动完成工具：`@unocss/autocomplete`。这个工具已经嵌入到<a href="https://unocss.dev/play/" target="_blank" rel="noreferrer">Playground</a> 和 [VS Code 扩展](/integrations/vscode)中。
 
 ## 使用方法
 
@@ -14,9 +14,7 @@ UnoCSS 的自动完成工具：`@unocss/autocomplete`。这个工具已经嵌入
 像这样的静态规则不需要任何配置即可工作。
 
 ```ts
-rules: [
-  ['flex', { display: 'flex' }]
-]
+rules: [['flex', { display: 'flex' }]]
 ```
 
 ### 动态规则
@@ -28,8 +26,8 @@ rules: [
   [
     /^m-(\d)$/,
     ([, d]) => ({ margin: `${d / 4}rem` }),
-    { autocomplete: 'm-<num>' }, // <-- 这里
-  ],
+    { autocomplete: 'm-<num>' } // <-- 这里
+  ]
 ]
 ```
 
@@ -45,7 +43,7 @@ rules: [
 
 - **模板**：`(border|b)-(solid|dashed|dotted|double|hidden|none)`
 - **输入**：`b-do`
-- **建议**：`b-dashed`，`b-double`
+- **建议**：`b-dotted`，`b-double`
 
 ### 示例 2
 

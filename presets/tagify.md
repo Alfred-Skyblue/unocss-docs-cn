@@ -12,9 +12,21 @@ outline: deep
 
 ## 安装
 
-```bash
-npm i -D @unocss/preset-tagify
+::: code-group
+
+```bash [pnpm]
+pnpm add -D @unocss/preset-tagify
 ```
+
+```bash [yarn]
+yarn add -D @unocss/preset-tagify
+```
+
+```bash [npm]
+npm install -D @unocss/preset-tagify
+```
+
+:::
 
 ```ts
 // uno.config.ts

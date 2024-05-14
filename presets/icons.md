@@ -12,12 +12,12 @@ const toggleDark = () => {
 
 # 图标预设
 
-使用 Pure CSS 和 UnoCSS 实现任何图标的样式。
+在 UnoCSS 中使用纯 CSS 图标。
 
 [源码](https://github.com/unocss/unocss/tree/main/packages/preset-icons)
 
 ::: tip
-推荐阅读：[纯 CSS 中的图标](https://antfu.me/posts/icons-in-pure-css)
+推荐阅读：[聊聊纯 CSS 图标](https://antfu.me/posts/icons-in-pure-css)
 :::
 
 按照以下规则使用图标
@@ -28,15 +28,15 @@ const toggleDark = () => {
 For examples:
 
 ```html
-<!-- Phosphor图标中的基本锚点图标 -->
+<!-- Phosphor 图标中的基本锚点图标 -->
 <div class="i-ph-anchor-simple-thin" />
-<!-- 来自Material Design图标的橙色闹钟 -->
+<!-- 来自 Material Design 图标的橙色闹钟 -->
 <div class="i-mdi-alarm text-orange-400" />
-<!-- 大号Vue标志 -->
+<!-- 大号 Vue 标志 -->
 <div class="i-logos-vue text-3xl" />
-<!-- 亮模式下的太阳，暗模式下的月亮，来自Carbon -->
+<!-- Linght 模式下显示太阳，Dark 模式下显示月亮，引用自 Carbon -->
 <button class="i-carbon-sun dark:i-carbon-moon" />
-<!-- Twemoji笑脸，悬停时变成眼泪 -->
+<!-- Twemoji 笑脸，悬停时变成眼泪 -->
 <div
   class="i-twemoji-grinning-face-with-smiling-eyes hover:i-twemoji-face-with-tears-of-joy"
 />
@@ -55,11 +55,23 @@ For examples:
 
 ## 安装
 
-```bash
-npm i -D @unocss/preset-icons @iconify-json/[the-collection-you-want]
+::: code-group
+
+```bash [pnpm]
+pnpm add -D @unocss/preset-icons @iconify-json/[the-collection-you-want]
 ```
 
-我们使用 [Iconify](https://iconify.design) 作为图标数据源。您需要按照 `@iconify-json/*` 模式在 `devDependencies` 中安装相应的图标集。例如，`@iconify-json/mdi` 是 [Material Design Icons](https://materialdesignicons.com/)图标，`@iconify-json/tabler` 是 [Tabler](https://tabler-icons.io/)。您可以参考 [Icônes](https://icones.js.org/) 或 [Iconify](https://icon-sets.iconify.design/) 获取所有可用的图标集。
+```bash [yarn]
+yarn add -D @unocss/preset-icons @iconify-json/[the-collection-you-want]
+```
+
+```bash [npm]
+npm install -D @unocss/preset-icons @iconify-json/[the-collection-you-want]
+```
+
+:::
+
+我们使用 [Iconify](https://iconify.design) 作为图标数据源。您需要按照 `@iconify-json/*` 模式在 `devDependencies` 中安装相应的图标集。例如，`@iconify-json/mdi` 是 [Material Design Icons](https://materialdesignicons.com/) 图标，`@iconify-json/tabler` 是 [Tabler](https://tabler-icons.io/)。您可以参考 [Icônes](https://icones.js.org/) 或 [Iconify](https://icon-sets.iconify.design/) 获取所有可用的图标集。
 
 ```ts
 // uno.config.ts
@@ -91,13 +103,25 @@ import { presetIcons } from 'unocss'
 
 如果您喜欢一次性安装 Iconify 上所有可用的图标集（~130MB）：
 
-```bash
-npm i -D @iconify/json
+::: code-group
+
+```bash [pnpm]
+pnpm add -D @iconify/json
 ```
+
+```bash [yarn]
+yarn add -D @iconify/json
+```
+
+```bash [npm]
+npm install -D @iconify/json
+```
+
+:::
 
 ### 额外的属性
 
-您可以提供额外的 CSS 属性来控制图标的默认行为。以下是一个让图标默认呈现为行内块级元素的示例：
+您可以提供额外的 CSS 属性来控制图标的默认行为。以下是默认内嵌图标的示例：
 
 ```ts
 presetIcons({
@@ -111,12 +135,12 @@ presetIcons({
 
 ## 模式覆盖
 
-默认情况下，此预设将根据每个图标的特征自动选择渲染模式。您可以在此[博客文章](https://antfu.me/posts/icons-in-pure-css)中了解更多。在某些情况下，您可能希望为每个图标明确设置渲染模式。
+默认情况下，此预设将根据每个图标的特征自动选择渲染模式。您可以在此篇[博客文章](https://antfu.me/posts/icons-in-pure-css)中了解更多。在某些情况下，您可能希望为每个图标明确设置渲染模式。
 
 - `?bg` 表示 `background-img` - 将图标呈现为背景图片
-- `?mask` 表示 `mask` - 将图标呈现为掩膜图像
+- `?mask` 表示 `mask` - 将图标呈现为遮罩图像
 
-例如，`vscode-icons:file-type-light-pnpm` 是一个有颜色的图标（`svg` 中不包含 `currentColor`），将呈现为背景图片。使用 `vscode-icons:file-type-light-pnpm?mask` 以掩膜图像的形式呈现，绕过其颜色。
+例如，`vscode-icons:file-type-light-pnpm` 是一个有颜色的图标（`svg` 中不包含 `currentColor`），将呈现为背景图片。使用 `vscode-icons:file-type-light-pnpm?mask` 将其渲染为遮罩图像，覆盖其本来颜色。
 
 ```html
 <div class="w-full flex items-center justify-center gap-x-4 text-4xl p-2 mt-4">
@@ -140,7 +164,7 @@ presetIcons({
 
 #### 打包工具
 
-使用打包工具时，您可以使用 `dynamic imports` 提供集合，以便它们作为异步块进行打包，并按需加载。
+使用打包工具时，您可以使用 `dynamic imports` 提供集合，以便它们作为异步块进行打包并按需加载。
 
 ```ts
 import presetIcons from '@unocss/preset-icons/browser'
@@ -193,7 +217,7 @@ presetIcons({
 
 ### Node.js
 
-在 `Node.js` 中，预设将自动搜索已安装的 `iconify` 数据集，因此您不需要注册 `iconify` 集合。
+在 `Node.js` 中，预设会自动搜索已安装的 `iconify` 数据集，因此您无需注册 `iconify`。
 
 您还可以使用 [CustomIconLoader](https://github.com/iconify/iconify/blob/master/packages/utils/src/loader/types.ts#L17) 或 [InlineCollection](https://github.com/iconify/iconify/blob/master/packages/utils/src/loader/types.ts#L86) 提供自己的自定义集合。
 
@@ -242,7 +266,7 @@ export default defineConfig({
 
 可用的自定义函数：
 
-- `transform`: 转换原始的 `svg`，仅在使用自定义图标集（`iconify` 集合除外）时应用。
+- `transform`: 转换原始的 `svg`，仅在使用 `custom` 图标集时应用（`iconify` 集合除外）。
 - `customize`: 更改默认的图标自定义值。
 - `iconCustomizer`: 更改默认的图标自定义值。
 
@@ -428,13 +452,13 @@ presetIcons({
 
 ### 高级自定义图标集清理
 
-在使用此预设与您自己的自定义图标时，请考虑使用类似于 [Iconify](https://iconify.design/) 所做的任何图标集清理过程。您需要的所有工具都可以在 [Iconify 工具](https://docs.iconify.design/tools/tools2/) 中找到。
+将此预设与自定义图标一起使用时，请考虑使用类似于 [Iconify](https://iconify.design/) 对任何图标集执行的清理过程。您需要的所有工具都可以在 [Iconify Tools](https://iconify.design/docs/libraries/tools/) 中找到。
 
-您可以查看此 repo，在一个 `Vue 3` 项目上使用此预设: [@iconify/tools/@iconify-demo/unocss](https://github.com/iconify/tools/tree/main/%40iconify-demo/unocss)
+您可以查看此 Repo，在 `Vue 3` 项目上使用此预设: [@iconify/tools/@iconify-demo/unocss](https://github.com/iconify/tools/tree/main/%40iconify-demo/unocss)
 
-阅读 [Cleaning up icons](https://docs.iconify.design/articles/cleaning-up-icons/) article from [Iconify] 来自 [Iconify](https://iconify.design/) 的文章获取更多详细信息。
+阅读 [Cleaning up icons](https://iconify.design/docs/articles/cleaning-up-icons/) 中的[Iconify](https://iconify.design/)文章了解更多详细信息。
 
 ## 鸣谢
 
-- 此预设受到[@husayt](https://github.com/husayt)创建的 此[问题](https://github.com/antfu/unplugin-icons/issues/88)的启发。
-- 基于[@userquin](https://github.com/userquin)的 此 [PR](https://github.com/antfu/unplugin-icons/pull/90) 的工作。
+- 此预设受到 [@husayt](https://github.com/husayt) 创建的 此 [问题](https://github.com/antfu/unplugin-icons/issues/88) 的启发。
+- 基于 [@userquin](https://github.com/userquin) 的此 [PR](https://github.com/antfu/unplugin-icons/pull/90) 的工作。

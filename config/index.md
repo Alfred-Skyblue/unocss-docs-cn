@@ -10,4 +10,5 @@
 - [Extractors](/config/extractors) - 定义提取工具使用情况的位置和方式。
 - [Preflights](/config/preflights) - 定义全局 CSS 规则。
 - [Layers](/config/layers) -定义每个工具类层的顺序。
+- [Autocomplete](/config/autocomplete) - 定义自定义自动完成建议。
 - [Presets](/config/presets) - 针对常见用例预定义的配置。

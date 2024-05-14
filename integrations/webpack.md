@@ -45,7 +45,7 @@ module.exports = {
 }
 ```
 
-```ts [webpack 4]
+```js [webpack 4]
 // webpack.config.js
 const UnoCSS = require('@unocss/webpack').default
 

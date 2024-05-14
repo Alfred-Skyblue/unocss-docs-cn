@@ -86,9 +86,9 @@ export default defineConfig({
     presetWebFonts({
       // 使用带有 https 代理的 axios
       customFetch: (url: string) =>
-        axios.get(url, {
-          httpsAgent: new ProxyAgent('https://localhost:7890')
-        }),
+        axios
+          .get(url, { httpsAgent: new ProxyAgent('https://localhost:7890') })
+          .then(it => it.data),
       provider: 'google',
       fonts: {
         sans: 'Roboto',

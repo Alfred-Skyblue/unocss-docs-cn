@@ -14,9 +14,9 @@ export default function myPreset(options: MyPresetOptions): Preset {
     rules: [
       // ...
     ],
-    variants: {
+    variants: [
       // ...
-    }
+    ]
     // 它支持您在根配置中拥有的大多数配置
   }
 }

@@ -74,7 +74,7 @@ import { presetUno } from 'unocss'
 
 ## 规则
 
-该预设与 [Tailwind CSS](https://tailwindcss.com/) 和 [Windi CSS](https://windicss.org/) 兼容，您可以参考它们的[文档](https://tailwindcss.com/docs)以获取详细的使用方法。
+对于此预设中包含的所有规则和预设，请参阅我们的[交互式文档](https://unocss.dev/interactive/)或直接转到[源代码](https://github.com/unocss/unocss/tree/main/packages/preset-uno)。
 
 有关此预设中包含的所有规则和预设，请参阅我们的[交互式文档](/interactive/)，或直接查看[源码](https://github.com/unocss/unocss/tree/main/packages/preset-uno)。
 
